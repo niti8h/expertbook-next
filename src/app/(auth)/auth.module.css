@@ -1,0 +1,238 @@
+.authPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-1);
+  padding: 24px;
+}
+
+.authFormWrapper {
+  background: var(--surface-0);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--shadow-lg);
+}
+
+.authLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.authLogoIcon {
+  width: 36px;
+  height: 36px;
+  background: var(--brand-600);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 0.875rem;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.formSubtitle {
+  font-size: 0.938rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.formSubtitle a {
+  color: var(--brand-600);
+  font-weight: 600;
+  transition: color 0.2s;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
+.formSubtitle a:hover {
+  text-decoration-color: var(--brand-600);
+}
+
+/* Role selector (register page) */
+.roleSelector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.roleOption {
+  padding: 16px 12px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-light);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  background: var(--surface-0);
+}
+
+.roleOption:hover {
+  border-color: var(--brand-400);
+}
+
+.roleOptionActive {
+  border-color: var(--brand-600);
+  background: var(--surface-1);
+}
+
+.roleIcon {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.roleOptionActive .roleIcon {
+  color: var(--brand-600);
+}
+
+.roleOption strong {
+  font-size: 0.813rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.roleOption span {
+  font-size: 0.688rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 4px;
+}
+
+/* Form fields */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.fieldGroup label {
+  font-size: 0.813rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fieldGroup input {
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--surface-0);
+  transition: all 0.2s;
+  outline: none;
+  width: 100%;
+}
+
+.fieldGroup input:focus {
+  border-color: var(--brand-600);
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+}
+
+.fieldGroup input::placeholder {
+  color: var(--text-muted);
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 16px;
+  background: var(--brand-600);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s var(--ease);
+  margin-top: 8px;
+}
+
+.submitBtn:hover {
+  background: #27272a;
+  transform: translateY(-1px);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+.otpInputContainer {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.otpInput {
+  width: 48px;
+  height: 56px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  background: var(--surface-0);
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.otpInput:focus {
+  border-color: var(--brand-600);
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+}
+
+.errorText {
+  color: #ef4444;
+  font-size: 0.813rem;
+  margin-top: -16px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .authPage {
+    padding: 0;
+    align-items: flex-start;
+  }
+  
+  .authFormWrapper {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 32px 24px;
+    min-height: 100vh;
+  }
+
+  .otpInput {
+    width: 44px;
+    height: 52px;
+    font-size: 1.25rem;
+  }
+}

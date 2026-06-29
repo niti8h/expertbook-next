@@ -1,0 +1,2477 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://127.0.2.2:3000
+- Environments: .env.local
+✓ Ready in 609ms
+
+ GET /article/create 200 in 1252ms (next.js: 388ms, application-code: 864ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/article/c..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_5ba3...">
+                          <LayoutWrapper settings={{...}}>
+                            <body
+                              style={{display:"flex",flexDirection:"column",minHeight:"100vh"}}
+-                             cz-shortcut-listen="true"
+                            >
+                  ...
+ 
+ GET /article 200 in 246ms (next.js: 151ms, application-code: 95ms)
+ GET /article 200 in 83ms (next.js: 30ms, application-code: 53ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /article/1 200 in 2.3s (next.js: 2.3s, application-code: 28ms)
+ GET /article/1 200 in 41ms (next.js: 8ms, application-code: 33ms)
+ GET /article/1 200 in 87ms (next.js: 11ms, application-code: 76ms)
+ GET /article/1 200 in 42ms (next.js: 5ms, application-code: 37ms)
+ GET /article 200 in 38ms (next.js: 8ms, application-code: 31ms)
+✓ Compiled in 55ms
+ GET /article/1 200 in 44ms (next.js: 11ms, application-code: 33ms)
+ GET /article/1 200 in 39ms (next.js: 8ms, application-code: 31ms)
+ GET /article/1 200 in 53ms (next.js: 6ms, application-code: 47ms)
+ GET /article/1 200 in 49ms (next.js: 7ms, application-code: 42ms)
+ GET /products 200 in 63ms (next.js: 41ms, application-code: 21ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+✓ Compiled in 355ms
+ GET /products 200 in 339ms (next.js: 103ms, application-code: 236ms)
+ GET /article 200 in 339ms (next.js: 201ms, application-code: 138ms)
+ GET /products 200 in 77ms (next.js: 4ms, application-code: 73ms)
+ GET /article 200 in 77ms (next.js: 32ms, application-code: 45ms)
+✓ Compiled in 182ms
+✓ Compiled in 31ms
+ GET /products?pincode=126116&search=sofware 200 in 85ms (next.js: 20ms, application-code: 66ms)
+ GET /products?pincode=126116&search=software 200 in 23ms (next.js: 3ms, application-code: 19ms)
+ GET /products?pincode=126116&search=software 200 in 192ms (next.js: 3ms, application-code: 189ms)
+✓ Compiled in 44ms
+ GET /products?pincode=126116&search=software 200 in 88ms (next.js: 22ms, application-code: 66ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/products" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_5ba3...">
+                          <LayoutWrapper settings={{...}}>
+                            <body
+                              style={{display:"flex",flexDirection:"column",minHeight:"100vh"}}
+-                             cz-shortcut-listen="true"
+                            >
+                  ...
+ 
+ GET /products?pincode=126116&search=software 200 in 69ms (next.js: 10ms, application-code: 59ms)
+✓ Compiled in 32ms
+ GET /products?search=software 200 in 96ms (next.js: 46ms, application-code: 50ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /products?search=software&pincode=126116 200 in 50ms (next.js: 16ms, application-code: 33ms)
+ GET /article 200 in 33ms (next.js: 6ms, application-code: 28ms)
+ GET /article/1 200 in 53ms (next.js: 33ms, application-code: 20ms)
+ GET /products 200 in 23ms (next.js: 6ms, application-code: 18ms)
+ GET /products/school-erp-software-6a3cd9994d5d2 200 in 605ms (next.js: 584ms, application-code: 21ms)
+ GET /store/8/webspool 200 in 423ms (next.js: 396ms, application-code: 27ms)
+ GET /article 200 in 24ms (next.js: 4ms, application-code: 20ms)
+ GET /products 200 in 35ms (next.js: 8ms, application-code: 26ms)
+✓ Compiled in 577ms
+ GET /products 200 in 691ms (next.js: 402ms, application-code: 289ms)
+ GET /products 200 in 261ms (next.js: 28ms, application-code: 233ms)
+ GET /products 200 in 161ms (next.js: 3ms, application-code: 158ms)
+ GET /products 200 in 171ms (next.js: 5ms, application-code: 166ms)
+ GET /products 200 in 115ms (next.js: 5ms, application-code: 110ms)
+ GET /products 200 in 97ms (next.js: 5ms, application-code: 92ms)
+ GET /products 200 in 83ms (next.js: 2ms, application-code: 81ms)
+ GET /products 200 in 101ms (next.js: 3ms, application-code: 98ms)
+ GET /products 200 in 97ms (next.js: 4ms, application-code: 94ms)
+ GET /products 200 in 90ms (next.js: 3ms, application-code: 87ms)
+ GET /products 200 in 86ms (next.js: 1711µs, application-code: 85ms)
+ GET /products 200 in 85ms (next.js: 2ms, application-code: 83ms)
+ GET /products 200 in 66ms (next.js: 1377µs, application-code: 65ms)
+ GET /products 200 in 65ms (next.js: 1554µs, application-code: 64ms)
+ GET /products 200 in 65ms (next.js: 1516µs, application-code: 63ms)
+ GET /products 200 in 64ms (next.js: 2ms, application-code: 61ms)
+ GET /products 200 in 68ms (next.js: 1974µs, application-code: 66ms)
+ GET /products 200 in 70ms (next.js: 1734µs, application-code: 68ms)
+ GET /products 200 in 66ms (next.js: 3ms, application-code: 63ms)
+ GET /products 200 in 62ms (next.js: 4ms, application-code: 58ms)
+ GET /products 200 in 65ms (next.js: 1705µs, application-code: 64ms)
+ GET /products 200 in 88ms (next.js: 1902µs, application-code: 86ms)
+ GET /products 200 in 87ms (next.js: 2ms, application-code: 85ms)
+ GET /products 200 in 97ms (next.js: 3ms, application-code: 94ms)
+ GET /products 200 in 74ms (next.js: 19ms, application-code: 55ms)
+ GET /products 200 in 58ms (next.js: 1664µs, application-code: 57ms)
+ GET /products 200 in 89ms (next.js: 1264µs, application-code: 87ms)
+ GET /products 200 in 74ms (next.js: 1543µs, application-code: 72ms)
+ GET /products 200 in 135ms (next.js: 3ms, application-code: 132ms)
+ GET /products 200 in 147ms (next.js: 2ms, application-code: 145ms)
+ GET /products 200 in 177ms (next.js: 4ms, application-code: 174ms)
+ GET /products 200 in 177ms (next.js: 5ms, application-code: 172ms)
+ GET /products 200 in 204ms (next.js: 2ms, application-code: 201ms)
+ GET /products 200 in 216ms (next.js: 3ms, application-code: 214ms)
+ GET /products 200 in 228ms (next.js: 5ms, application-code: 222ms)
+ GET /products 200 in 246ms (next.js: 3ms, application-code: 242ms)
+ GET /products 200 in 243ms (next.js: 5ms, application-code: 237ms)
+ GET /products 200 in 276ms (next.js: 3ms, application-code: 273ms)
+ GET /products 200 in 213ms (next.js: 6ms, application-code: 207ms)
+ GET /products 200 in 444ms (next.js: 4ms, application-code: 440ms)
+ GET /products 200 in 426ms (next.js: 3ms, application-code: 423ms)
+ GET /products 200 in 409ms (next.js: 10ms, application-code: 399ms)
+ GET /products 200 in 143ms (next.js: 5ms, application-code: 138ms)
+ GET /products 200 in 122ms (next.js: 4ms, application-code: 118ms)
+ GET /products 200 in 111ms (next.js: 3ms, application-code: 109ms)
+ GET /products 200 in 103ms (next.js: 2ms, application-code: 101ms)
+ GET /products 200 in 100ms (next.js: 2ms, application-code: 98ms)
+ GET /products 200 in 97ms (next.js: 1831µs, application-code: 96ms)
+ GET /products 200 in 95ms (next.js: 1897µs, application-code: 93ms)
+ GET /products 200 in 96ms (next.js: 1936µs, application-code: 94ms)
+ GET /products 200 in 92ms (next.js: 1673µs, application-code: 90ms)
+ GET /products 200 in 92ms (next.js: 1598µs, application-code: 91ms)
+ GET /products 200 in 73ms (next.js: 3ms, application-code: 69ms)
+ GET /products 200 in 87ms (next.js: 1796µs, application-code: 86ms)
+ GET /products 200 in 93ms (next.js: 2ms, application-code: 90ms)
+ GET /products 200 in 92ms (next.js: 3ms, application-code: 89ms)
+ GET /products 200 in 92ms (next.js: 1581µs, application-code: 90ms)
+ GET /products 200 in 93ms (next.js: 1810µs, application-code: 91ms)
+ GET /products 200 in 86ms (next.js: 1851µs, application-code: 84ms)
+ GET /products 200 in 86ms (next.js: 1892µs, application-code: 84ms)
+ GET /products 200 in 90ms (next.js: 1795µs, application-code: 88ms)
+ GET /products 200 in 71ms (next.js: 1473µs, application-code: 70ms)
+ GET /products 200 in 75ms (next.js: 1768µs, application-code: 74ms)
+ GET /products 200 in 107ms (next.js: 1697µs, application-code: 105ms)
+ GET /products 200 in 114ms (next.js: 3ms, application-code: 111ms)
+ GET /products 200 in 129ms (next.js: 3ms, application-code: 126ms)
+ GET /products 200 in 139ms (next.js: 3ms, application-code: 136ms)
+ GET /products 200 in 142ms (next.js: 4ms, application-code: 139ms)
+ GET /products 200 in 154ms (next.js: 3ms, application-code: 152ms)
+ GET /products 200 in 150ms (next.js: 4ms, application-code: 146ms)
+ GET /products 200 in 146ms (next.js: 2ms, application-code: 144ms)
+ GET /products 200 in 114ms (next.js: 3ms, application-code: 111ms)
+ GET /products 200 in 114ms (next.js: 3ms, application-code: 111ms)
+ GET /products 200 in 134ms (next.js: 2ms, application-code: 132ms)
+ GET /products 200 in 132ms (next.js: 4ms, application-code: 127ms)
+ GET /products 200 in 120ms (next.js: 4ms, application-code: 116ms)
+ GET /products 200 in 134ms (next.js: 2ms, application-code: 132ms)
+ GET /products 200 in 110ms (next.js: 2ms, application-code: 108ms)
+ GET /products 200 in 118ms (next.js: 2ms, application-code: 116ms)
+ GET /products 200 in 162ms (next.js: 3ms, application-code: 159ms)
+ GET /products 200 in 119ms (next.js: 5ms, application-code: 114ms)
+ GET /products 200 in 82ms (next.js: 4ms, application-code: 78ms)
+ GET /products 200 in 40ms (next.js: 4ms, application-code: 36ms)
+ GET /article 200 in 139ms (next.js: 35ms, application-code: 104ms)
+ GET /article 200 in 76ms (next.js: 1974µs, application-code: 74ms)
+ GET /article 200 in 74ms (next.js: 2ms, application-code: 71ms)
+ GET /article 200 in 67ms (next.js: 1669µs, application-code: 66ms)
+ GET /article 200 in 69ms (next.js: 1603µs, application-code: 68ms)
+ GET /article 200 in 106ms (next.js: 2ms, application-code: 104ms)
+ GET /article 200 in 87ms (next.js: 1831µs, application-code: 85ms)
+ GET /article 200 in 85ms (next.js: 2ms, application-code: 82ms)
+ GET /article 200 in 72ms (next.js: 1557µs, application-code: 71ms)
+ GET /article 200 in 73ms (next.js: 3ms, application-code: 69ms)
+ GET /article 200 in 76ms (next.js: 1645µs, application-code: 74ms)
+ GET /article 200 in 75ms (next.js: 3ms, application-code: 73ms)
+ GET /article 200 in 77ms (next.js: 3ms, application-code: 75ms)
+ GET /article 200 in 75ms (next.js: 3ms, application-code: 72ms)
+ GET /article 200 in 76ms (next.js: 3ms, application-code: 73ms)
+ GET /article 200 in 73ms (next.js: 3ms, application-code: 70ms)
+ GET /article 200 in 71ms (next.js: 3ms, application-code: 68ms)
+ GET /article 200 in 70ms (next.js: 3ms, application-code: 67ms)
+ GET /article 200 in 71ms (next.js: 3ms, application-code: 68ms)
+ GET /article 200 in 96ms (next.js: 3ms, application-code: 93ms)
+ GET /article 200 in 92ms (next.js: 2ms, application-code: 89ms)
+ GET /article 200 in 70ms (next.js: 1890µs, application-code: 68ms)
+ GET /article 200 in 89ms (next.js: 1833µs, application-code: 87ms)
+ GET /article 200 in 68ms (next.js: 1548µs, application-code: 66ms)
+ GET /article 200 in 66ms (next.js: 3ms, application-code: 63ms)
+ GET /article 200 in 62ms (next.js: 1657µs, application-code: 61ms)
+ GET /article 200 in 58ms (next.js: 2ms, application-code: 56ms)
+ GET /article 200 in 62ms (next.js: 1830µs, application-code: 60ms)
+ GET /article 200 in 62ms (next.js: 2ms, application-code: 60ms)
+ GET /article 200 in 63ms (next.js: 1649µs, application-code: 61ms)
+ GET /article 200 in 78ms (next.js: 1705µs, application-code: 76ms)
+ GET /article 200 in 62ms (next.js: 2ms, application-code: 60ms)
+ GET /article 200 in 86ms (next.js: 3ms, application-code: 83ms)
+ GET /article 200 in 101ms (next.js: 1266µs, application-code: 100ms)
+ GET /article 200 in 81ms (next.js: 3ms, application-code: 78ms)
+ GET /article 200 in 56ms (next.js: 3ms, application-code: 52ms)
+ GET /article 200 in 54ms (next.js: 1364µs, application-code: 53ms)
+ GET /article 200 in 55ms (next.js: 1637µs, application-code: 53ms)
+ GET /article 200 in 55ms (next.js: 2ms, application-code: 53ms)
+ GET /article 200 in 54ms (next.js: 2ms, application-code: 52ms)
+ GET /article 200 in 56ms (next.js: 3ms, application-code: 53ms)
+ GET /article 200 in 54ms (next.js: 1487µs, application-code: 53ms)
+ GET /article 200 in 56ms (next.js: 2ms, application-code: 54ms)
+ GET /article 200 in 56ms (next.js: 1976µs, application-code: 54ms)
+ GET /article 200 in 56ms (next.js: 1503µs, application-code: 54ms)
+ GET /article 200 in 53ms (next.js: 1562µs, application-code: 52ms)
+ GET /article 200 in 54ms (next.js: 3ms, application-code: 51ms)
+ GET /article 200 in 53ms (next.js: 1821µs, application-code: 51ms)
+ GET /article 200 in 54ms (next.js: 1455µs, application-code: 52ms)
+ GET /article 200 in 56ms (next.js: 2ms, application-code: 54ms)
+ GET /article 200 in 65ms (next.js: 1511µs, application-code: 64ms)
+ GET /article 200 in 70ms (next.js: 2ms, application-code: 67ms)
+ GET /article 200 in 91ms (next.js: 4ms, application-code: 87ms)
+ GET /article 200 in 66ms (next.js: 2ms, application-code: 64ms)
+ GET /article 200 in 64ms (next.js: 1438µs, application-code: 62ms)
+ GET /article 200 in 82ms (next.js: 1579µs, application-code: 80ms)
+ GET /article 200 in 80ms (next.js: 3ms, application-code: 78ms)
+ GET /article 200 in 62ms (next.js: 3ms, application-code: 59ms)
+ GET /article 200 in 66ms (next.js: 1518µs, application-code: 65ms)
+ GET /article 200 in 83ms (next.js: 1543µs, application-code: 82ms)
+ GET /article 200 in 68ms (next.js: 2ms, application-code: 65ms)
+ GET /article 200 in 64ms (next.js: 3ms, application-code: 62ms)
+ GET /article 200 in 79ms (next.js: 1694µs, application-code: 77ms)
+ GET /article 200 in 59ms (next.js: 2ms, application-code: 57ms)
+ GET /article 200 in 55ms (next.js: 2ms, application-code: 53ms)
+ GET /article 200 in 58ms (next.js: 1177µs, application-code: 56ms)
+ GET /article 200 in 66ms (next.js: 1394µs, application-code: 64ms)
+ GET /article 200 in 116ms (next.js: 1680µs, application-code: 114ms)
+ GET /article 200 in 115ms (next.js: 4ms, application-code: 111ms)
+ GET /article 200 in 91ms (next.js: 3ms, application-code: 88ms)
+ GET /article 200 in 82ms (next.js: 25ms, application-code: 57ms)
+ GET /article 200 in 58ms (next.js: 1379µs, application-code: 56ms)
+ GET /article 200 in 57ms (next.js: 1471µs, application-code: 56ms)
+ GET /article 200 in 59ms (next.js: 2ms, application-code: 57ms)
+ GET /article 200 in 60ms (next.js: 2ms, application-code: 58ms)
+ GET /article 200 in 60ms (next.js: 2ms, application-code: 57ms)
+ GET /article 200 in 58ms (next.js: 1868µs, application-code: 56ms)
+ GET /article 200 in 60ms (next.js: 3ms, application-code: 57ms)
+ GET /article 200 in 62ms (next.js: 1527µs, application-code: 61ms)
+ GET /article 200 in 64ms (next.js: 2ms, application-code: 62ms)
+ GET /article 200 in 66ms (next.js: 2ms, application-code: 64ms)
+ GET /article 200 in 47ms (next.js: 3ms, application-code: 44ms)
+ GET /article 200 in 28ms (next.js: 2ms, application-code: 26ms)
+✓ Compiled in 335ms
+✓ Compiled in 40ms
+ GET / 200 in 187ms (next.js: 110ms, application-code: 77ms)
+ GET /services 200 in 101ms (next.js: 75ms, application-code: 26ms)
+ GET /article 200 in 41ms (next.js: 13ms, application-code: 28ms)
+⨯ ./src/app/article/user/[id]/page.tsx:7:1
+Module not found: Can't resolve 'date-fns'
+  [90m 5 |[0m [36mimport[0m { useParams, useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m 6 |[0m [36mimport[0m { api } [36mfrom[0m [32m"@/lib/api"[0m;
+[31m[1m>[0m [90m 7 |[0m [36mimport[0m { formatDistanceToNow } [36mfrom[0m [32m"date-fns"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 8 |[0m [36mimport[0m { [33mHeart[0m, [33mMessageSquare[0m, [33mClock[0m, [33mArrowLeft[0m, [33mUser[0m [36mas[0m [33mUserIcon[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m 9 |[0m [36mimport[0m { useToast } [36mfrom[0m [32m"@/components/ui/ToastContext"[0m;
+  [90m10 |[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/article/user/[id]/page.tsx [Client Component Browser]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/article/user/[id]/page.tsx [Client Component SSR]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ GET /article/user/8 500 in 2.8s (next.js: 2.7s, application-code: 138ms)
+[browser] ./src/app/article/user/[id]/page.tsx:7:1
+Module not found: Can't resolve 'date-fns'
+   5 | import { useParams, useRouter } from "next/navigation";
+   6 | import { api } from "@/lib/api";
+>  7 | import { formatDistanceToNow } from "date-fns";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { Heart, MessageSquare, Clock, ArrowLeft, User as UserIcon } from "lucide-react";
+   9 | import { useToast } from "@/components/ui/ToastContext";
+  10 |
+
+Import traces:
+  Client Component Browser:
+    ./src/app/article/user/[id]/page.tsx [Client Component Browser]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/article/user/[id]/page.tsx [Client Component SSR]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+⨯ ./src/app/article/user/[id]/page.tsx:7:1
+Module not found: Can't resolve 'date-fns'
+  [90m 5 |[0m [36mimport[0m { useParams, useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m 6 |[0m [36mimport[0m { api } [36mfrom[0m [32m"@/lib/api"[0m;
+[31m[1m>[0m [90m 7 |[0m [36mimport[0m { formatDistanceToNow } [36mfrom[0m [32m"date-fns"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 8 |[0m [36mimport[0m { [33mHeart[0m, [33mMessageSquare[0m, [33mClock[0m, [33mArrowLeft[0m, [33mUser[0m [36mas[0m [33mUserIcon[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m 9 |[0m [36mimport[0m { useToast } [36mfrom[0m [32m"@/components/ui/ToastContext"[0m;
+  [90m10 |[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/article/user/[id]/page.tsx [Client Component Browser]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/article/user/[id]/page.tsx [Client Component SSR]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ GET /article/user/8 500 in 26ms (next.js: 10ms, application-code: 16ms)
+[browser] Uncaught Error: ./src/app/article/user/[id]/page.tsx:7:1
+Module not found: Can't resolve 'date-fns'
+   5 | import { useParams, useRouter } from "next/navigation";
+   6 | import { api } from "@/lib/api";
+>  7 | import { formatDistanceToNow } from "date-fns";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { Heart, MessageSquare, Clock, ArrowLeft, User as UserIcon } from "lucide-react";
+   9 | import { useToast } from "@/components/ui/ToastContext";
+  10 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/article/user/[id]/page.tsx [Client Component Browser]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/article/user/[id]/page.tsx [Client Component SSR]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./src/app/article/user/[id]/page.tsx:7:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./src/app/article/user/[id]/page.tsx:7:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./src/app/article/user/[id]/page.tsx:7:1
+Module not found: Can't resolve 'date-fns'
+   5 | import { useParams, useRouter } from "next/navigation";
+   6 | import { api } from "@/lib/api";
+>  7 | import { formatDistanceToNow } from "date-fns";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { Heart, MessageSquare, Clock, ArrowLeft, User as UserIcon } from "lucide-react";
+   9 | import { useToast } from "@/components/ui/ToastContext";
+  10 |
+
+Import traces:
+  Client Component Browser:
+    ./src/app/article/user/[id]/page.tsx [Client Component Browser]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/article/user/[id]/page.tsx [Client Component SSR]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/article/user/[id]/page.tsx:7:1
+Module not found: Can't resolve 'date-fns'
+   5 | import { useParams, useRouter } from "next/navigation";
+   6 | import { api } from "@/lib/api";
+>  7 | import { formatDistanceToNow } from "date-fns";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { Heart, MessageSquare, Clock, ArrowLeft, User as UserIcon } from "lucide-react";
+   9 | import { useToast } from "@/components/ui/ToastContext";
+  10 |
+
+Import traces:
+  Client Component Browser:
+    ./src/app/article/user/[id]/page.tsx [Client Component Browser]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/article/user/[id]/page.tsx [Client Component SSR]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+✓ Compiled in 152ms
+ GET /article 200 in 156ms (next.js: 17ms, application-code: 140ms)
+ GET /article/user/8 200 in 920ms (next.js: 726ms, application-code: 194ms)
+ GET /article/1 200 in 90ms (next.js: 55ms, application-code: 36ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /article 200 in 23ms (next.js: 5ms, application-code: 18ms)
+ GET /article 200 in 21ms (next.js: 3ms, application-code: 18ms)
+ GET /article 200 in 21ms (next.js: 3ms, application-code: 19ms)
+ GET /services 200 in 23ms (next.js: 4ms, application-code: 19ms)
+ GET /products 200 in 23ms (next.js: 5ms, application-code: 18ms)
+ GET /services 200 in 23ms (next.js: 4ms, application-code: 19ms)
+✓ Compiled in 689ms
+[browser] ./src/app/article/user/[id]/page.tsx:7:1
+Module not found: Can't resolve 'date-fns'
+   5 | import { useParams, useRouter } from "next/navigation";
+   6 | import { api } from "@/lib/api";
+>  7 | import { formatDistanceToNow } from "date-fns";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { Heart, MessageSquare, Clock, ArrowLeft, User as UserIcon } from "lucide-react";
+   9 | import { useToast } from "@/components/ui/ToastContext";
+  10 |
+
+Import traces:
+  Client Component Browser:
+    ./src/app/article/user/[id]/page.tsx [Client Component Browser]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/article/user/[id]/page.tsx [Client Component SSR]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/article/user/[id]/page.tsx:7:1
+Module not found: Can't resolve 'date-fns'
+   5 | import { useParams, useRouter } from "next/navigation";
+   6 | import { api } from "@/lib/api";
+>  7 | import { formatDistanceToNow } from "date-fns";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { Heart, MessageSquare, Clock, ArrowLeft, User as UserIcon } from "lucide-react";
+   9 | import { useToast } from "@/components/ui/ToastContext";
+  10 |
+
+Import traces:
+  Client Component Browser:
+    ./src/app/article/user/[id]/page.tsx [Client Component Browser]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/article/user/[id]/page.tsx [Client Component SSR]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/article/user/[id]/page.tsx:7:1
+Module not found: Can't resolve 'date-fns'
+   5 | import { useParams, useRouter } from "next/navigation";
+   6 | import { api } from "@/lib/api";
+>  7 | import { formatDistanceToNow } from "date-fns";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { Heart, MessageSquare, Clock, ArrowLeft, User as UserIcon } from "lucide-react";
+   9 | import { useToast } from "@/components/ui/ToastContext";
+  10 |
+
+Import traces:
+  Client Component Browser:
+    ./src/app/article/user/[id]/page.tsx [Client Component Browser]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/article/user/[id]/page.tsx [Client Component SSR]
+    ./src/app/article/user/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+✓ Compiled in 642ms
+✓ Compiled in 151ms
+✓ Compiled in 155ms
+ GET /services/sss-6a37c0b0f0571 200 in 821ms (next.js: 783ms, application-code: 38ms)
+✓ Compiled in 162ms
+ GET /store/7/sss 200 in 116ms (next.js: 42ms, application-code: 74ms)
+ GET /services?category_id=4 200 in 48ms (next.js: 15ms, application-code: 33ms)
+ GET /services 200 in 10ms (next.js: 3ms, application-code: 7ms)
+ GET /services 200 in 21ms (next.js: 1952µs, application-code: 19ms)
+✓ Compiled in 85ms
+ GET /products 200 in 43ms (next.js: 12ms, application-code: 31ms)
+ GET /services?category_id=4 200 in 43ms (next.js: 11ms, application-code: 33ms)
+ GET /services?category_id=6 200 in 22ms (next.js: 3ms, application-code: 19ms)
+ GET /services?category_id=5 200 in 21ms (next.js: 2ms, application-code: 19ms)
+ GET /services?category_id=4 200 in 22ms (next.js: 4ms, application-code: 18ms)
+ GET /services 200 in 9ms (next.js: 2ms, application-code: 7ms)
+ GET /services 200 in 25ms (next.js: 4ms, application-code: 21ms)
+ GET /services?lat=29.695484567885327&lng=76.01498219466062 200 in 23ms (next.js: 3ms, application-code: 20ms)
+ GET /checkout?item_id=2&type=service 200 in 118ms (next.js: 83ms, application-code: 35ms)
+✓ Compiled in 322ms
+✓ Compiled in 281ms
+✓ Compiled in 225ms
+ GET /services?lat=29.695484567885327&lng=76.01498219466062&category_id=5 200 in 225ms (next.js: 96ms, application-code: 129ms)
+ GET /services?lat=29.695484567885327&lng=76.01498219466062&category_id=4 200 in 63ms (next.js: 3ms, application-code: 60ms)
+ GET /services?lat=29.695484567885327&lng=76.01498219466062&category_id=6 200 in 51ms (next.js: 1695µs, application-code: 50ms)
+ GET /services?lat=29.695484567885327&lng=76.01498219466062 200 in 28ms (next.js: 6ms, application-code: 22ms)
+ GET /services/hair-cutting-6a3cdcf495fa0 200 in 39ms (next.js: 14ms, application-code: 25ms)
+ GET /products 200 in 53ms (next.js: 14ms, application-code: 40ms)
+ GET /products/school-erp-software-6a3cd9994d5d2 200 in 53ms (next.js: 31ms, application-code: 22ms)
+ GET /products/handmade-mug-6a339cfda2673 200 in 39ms (next.js: 7ms, application-code: 33ms)
+ GET /store/5/nitish-botique 200 in 28ms (next.js: 9ms, application-code: 19ms)
+ GET /user/refer 200 in 83ms (next.js: 63ms, application-code: 21ms)
+✓ Compiled in 858ms
+✓ Compiled in 173ms
+ GET /user/refer 200 in 54ms (next.js: 21ms, application-code: 33ms)
+ GET /user/refer 200 in 33ms (next.js: 1634µs, application-code: 31ms)
+○ Compiling /user/wallet ...
+⨯ ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { useState, useEffect } [36mfrom[0m [32m"react"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m styles [36mfrom[0m [32m"../../dashboard.module.css"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m { api } [36mfrom[0m [32m"@/lib/api"[0m;
+  [90m6 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m7 |[0m [36mimport[0m { useToast } [36mfrom[0m [32m"@/components/ui/ToastContext"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  2 |
+  3 | import { useState, useEffect } from "react";
+> 4 | import styles from "../../dashboard.module.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { api } from "@/lib/api";
+  6 | import { useRouter } from "next/navigation";
+  7 | import { useToast } from "@/components/ui/ToastContext";
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+ GET /user/wallet 500 in 3.7s (next.js: 3.6s, application-code: 119ms)
+[browser] ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  2 |
+  3 | import { useState, useEffect } from "react";
+> 4 | import styles from "../../dashboard.module.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { api } from "@/lib/api";
+  6 | import { useRouter } from "next/navigation";
+  7 | import { useToast } from "@/components/ui/ToastContext";
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+⨯ ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { useState, useEffect } [36mfrom[0m [32m"react"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m styles [36mfrom[0m [32m"../../dashboard.module.css"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m { api } [36mfrom[0m [32m"@/lib/api"[0m;
+  [90m6 |[0m [36mimport[0m { useRouter } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m7 |[0m [36mimport[0m { useToast } [36mfrom[0m [32m"@/components/ui/ToastContext"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ GET /user/wallet 500 in 54ms (next.js: 21ms, application-code: 33ms)
+[browser] Uncaught Error: ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  2 |
+  3 | import { useState, useEffect } from "react";
+> 4 | import styles from "../../dashboard.module.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { api } from "@/lib/api";
+  6 | import { useRouter } from "next/navigation";
+  7 | import { useToast } from "@/components/ui/ToastContext";
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./src/app/user/wallet/page.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./src/app/user/wallet/page.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  2 |
+  3 | import { useState, useEffect } from "react";
+> 4 | import styles from "../../dashboard.module.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { api } from "@/lib/api";
+  6 | import { useRouter } from "next/navigation";
+  7 | import { useToast } from "@/components/ui/ToastContext";
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  2 |
+  3 | import { useState, useEffect } from "react";
+> 4 | import styles from "../../dashboard.module.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { api } from "@/lib/api";
+  6 | import { useRouter } from "next/navigation";
+  7 | import { useToast } from "@/components/ui/ToastContext";
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+✓ Compiled in 464ms
+ GET /user/wallet 200 in 606ms (next.js: 293ms, application-code: 313ms)
+ GET /article 200 in 161ms (next.js: 64ms, application-code: 98ms)
+ GET /article 200 in 81ms (next.js: 3ms, application-code: 78ms)
+ GET /article 200 in 48ms (next.js: 3ms, application-code: 45ms)
+✓ Compiled in 293ms
+[browser] ./src/app/user/wallet/page.tsx:226:7
+Expression expected
+  224 |         </div>
+  225 |       </main>
+> 226 |     </>
+      |       ^
+  227 |   );
+  228 | }
+  229 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component] 
+ GET /user/wallet 200 in 61ms (next.js: 12ms, application-code: 49ms)
+ GET /article 200 in 34ms (next.js: 6ms, application-code: 27ms)
+✓ Compiled in 176ms
+✓ Compiled in 909ms
+ GET /article 200 in 87ms (next.js: 20ms, application-code: 67ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  2 |
+  3 | import { useState, useEffect } from "react";
+> 4 | import styles from "../../dashboard.module.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { api } from "@/lib/api";
+  6 | import { useRouter } from "next/navigation";
+  7 | import { useToast } from "@/components/ui/ToastContext";
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  2 |
+  3 | import { useState, useEffect } from "react";
+> 4 | import styles from "../../dashboard.module.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { api } from "@/lib/api";
+  6 | import { useRouter } from "next/navigation";
+  7 | import { useToast } from "@/components/ui/ToastContext";
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  2 |
+  3 | import { useState, useEffect } from "react";
+> 4 | import styles from "../../dashboard.module.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { api } from "@/lib/api";
+  6 | import { useRouter } from "next/navigation";
+  7 | import { useToast } from "@/components/ui/ToastContext";
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/user/wallet/page.tsx:4:1
+Module not found: Can't resolve '../../dashboard.module.css'
+  2 |
+  3 | import { useState, useEffect } from "react";
+> 4 | import styles from "../../dashboard.module.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { api } from "@/lib/api";
+  6 | import { useRouter } from "next/navigation";
+  7 | import { useToast } from "@/components/ui/ToastContext";
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./src/app/user/wallet/page.tsx:226:7
+Expression expected
+  224 |         </div>
+  225 |       </main>
+> 226 |     </>
+      |       ^
+  227 |   );
+  228 | }
+  229 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/user/wallet/page.tsx [Client Component Browser]
+    ./src/app/user/wallet/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/user/wallet/page.tsx [Client Component SSR]
+    ./src/app/user/wallet/page.tsx [Server Component] 
+ GET /article/1 200 in 115ms (next.js: 63ms, application-code: 52ms)
+ GET / 200 in 86ms (next.js: 40ms, application-code: 46ms)
+ GET /article 200 in 89ms (next.js: 31ms, application-code: 58ms)
+ GET /article 200 in 76ms (next.js: 10ms, application-code: 66ms)
+ GET / 200 in 39ms (next.js: 5ms, application-code: 34ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /article 200 in 27ms (next.js: 6ms, application-code: 22ms)
+ GET / 200 in 38ms (next.js: 4ms, application-code: 34ms)
+ GET /products 200 in 52ms (next.js: 34ms, application-code: 18ms)
+ GET /article 200 in 24ms (next.js: 5ms, application-code: 19ms)
+ GET /services 200 in 47ms (next.js: 24ms, application-code: 23ms)
+ GET /user/wallet 200 in 27ms (next.js: 9ms, application-code: 19ms)
+✓ Compiled in 416ms
+ GET /services 200 in 59ms (next.js: 6ms, application-code: 53ms)
+ GET /article 200 in 24ms (next.js: 3ms, application-code: 21ms)
+ GET /article/1 200 in 31ms (next.js: 10ms, application-code: 21ms)
+ GET /register 200 in 64ms (next.js: 40ms, application-code: 24ms)
+ GET /register 200 in 52ms (next.js: 3ms, application-code: 48ms)
+ GET /services 200 in 25ms (next.js: 3ms, application-code: 22ms)
+✓ Compiled in 342ms
+ GET / 200 in 66ms (next.js: 15ms, application-code: 51ms)
+ GET /products 200 in 32ms (next.js: 6ms, application-code: 26ms)
+ GET /products 200 in 25ms (next.js: 5ms, application-code: 21ms)
+✓ Compiled in 235ms
+ GET /services 200 in 67ms (next.js: 20ms, application-code: 47ms)
+ GET /products 200 in 32ms (next.js: 14ms, application-code: 19ms)
+ GET / 200 in 38ms (next.js: 9ms, application-code: 29ms)
+ GET /products 200 in 24ms (next.js: 5ms, application-code: 19ms)
+ GET /services 200 in 45ms (next.js: 10ms, application-code: 35ms)
+ GET /products 200 in 30ms (next.js: 6ms, application-code: 24ms)
+ GET /services 200 in 23ms (next.js: 4ms, application-code: 20ms)
+ GET /article 200 in 58ms (next.js: 17ms, application-code: 42ms)
+ GET /article/user/8 200 in 69ms (next.js: 42ms, application-code: 27ms)
+✓ Compiled in 83ms
+✓ Compiled in 78ms
+ GET /services 200 in 851ms (next.js: 340ms, application-code: 510ms)
+ GET /article 200 in 853ms (next.js: 274ms, application-code: 579ms)
+ GET /services 200 in 687ms (next.js: 28ms, application-code: 659ms)
+ GET /article 200 in 259ms (next.js: 25ms, application-code: 234ms)
+ GET /services 200 in 193ms (next.js: 7ms, application-code: 186ms)
+ GET /article 200 in 193ms (next.js: 42ms, application-code: 150ms)
+ GET /services 200 in 164ms (next.js: 3ms, application-code: 161ms)
+ GET /article 200 in 162ms (next.js: 2ms, application-code: 160ms)
+ GET /services 200 in 188ms (next.js: 4ms, application-code: 184ms)
+ GET /article 200 in 162ms (next.js: 5ms, application-code: 156ms)
+ GET /services 200 in 167ms (next.js: 4ms, application-code: 163ms)
+ GET /article 200 in 200ms (next.js: 33ms, application-code: 167ms)
+ GET /services 200 in 200ms (next.js: 4ms, application-code: 196ms)
+ GET /article 200 in 222ms (next.js: 4ms, application-code: 218ms)
+ GET /services 200 in 227ms (next.js: 4ms, application-code: 223ms)
+ GET /article 200 in 219ms (next.js: 6ms, application-code: 213ms)
+ GET /services 200 in 208ms (next.js: 4ms, application-code: 204ms)
+ GET /article 200 in 182ms (next.js: 9ms, application-code: 172ms)
+ GET /services 200 in 160ms (next.js: 5ms, application-code: 155ms)
+ GET /article 200 in 144ms (next.js: 6ms, application-code: 138ms)
+ GET /services 200 in 133ms (next.js: 4ms, application-code: 130ms)
+ GET /article 200 in 153ms (next.js: 28ms, application-code: 125ms)
+ GET /services 200 in 123ms (next.js: 3ms, application-code: 120ms)
+ GET /article 200 in 118ms (next.js: 5ms, application-code: 113ms)
+ GET /services 200 in 117ms (next.js: 2ms, application-code: 114ms)
+ GET /article 200 in 120ms (next.js: 4ms, application-code: 116ms)
+ GET /services 200 in 119ms (next.js: 2ms, application-code: 117ms)
+ GET /article 200 in 144ms (next.js: 22ms, application-code: 122ms)
+ GET /services 200 in 124ms (next.js: 3ms, application-code: 121ms)
+ GET /article 200 in 125ms (next.js: 3ms, application-code: 122ms)
+ GET /services 200 in 123ms (next.js: 3ms, application-code: 121ms)
+ GET /article 200 in 144ms (next.js: 24ms, application-code: 120ms)
+ GET /services 200 in 140ms (next.js: 4ms, application-code: 136ms)
+ GET /article 200 in 142ms (next.js: 22ms, application-code: 120ms)
+ GET /services 200 in 124ms (next.js: 4ms, application-code: 119ms)
+ GET /article 200 in 125ms (next.js: 3ms, application-code: 122ms)
+ GET /services 200 in 121ms (next.js: 3ms, application-code: 118ms)
+ GET /article 200 in 121ms (next.js: 22ms, application-code: 99ms)
+ GET /services 200 in 128ms (next.js: 3ms, application-code: 125ms)
+ GET /article 200 in 129ms (next.js: 23ms, application-code: 105ms)
+ GET /services 200 in 108ms (next.js: 2ms, application-code: 105ms)
+ GET /article 200 in 114ms (next.js: 4ms, application-code: 110ms)
+ GET /services 200 in 122ms (next.js: 2ms, application-code: 120ms)
+ GET /article 200 in 148ms (next.js: 19ms, application-code: 129ms)
+ GET /services 200 in 133ms (next.js: 3ms, application-code: 130ms)
+ GET /article 200 in 127ms (next.js: 3ms, application-code: 123ms)
+ GET /services 200 in 124ms (next.js: 3ms, application-code: 121ms)
+ GET /article 200 in 119ms (next.js: 3ms, application-code: 116ms)
+ GET /services 200 in 113ms (next.js: 3ms, application-code: 110ms)
+ GET /article 200 in 132ms (next.js: 22ms, application-code: 109ms)
+ GET /services 200 in 112ms (next.js: 3ms, application-code: 109ms)
+ GET /article 200 in 123ms (next.js: 4ms, application-code: 119ms)
+ GET /services 200 in 125ms (next.js: 2ms, application-code: 123ms)
+ GET /article 200 in 131ms (next.js: 4ms, application-code: 127ms)
+ GET /services 200 in 132ms (next.js: 2ms, application-code: 130ms)
+ GET /article 200 in 136ms (next.js: 4ms, application-code: 132ms)
+ GET /services 200 in 131ms (next.js: 4ms, application-code: 127ms)
+ GET /article 200 in 130ms (next.js: 3ms, application-code: 127ms)
+ GET /services 200 in 129ms (next.js: 5ms, application-code: 124ms)
+ GET /article 200 in 129ms (next.js: 2ms, application-code: 127ms)
+ GET /services 200 in 127ms (next.js: 3ms, application-code: 125ms)
+ GET /article 200 in 122ms (next.js: 4ms, application-code: 118ms)
+ GET /services 200 in 117ms (next.js: 3ms, application-code: 114ms)
+ GET /article 200 in 117ms (next.js: 3ms, application-code: 114ms)
+ GET /services 200 in 111ms (next.js: 2ms, application-code: 109ms)
+ GET /article 200 in 92ms (next.js: 3ms, application-code: 89ms)
+ GET /services 200 in 125ms (next.js: 1705µs, application-code: 123ms)
+ GET /article 200 in 132ms (next.js: 2ms, application-code: 130ms)
+ GET /services 200 in 138ms (next.js: 3ms, application-code: 135ms)
+ GET /article 200 in 141ms (next.js: 3ms, application-code: 138ms)
+ GET /services 200 in 165ms (next.js: 32ms, application-code: 133ms)
+ GET /article 200 in 113ms (next.js: 2ms, application-code: 111ms)
+ GET /services 200 in 143ms (next.js: 4ms, application-code: 138ms)
+ GET /article 200 in 149ms (next.js: 3ms, application-code: 145ms)
+ GET /services 200 in 162ms (next.js: 4ms, application-code: 158ms)
+ GET /article 200 in 170ms (next.js: 4ms, application-code: 166ms)
+ GET /services 200 in 215ms (next.js: 26ms, application-code: 189ms)
+ GET /article 200 in 166ms (next.js: 7ms, application-code: 159ms)
+ GET /services 200 in 221ms (next.js: 9ms, application-code: 212ms)
+ GET /article 200 in 224ms (next.js: 3ms, application-code: 221ms)
+ GET /services 200 in 234ms (next.js: 5ms, application-code: 229ms)
+ GET /article 200 in 258ms (next.js: 11ms, application-code: 247ms)
+ GET /services 200 in 252ms (next.js: 41ms, application-code: 211ms)
+ GET /article 200 in 174ms (next.js: 4ms, application-code: 170ms)
+ GET /services 200 in 195ms (next.js: 7ms, application-code: 188ms)
+ GET /article 200 in 175ms (next.js: 4ms, application-code: 171ms)
+ GET /services 200 in 165ms (next.js: 4ms, application-code: 160ms)
+ GET /article 200 in 183ms (next.js: 5ms, application-code: 178ms)
+ GET /services 200 in 186ms (next.js: 34ms, application-code: 153ms)
+ GET /article 200 in 129ms (next.js: 3ms, application-code: 127ms)
+ GET /services 200 in 186ms (next.js: 3ms, application-code: 184ms)
+ GET /article 200 in 186ms (next.js: 4ms, application-code: 182ms)
+ GET /services 200 in 202ms (next.js: 4ms, application-code: 198ms)
+ GET /article 200 in 214ms (next.js: 5ms, application-code: 209ms)
+ GET /services 200 in 215ms (next.js: 55ms, application-code: 160ms)
+ GET /article 200 in 135ms (next.js: 2ms, application-code: 132ms)
+ GET /services 200 in 161ms (next.js: 4ms, application-code: 158ms)
+ GET /article 200 in 138ms (next.js: 3ms, application-code: 134ms)
+ GET /services 200 in 116ms (next.js: 2ms, application-code: 114ms)
+ GET /article 200 in 149ms (next.js: 5ms, application-code: 145ms)
+ GET /services 200 in 148ms (next.js: 30ms, application-code: 118ms)
+ GET /article 200 in 99ms (next.js: 4ms, application-code: 95ms)
+ GET /services 200 in 123ms (next.js: 4ms, application-code: 120ms)
+ GET /article 200 in 151ms (next.js: 22ms, application-code: 129ms)
+ GET /services 200 in 113ms (next.js: 3ms, application-code: 111ms)
+ GET /article 200 in 435ms (next.js: 3ms, application-code: 432ms)
+ GET /services 200 in 439ms (next.js: 23ms, application-code: 416ms)
+ GET /article 200 in 438ms (next.js: 3ms, application-code: 435ms)
+ GET /services 200 in 511ms (next.js: 5ms, application-code: 506ms)
+ GET /article 200 in 516ms (next.js: 28ms, application-code: 488ms)
+ GET /services 200 in 228ms (next.js: 9ms, application-code: 219ms)
+ GET /article 200 in 240ms (next.js: 6ms, application-code: 234ms)
+ GET /services 200 in 268ms (next.js: 44ms, application-code: 224ms)
+ GET /article 200 in 175ms (next.js: 8ms, application-code: 167ms)
+ GET /services 200 in 193ms (next.js: 9ms, application-code: 184ms)
+ GET /article 200 in 191ms (next.js: 38ms, application-code: 153ms)
+ GET /services 200 in 127ms (next.js: 6ms, application-code: 121ms)
+ GET /article 200 in 144ms (next.js: 6ms, application-code: 138ms)
+ GET /services 200 in 165ms (next.js: 27ms, application-code: 137ms)
+ GET /article 200 in 117ms (next.js: 7ms, application-code: 110ms)
+ GET /services 200 in 173ms (next.js: 4ms, application-code: 169ms)
+ GET /article 200 in 173ms (next.js: 23ms, application-code: 150ms)
+ GET /services 200 in 171ms (next.js: 5ms, application-code: 166ms)
+ GET /article 200 in 147ms (next.js: 9ms, application-code: 138ms)
+ GET /services 200 in 146ms (next.js: 37ms, application-code: 109ms)
+ GET /article 200 in 120ms (next.js: 3ms, application-code: 118ms)
+ GET /services 200 in 154ms (next.js: 3ms, application-code: 151ms)
+ GET /article 200 in 154ms (next.js: 23ms, application-code: 131ms)
+ GET /services 200 in 151ms (next.js: 6ms, application-code: 145ms)
+ GET /article 200 in 116ms (next.js: 4ms, application-code: 112ms)
+ GET /services 200 in 116ms (next.js: 24ms, application-code: 92ms)
+ GET /article 200 in 117ms (next.js: 3ms, application-code: 114ms)
+ GET /services 200 in 116ms (next.js: 2ms, application-code: 114ms)
+ GET /article 200 in 135ms (next.js: 22ms, application-code: 113ms)
+ GET /services 200 in 115ms (next.js: 5ms, application-code: 110ms)
+ GET /article 200 in 112ms (next.js: 2ms, application-code: 110ms)
+ GET /services 200 in 113ms (next.js: 22ms, application-code: 91ms)
+ GET /article 200 in 112ms (next.js: 4ms, application-code: 108ms)
+ GET /services 200 in 128ms (next.js: 3ms, application-code: 125ms)
+ GET /article 200 in 128ms (next.js: 22ms, application-code: 107ms)
+ GET /services 200 in 118ms (next.js: 5ms, application-code: 113ms)
+ GET /article 200 in 116ms (next.js: 1798µs, application-code: 114ms)
+ GET /services 200 in 117ms (next.js: 21ms, application-code: 96ms)
+ GET /article 200 in 120ms (next.js: 2ms, application-code: 118ms)
+ GET /services 200 in 116ms (next.js: 2ms, application-code: 114ms)
+ GET /article 200 in 135ms (next.js: 30ms, application-code: 105ms)
+ GET /services 200 in 86ms (next.js: 3ms, application-code: 83ms)
+ GET /article 200 in 117ms (next.js: 2ms, application-code: 114ms)
+ GET /services 200 in 178ms (next.js: 21ms, application-code: 157ms)
+ GET /article 200 in 180ms (next.js: 1866µs, application-code: 178ms)
+ GET /services 200 in 190ms (next.js: 1955µs, application-code: 188ms)
+ GET /article 200 in 223ms (next.js: 21ms, application-code: 203ms)
+ GET /services 200 in 170ms (next.js: 6ms, application-code: 164ms)
+ GET /article 200 in 183ms (next.js: 5ms, application-code: 178ms)
+ GET /services 200 in 182ms (next.js: 7ms, application-code: 175ms)
+ GET /article 200 in 155ms (next.js: 6ms, application-code: 149ms)
+ GET /services 200 in 216ms (next.js: 7ms, application-code: 209ms)
+ GET /article 200 in 176ms (next.js: 5ms, application-code: 171ms)
+ GET /services 200 in 174ms (next.js: 37ms, application-code: 137ms)
+ GET /article 200 in 107ms (next.js: 7ms, application-code: 100ms)
+ GET /services 200 in 72ms (next.js: 5ms, application-code: 68ms)
+ GET /article 200 in 101ms (next.js: 42ms, application-code: 59ms)
+ GET /services 200 in 127ms (next.js: 1874µs, application-code: 125ms)
+ GET /article 200 in 120ms (next.js: 3ms, application-code: 118ms)
+ GET /services 200 in 122ms (next.js: 24ms, application-code: 99ms)
+ GET /services 200 in 81ms (next.js: 23ms, application-code: 57ms)
+ GET /article 200 in 84ms (next.js: 2ms, application-code: 82ms)
+ GET /article 200 in 41ms (next.js: 3ms, application-code: 38ms)
+ GET /article 200 in 648ms (next.js: 326ms, application-code: 322ms)
+ GET /services 200 in 704ms (next.js: 446ms, application-code: 259ms)
+ GET /article 200 in 233ms (next.js: 4ms, application-code: 230ms)
+ GET /services 200 in 259ms (next.js: 24ms, application-code: 235ms)
+ GET /article 200 in 299ms (next.js: 7ms, application-code: 292ms)
+ GET /services 200 in 316ms (next.js: 43ms, application-code: 273ms)
+ GET /article 200 in 118ms (next.js: 1734µs, application-code: 116ms)
+ GET /services 200 in 118ms (next.js: 23ms, application-code: 95ms)
+ GET /article 200 in 77ms (next.js: 1763µs, application-code: 75ms)
+ GET /services 200 in 77ms (next.js: 21ms, application-code: 56ms)
+ GET /article 200 in 39ms (next.js: 1636µs, application-code: 37ms)
+ GET /services 200 in 39ms (next.js: 20ms, application-code: 19ms)
+ GET /article 200 in 89ms (next.js: 1266µs, application-code: 87ms)
+ GET /article 200 in 86ms (next.js: 17ms, application-code: 69ms)
+ GET /services 200 in 87ms (next.js: 1349µs, application-code: 86ms)
+ GET /article 200 in 104ms (next.js: 18ms, application-code: 87ms)
+ GET /services 200 in 105ms (next.js: 1660µs, application-code: 103ms)
+ GET /services 200 in 72ms (next.js: 2ms, application-code: 70ms)
+ GET /article 200 in 54ms (next.js: 2ms, application-code: 52ms)
+ GET /services 200 in 54ms (next.js: 1895µs, application-code: 52ms)
+ GET /article 200 in 86ms (next.js: 17ms, application-code: 70ms)
+ GET /services 200 in 96ms (next.js: 1433µs, application-code: 94ms)
+ GET /services 200 in 97ms (next.js: 18ms, application-code: 79ms)
+ GET /article 200 in 98ms (next.js: 3ms, application-code: 96ms)
+ GET /article 200 in 129ms (next.js: 3ms, application-code: 126ms)
+ GET /services 200 in 128ms (next.js: 18ms, application-code: 111ms)
+ GET /article 200 in 90ms (next.js: 1738µs, application-code: 88ms)
+ GET /services 200 in 69ms (next.js: 4ms, application-code: 65ms)
+ GET /article 200 in 47ms (next.js: 1601µs, application-code: 46ms)
+ GET /services 200 in 47ms (next.js: 19ms, application-code: 28ms)
+ GET /article 200 in 163ms (next.js: 3ms, application-code: 160ms)
+ GET /services 200 in 162ms (next.js: 35ms, application-code: 127ms)
+ GET /article 200 in 107ms (next.js: 1508µs, application-code: 105ms)
+ GET /services 200 in 107ms (next.js: 19ms, application-code: 88ms)
+ GET /article 200 in 54ms (next.js: 8ms, application-code: 46ms)
+ GET /services 200 in 54ms (next.js: 32ms, application-code: 21ms)
+ GET /article 200 in 205ms (next.js: 2ms, application-code: 203ms)
+ GET /services 200 in 183ms (next.js: 2ms, application-code: 181ms)
+ GET /article 200 in 159ms (next.js: 3ms, application-code: 156ms)
+ GET /services 200 in 158ms (next.js: 32ms, application-code: 126ms)
+ GET /article 200 in 96ms (next.js: 4ms, application-code: 91ms)
+ GET /services 200 in 96ms (next.js: 58ms, application-code: 38ms)
+ GET /article 200 in 160ms (next.js: 3ms, application-code: 156ms)
+ GET /services 200 in 161ms (next.js: 31ms, application-code: 130ms)
+ GET /article 200 in 107ms (next.js: 3ms, application-code: 104ms)
+ GET /services 200 in 147ms (next.js: 27ms, application-code: 120ms)
+ GET /article 200 in 98ms (next.js: 2ms, application-code: 96ms)
+ GET /services 200 in 100ms (next.js: 23ms, application-code: 78ms)
+ GET /article 200 in 123ms (next.js: 4ms, application-code: 119ms)
+ GET /services 200 in 123ms (next.js: 24ms, application-code: 99ms)
+ GET /article 200 in 81ms (next.js: 5ms, application-code: 76ms)
+ GET /services 200 in 59ms (next.js: 1850µs, application-code: 58ms)
+ GET /article 200 in 61ms (next.js: 20ms, application-code: 42ms)
+ GET /services 200 in 27ms (next.js: 1380µs, application-code: 26ms)
+ GET /services 200 in 117ms (next.js: 21ms, application-code: 96ms)
+ GET /article 200 in 118ms (next.js: 3ms, application-code: 115ms)
+ GET /article 200 in 79ms (next.js: 1779µs, application-code: 78ms)
+ GET /services 200 in 79ms (next.js: 19ms, application-code: 60ms)
+ GET /services 200 in 36ms (next.js: 18ms, application-code: 18ms)
+ GET /article 200 in 38ms (next.js: 1577µs, application-code: 37ms)
+ GET /article 200 in 104ms (next.js: 1765µs, application-code: 102ms)
+ GET /services 200 in 104ms (next.js: 18ms, application-code: 86ms)
+ GET /article 200 in 71ms (next.js: 1547µs, application-code: 69ms)
+ GET /services 200 in 71ms (next.js: 19ms, application-code: 52ms)
+ GET /article 200 in 37ms (next.js: 1491µs, application-code: 36ms)
+ GET /services 200 in 39ms (next.js: 18ms, application-code: 21ms)
+ GET /services 200 in 105ms (next.js: 18ms, application-code: 87ms)
+ GET /article 200 in 106ms (next.js: 1886µs, application-code: 105ms)
+ GET /article 200 in 76ms (next.js: 1533µs, application-code: 74ms)
+ GET /services 200 in 77ms (next.js: 17ms, application-code: 60ms)
+ GET /article 200 in 123ms (next.js: 1495µs, application-code: 121ms)
+ GET /services 200 in 122ms (next.js: 18ms, application-code: 105ms)
+ GET /article 200 in 83ms (next.js: 4ms, application-code: 79ms)
+ GET /services 200 in 83ms (next.js: 20ms, application-code: 63ms)
+ GET /article 200 in 36ms (next.js: 2ms, application-code: 34ms)
+ GET /services 200 in 55ms (next.js: 18ms, application-code: 37ms)
+ GET /article 200 in 116ms (next.js: 3ms, application-code: 113ms)
+ GET /article 200 in 98ms (next.js: 18ms, application-code: 80ms)
+ GET /services 200 in 100ms (next.js: 1668µs, application-code: 98ms)
+ GET /services 200 in 86ms (next.js: 3ms, application-code: 83ms)
+ GET /article 200 in 86ms (next.js: 21ms, application-code: 64ms)
+ GET /services 200 in 127ms (next.js: 2ms, application-code: 125ms)
+ GET /article 200 in 110ms (next.js: 4ms, application-code: 106ms)
+ GET /services 200 in 108ms (next.js: 4ms, application-code: 104ms)
+ GET /article 200 in 109ms (next.js: 22ms, application-code: 87ms)
+ GET /services 200 in 89ms (next.js: 3ms, application-code: 87ms)
+ GET /article 200 in 117ms (next.js: 21ms, application-code: 96ms)
+ GET /services 200 in 117ms (next.js: 4ms, application-code: 113ms)
+ GET /article 200 in 119ms (next.js: 3ms, application-code: 116ms)
+ GET /services 200 in 118ms (next.js: 3ms, application-code: 115ms)
+ GET /article 200 in 92ms (next.js: 4ms, application-code: 88ms)
+ GET /services 200 in 92ms (next.js: 1702µs, application-code: 90ms)
+ GET /article 200 in 92ms (next.js: 3ms, application-code: 89ms)
+ GET /services 200 in 108ms (next.js: 3ms, application-code: 105ms)
+ GET /article 200 in 109ms (next.js: 4ms, application-code: 105ms)
+ GET /services 200 in 111ms (next.js: 3ms, application-code: 108ms)
+ GET /article 200 in 116ms (next.js: 3ms, application-code: 112ms)
+ GET /services 200 in 116ms (next.js: 21ms, application-code: 95ms)
+ GET /article 200 in 125ms (next.js: 3ms, application-code: 123ms)
+ GET /services 200 in 130ms (next.js: 3ms, application-code: 127ms)
+ GET /article 200 in 133ms (next.js: 2ms, application-code: 131ms)
+ GET /services 200 in 154ms (next.js: 4ms, application-code: 150ms)
+ GET /article 200 in 131ms (next.js: 4ms, application-code: 127ms)
+ GET /services 200 in 163ms (next.js: 4ms, application-code: 159ms)
+ GET /article 200 in 135ms (next.js: 2ms, application-code: 133ms)
+ GET /services 200 in 160ms (next.js: 3ms, application-code: 157ms)
+ GET /article 200 in 139ms (next.js: 3ms, application-code: 135ms)
+ GET /services 200 in 131ms (next.js: 3ms, application-code: 129ms)
+ GET /article 200 in 124ms (next.js: 3ms, application-code: 121ms)
+ GET /services 200 in 98ms (next.js: 3ms, application-code: 94ms)
+ GET /article 200 in 97ms (next.js: 27ms, application-code: 70ms)
+ GET /services 200 in 109ms (next.js: 3ms, application-code: 106ms)
+ GET /article 200 in 106ms (next.js: 2ms, application-code: 104ms)
+ GET /services 200 in 108ms (next.js: 3ms, application-code: 105ms)
+ GET /article 200 in 105ms (next.js: 2ms, application-code: 103ms)
+ GET /services 200 in 106ms (next.js: 21ms, application-code: 85ms)
+ GET /article 200 in 86ms (next.js: 1357µs, application-code: 85ms)
+ GET /services 200 in 105ms (next.js: 1887µs, application-code: 103ms)
+ GET /article 200 in 105ms (next.js: 3ms, application-code: 102ms)
+ GET /services 200 in 101ms (next.js: 3ms, application-code: 98ms)
+ GET /article 200 in 103ms (next.js: 1976µs, application-code: 101ms)
+ GET /services 200 in 105ms (next.js: 17ms, application-code: 88ms)
+ GET /article 200 in 86ms (next.js: 1219µs, application-code: 85ms)
+ GET /services 200 in 117ms (next.js: 1745µs, application-code: 116ms)
+ GET /article 200 in 102ms (next.js: 1697µs, application-code: 101ms)
+ GET /services 200 in 115ms (next.js: 6ms, application-code: 109ms)
+ GET /article 200 in 92ms (next.js: 3ms, application-code: 89ms)
+ GET /services 200 in 91ms (next.js: 18ms, application-code: 73ms)
+ GET /article 200 in 57ms (next.js: 1248µs, application-code: 56ms)
+ GET /services 200 in 56ms (next.js: 1828µs, application-code: 54ms)
+ GET /article 200 in 56ms (next.js: 18ms, application-code: 38ms)
+ GET /services 200 in 91ms (next.js: 3ms, application-code: 88ms)
+ GET /article 200 in 88ms (next.js: 1544µs, application-code: 86ms)
+ GET /services 200 in 88ms (next.js: 17ms, application-code: 71ms)
+ GET /article 200 in 84ms (next.js: 2ms, application-code: 82ms)
+ GET /services 200 in 85ms (next.js: 18ms, application-code: 66ms)
+ GET /article 200 in 118ms (next.js: 3ms, application-code: 115ms)
+ GET /services 200 in 100ms (next.js: 3ms, application-code: 97ms)
+ GET /article 200 in 90ms (next.js: 3ms, application-code: 87ms)
+ GET /services 200 in 90ms (next.js: 18ms, application-code: 73ms)
+ GET /article 200 in 75ms (next.js: 1506µs, application-code: 74ms)
+ GET /services 200 in 92ms (next.js: 17ms, application-code: 74ms)
+ GET /article 200 in 109ms (next.js: 3ms, application-code: 106ms)
+ GET /services 200 in 89ms (next.js: 1480µs, application-code: 88ms)
+ GET /article 200 in 72ms (next.js: 3ms, application-code: 69ms)
+ GET /services 200 in 70ms (next.js: 19ms, application-code: 52ms)
+ GET /article 200 in 36ms (next.js: 1932µs, application-code: 34ms)
+ GET /services 200 in 37ms (next.js: 19ms, application-code: 19ms)
+ GET /article 200 in 159ms (next.js: 4ms, application-code: 155ms)
+ GET /article 200 in 181ms (next.js: 23ms, application-code: 158ms)
+ GET /services 200 in 184ms (next.js: 2ms, application-code: 182ms)
+ GET /services 200 in 147ms (next.js: 3ms, application-code: 145ms)
+ GET /article 200 in 149ms (next.js: 20ms, application-code: 129ms)
+ GET /services 200 in 195ms (next.js: 4ms, application-code: 191ms)
+ GET /article 200 in 361ms (next.js: 3ms, application-code: 357ms)
+ GET /article 200 in 453ms (next.js: 36ms, application-code: 417ms)
+ GET /services 200 in 457ms (next.js: 10ms, application-code: 446ms)
+ GET /services 200 in 398ms (next.js: 20ms, application-code: 378ms)
+ GET /article 200 in 397ms (next.js: 142ms, application-code: 255ms)
+ GET /services 200 in 412ms (next.js: 11ms, application-code: 402ms)
+ GET /article 200 in 413ms (next.js: 8ms, application-code: 405ms)
+ GET /services 200 in 438ms (next.js: 15ms, application-code: 423ms)
+ GET /article 200 in 438ms (next.js: 182ms, application-code: 257ms)
+ GET /services 200 in 286ms (next.js: 13ms, application-code: 272ms)
+ GET /article 200 in 285ms (next.js: 51ms, application-code: 234ms)
+ GET /services 200 in 261ms (next.js: 11ms, application-code: 250ms)
+ GET /article 200 in 289ms (next.js: 4ms, application-code: 285ms)
+ GET /article 200 in 242ms (next.js: 57ms, application-code: 185ms)
+ GET /services 200 in 247ms (next.js: 8ms, application-code: 240ms)
+ GET /article 200 in 148ms (next.js: 62ms, application-code: 86ms)
+ GET /services 200 in 151ms (next.js: 4ms, application-code: 147ms)
+ GET /services 200 in 45ms (next.js: 3ms, application-code: 42ms)
+✓ Compiled in 280ms
+ GET /user/orders 200 in 130ms (next.js: 59ms, application-code: 72ms)
+ GET /article 200 in 28ms (next.js: 9ms, application-code: 19ms)
+ GET /services 200 in 26ms (next.js: 7ms, application-code: 19ms)
+ GET /products 200 in 43ms (next.js: 21ms, application-code: 22ms)
+ GET /user/refer 200 in 43ms (next.js: 24ms, application-code: 19ms)
+ GET /user/orders 200 in 27ms (next.js: 4ms, application-code: 23ms)
+ GET /article 200 in 21ms (next.js: 3ms, application-code: 17ms)
+ GET /services 200 in 23ms (next.js: 4ms, application-code: 19ms)
+ GET /products 200 in 37ms (next.js: 6ms, application-code: 31ms)
+ GET /services 200 in 25ms (next.js: 5ms, application-code: 20ms)
+ GET /store/9/service-provider 200 in 236ms (next.js: 33ms, application-code: 203ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/store/9/s..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_5ba3...">
+                          <LayoutWrapper settings={{...}}>
+                            <body
+                              style={{display:"flex",flexDirection:"column",minHeight:"100vh"}}
+-                             cz-shortcut-listen="true"
+                            >
+                  ...
+ 
+ GET /services 200 in 478ms (next.js: 51ms, application-code: 427ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/services" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_5ba3...">
+                          <LayoutWrapper settings={{...}}>
+                            <body
+                              style={{display:"flex",flexDirection:"column",minHeight:"100vh"}}
+-                             cz-shortcut-listen="true"
+                            >
+                  ...
+ 
+ GET /store/9/service-provider 200 in 122ms (next.js: 23ms, application-code: 99ms)
+ GET /products 200 in 48ms (next.js: 10ms, application-code: 38ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /products 200 in 57ms (next.js: 15ms, application-code: 42ms)
+ GET / 200 in 102ms (next.js: 38ms, application-code: 64ms)
+ GET /products 200 in 37ms (next.js: 10ms, application-code: 28ms)
+✓ Compiled in 72ms
+✓ Compiled in 368ms
+ GET /services 200 in 662ms (next.js: 243ms, application-code: 419ms)
+ GET /products 200 in 660ms (next.js: 380ms, application-code: 280ms)
+ GET /services 200 in 595ms (next.js: 14ms, application-code: 580ms)
+ GET /products 200 in 597ms (next.js: 52ms, application-code: 545ms)
+ GET /store/8/webspool 200 in 415ms (next.js: 60ms, application-code: 354ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/store/8/w..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_5ba3...">
+                          <LayoutWrapper settings={{...}}>
+                            <body
+                              style={{display:"flex",flexDirection:"column",minHeight:"100vh"}}
+-                             cz-shortcut-listen="true"
+                            >
+                  ...
+ 
+ GET /services 200 in 770ms (next.js: 733ms, application-code: 37ms)
+ GET /store/8/webspool 200 in 675ms (next.js: 586ms, application-code: 88ms)
+ GET /services 200 in 297ms (next.js: 28ms, application-code: 269ms)
+ GET /services 200 in 245ms (next.js: 6ms, application-code: 239ms)
+ GET /store/8/webspool 200 in 246ms (next.js: 70ms, application-code: 176ms)
+ GET /services 200 in 228ms (next.js: 5ms, application-code: 223ms)
+ GET /store/8/webspool 200 in 214ms (next.js: 5ms, application-code: 209ms)
+ GET /services 200 in 214ms (next.js: 49ms, application-code: 166ms)
+ GET /services 200 in 189ms (next.js: 4ms, application-code: 185ms)
+ GET /store/8/webspool 200 in 167ms (next.js: 5ms, application-code: 162ms)
+ GET /services 200 in 128ms (next.js: 3ms, application-code: 125ms)
+ GET /services 200 in 154ms (next.js: 3ms, application-code: 151ms)
+ GET /store/8/webspool 200 in 186ms (next.js: 30ms, application-code: 157ms)
+ GET /services 200 in 135ms (next.js: 2ms, application-code: 133ms)
+ GET /services 200 in 172ms (next.js: 3ms, application-code: 169ms)
+ GET /store/8/webspool 200 in 176ms (next.js: 4ms, application-code: 172ms)
+ GET /services 200 in 150ms (next.js: 4ms, application-code: 146ms)
+ GET /services 200 in 162ms (next.js: 3ms, application-code: 159ms)
+ GET /store/8/webspool 200 in 160ms (next.js: 5ms, application-code: 154ms)
+ GET /services 200 in 159ms (next.js: 38ms, application-code: 121ms)
+ GET /services 200 in 150ms (next.js: 2ms, application-code: 148ms)
+ GET /store/8/webspool 200 in 152ms (next.js: 5ms, application-code: 147ms)
+ GET /services 200 in 123ms (next.js: 4ms, application-code: 119ms)
+ GET /services 200 in 151ms (next.js: 3ms, application-code: 148ms)
+ GET /store/8/webspool 200 in 177ms (next.js: 31ms, application-code: 146ms)
+ GET /services 200 in 119ms (next.js: 3ms, application-code: 117ms)
+ GET /services 200 in 150ms (next.js: 3ms, application-code: 147ms)
+ GET /store/8/webspool 200 in 156ms (next.js: 7ms, application-code: 150ms)
+ GET /services 200 in 131ms (next.js: 4ms, application-code: 127ms)
+ GET /services 200 in 225ms (next.js: 3ms, application-code: 221ms)
+ GET /store/8/webspool 200 in 228ms (next.js: 3ms, application-code: 225ms)
+ GET /services 200 in 229ms (next.js: 32ms, application-code: 198ms)
+ GET /services 200 in 220ms (next.js: 7ms, application-code: 214ms)
+ GET /store/8/webspool 200 in 220ms (next.js: 39ms, application-code: 181ms)
+ GET /services 200 in 148ms (next.js: 3ms, application-code: 145ms)
+ GET /services 200 in 245ms (next.js: 3ms, application-code: 242ms)
+ GET /store/8/webspool 200 in 247ms (next.js: 28ms, application-code: 219ms)
+ GET /services 200 in 194ms (next.js: 5ms, application-code: 189ms)
+ GET /services 200 in 184ms (next.js: 6ms, application-code: 179ms)
+ GET /store/8/webspool 200 in 308ms (next.js: 11ms, application-code: 298ms)
+ GET /services 200 in 320ms (next.js: 58ms, application-code: 262ms)
+ GET /services 200 in 375ms (next.js: 7ms, application-code: 367ms)
+ GET /store/8/webspool 200 in 385ms (next.js: 5ms, application-code: 380ms)
+ GET /services 200 in 384ms (next.js: 40ms, application-code: 344ms)
+ GET /services 200 in 288ms (next.js: 9ms, application-code: 278ms)
+ GET /store/8/webspool 200 in 285ms (next.js: 77ms, application-code: 208ms)
+ GET /services 200 in 176ms (next.js: 8ms, application-code: 168ms)
+ GET /store/8/webspool 200 in 240ms (next.js: 4ms, application-code: 236ms)
+ GET /services 200 in 241ms (next.js: 41ms, application-code: 201ms)
+ GET /services 200 in 327ms (next.js: 4ms, application-code: 323ms)
+ GET /store/8/webspool 200 in 296ms (next.js: 5ms, application-code: 290ms)
+ GET /services 200 in 300ms (next.js: 4ms, application-code: 295ms)
+ GET /store/8/webspool 200 in 369ms (next.js: 18ms, application-code: 351ms)
+ GET /services 200 in 374ms (next.js: 92ms, application-code: 282ms)
+ GET /services 200 in 306ms (next.js: 4ms, application-code: 302ms)
+ GET /store/8/webspool 200 in 257ms (next.js: 7ms, application-code: 250ms)
+ GET /services 200 in 241ms (next.js: 9ms, application-code: 231ms)
+ GET /store/8/webspool 200 in 246ms (next.js: 13ms, application-code: 233ms)
+ GET /services 200 in 247ms (next.js: 61ms, application-code: 186ms)
+ GET /services 200 in 207ms (next.js: 4ms, application-code: 203ms)
+ GET /store/8/webspool 200 in 164ms (next.js: 8ms, application-code: 156ms)
+ GET /services 200 in 127ms (next.js: 5ms, application-code: 122ms)
+ GET /services 200 in 189ms (next.js: 37ms, application-code: 152ms)
+ GET /store/8/webspool 200 in 193ms (next.js: 4ms, application-code: 188ms)
+ GET /services 200 in 194ms (next.js: 9ms, application-code: 185ms)
+ GET /store/8/webspool 200 in 191ms (next.js: 27ms, application-code: 164ms)
+ GET /services 200 in 123ms (next.js: 5ms, application-code: 118ms)
+ GET /store/8/webspool 200 in 157ms (next.js: 3ms, application-code: 154ms)
+ GET /services 200 in 193ms (next.js: 32ms, application-code: 161ms)
+ GET /services 200 in 190ms (next.js: 10ms, application-code: 180ms)
+ GET /store/8/webspool 200 in 190ms (next.js: 39ms, application-code: 151ms)
+ GET /services 200 in 181ms (next.js: 5ms, application-code: 176ms)
+ GET /store/8/webspool 200 in 141ms (next.js: 5ms, application-code: 136ms)
+ GET /services 200 in 142ms (next.js: 35ms, application-code: 107ms)
+ GET /store/8/webspool 200 in 160ms (next.js: 7ms, application-code: 152ms)
+ GET /services 200 in 162ms (next.js: 37ms, application-code: 125ms)
+ GET /services 200 in 168ms (next.js: 4ms, application-code: 163ms)
+ GET /store/8/webspool 200 in 146ms (next.js: 3ms, application-code: 143ms)
+ GET /services 200 in 147ms (next.js: 5ms, application-code: 142ms)
+ GET /store/8/webspool 200 in 174ms (next.js: 4ms, application-code: 170ms)
+ GET /services 200 in 174ms (next.js: 33ms, application-code: 141ms)
+ GET /services 200 in 164ms (next.js: 2ms, application-code: 162ms)
+ GET /store/8/webspool 200 in 140ms (next.js: 4ms, application-code: 135ms)
+ GET /services 200 in 140ms (next.js: 4ms, application-code: 136ms)
+ GET /store/8/webspool 200 in 166ms (next.js: 3ms, application-code: 163ms)
+ GET /services 200 in 167ms (next.js: 32ms, application-code: 135ms)
+ GET /services 200 in 164ms (next.js: 5ms, application-code: 159ms)
+ GET /store/8/webspool 200 in 138ms (next.js: 3ms, application-code: 135ms)
+ GET /services 200 in 141ms (next.js: 5ms, application-code: 136ms)
+ GET /store/8/webspool 200 in 183ms (next.js: 4ms, application-code: 179ms)
+ GET /services 200 in 185ms (next.js: 35ms, application-code: 151ms)
+ GET /services 200 in 202ms (next.js: 2ms, application-code: 199ms)
+ GET /store/8/webspool 200 in 173ms (next.js: 5ms, application-code: 168ms)
+ GET /services 200 in 139ms (next.js: 5ms, application-code: 134ms)
+ GET /store/8/webspool 200 in 214ms (next.js: 6ms, application-code: 208ms)
+ GET /services 200 in 216ms (next.js: 54ms, application-code: 162ms)
+ GET /store/8/webspool 200 in 231ms (next.js: 4ms, application-code: 227ms)
+ GET /services 200 in 239ms (next.js: 33ms, application-code: 207ms)
+ GET /products/school-erp-software-6a3cd9994d5d2 200 in 185ms (next.js: 32ms, application-code: 153ms)
+ GET /store/8/webspool 200 in 260ms (next.js: 5ms, application-code: 254ms)
+ GET /services 200 in 264ms (next.js: 48ms, application-code: 215ms)
+ GET /store/8/webspool 200 in 313ms (next.js: 11ms, application-code: 303ms)
+ GET /services 200 in 315ms (next.js: 67ms, application-code: 247ms)
+ GET /services 200 in 267ms (next.js: 13ms, application-code: 254ms)
+ GET /store/8/webspool 200 in 205ms (next.js: 5ms, application-code: 200ms)
+ GET /services 200 in 257ms (next.js: 53ms, application-code: 204ms)
+ GET /store/8/webspool 200 in 303ms (next.js: 6ms, application-code: 297ms)
+ GET /services 200 in 306ms (next.js: 47ms, application-code: 259ms)
+ GET /services 200 in 452ms (next.js: 5ms, application-code: 447ms)
+ GET /store/8/webspool 200 in 399ms (next.js: 6ms, application-code: 393ms)
+ GET /services 200 in 364ms (next.js: 25ms, application-code: 339ms)
+ GET /services 200 in 374ms (next.js: 7ms, application-code: 367ms)
+ GET /store/8/webspool 200 in 379ms (next.js: 182ms, application-code: 197ms)
+ GET /services 200 in 179ms (next.js: 8ms, application-code: 171ms)
+ GET /services 200 in 169ms (next.js: 3ms, application-code: 166ms)
+ GET /store/8/webspool 200 in 166ms (next.js: 6ms, application-code: 160ms)
+ GET /services 200 in 134ms (next.js: 3ms, application-code: 131ms)
+ GET /services 200 in 158ms (next.js: 3ms, application-code: 155ms)
+ GET /store/8/webspool 200 in 159ms (next.js: 3ms, application-code: 156ms)
+ GET /services 200 in 161ms (next.js: 35ms, application-code: 126ms)
+ GET /services 200 in 157ms (next.js: 4ms, application-code: 153ms)
+ GET /store/8/webspool 200 in 159ms (next.js: 3ms, application-code: 157ms)
+ GET /services 200 in 133ms (next.js: 3ms, application-code: 129ms)
+ GET /services 200 in 165ms (next.js: 3ms, application-code: 162ms)
+ GET /store/8/webspool 200 in 167ms (next.js: 29ms, application-code: 138ms)
+ GET /services 200 in 140ms (next.js: 3ms, application-code: 138ms)
+ GET /services 200 in 203ms (next.js: 3ms, application-code: 200ms)
+ GET /store/8/webspool 200 in 177ms (next.js: 4ms, application-code: 173ms)
+ GET /services 200 in 145ms (next.js: 6ms, application-code: 138ms)
+ GET /services 200 in 165ms (next.js: 5ms, application-code: 160ms)
+ GET /services 200 in 150ms (next.js: 35ms, application-code: 115ms)
+ GET /store/8/webspool 200 in 154ms (next.js: 7ms, application-code: 147ms)
+ GET /services 200 in 143ms (next.js: 2ms, application-code: 141ms)
+ GET /store/8/webspool 200 in 145ms (next.js: 3ms, application-code: 142ms)
+ GET /services 200 in 118ms (next.js: 3ms, application-code: 115ms)
+ GET /services 200 in 147ms (next.js: 3ms, application-code: 144ms)
+ GET /store/8/webspool 200 in 173ms (next.js: 29ms, application-code: 145ms)
+ GET /services 200 in 121ms (next.js: 2ms, application-code: 119ms)
+ GET /services 200 in 124ms (next.js: 3ms, application-code: 121ms)
+ GET /store/8/webspool 200 in 103ms (next.js: 3ms, application-code: 100ms)
+ GET /services 200 in 103ms (next.js: 31ms, application-code: 72ms)
+ GET /store/8/webspool 200 in 83ms (next.js: 3ms, application-code: 80ms)
+ GET /store/8/webspool 200 in 100ms (next.js: 5ms, application-code: 95ms)
+ GET /store/8/webspool 200 in 101ms (next.js: 3ms, application-code: 98ms)
+ GET /store/8/webspool 200 in 86ms (next.js: 2ms, application-code: 84ms)
+ GET /store/8/webspool 200 in 88ms (next.js: 3ms, application-code: 85ms)
+ GET /store/8/webspool 200 in 86ms (next.js: 2ms, application-code: 84ms)
+ GET /store/8/webspool 200 in 84ms (next.js: 3ms, application-code: 81ms)
+ GET /store/8/webspool 200 in 87ms (next.js: 5ms, application-code: 82ms)
+ GET /store/8/webspool 200 in 103ms (next.js: 3ms, application-code: 100ms)
+ GET /store/8/webspool 200 in 99ms (next.js: 4ms, application-code: 95ms)
+ GET /store/8/webspool 200 in 82ms (next.js: 3ms, application-code: 79ms)
+ GET /store/8/webspool 200 in 91ms (next.js: 2ms, application-code: 88ms)
+ GET /store/8/webspool 200 in 86ms (next.js: 3ms, application-code: 84ms)
+ GET /store/8/webspool 200 in 77ms (next.js: 2ms, application-code: 74ms)
+ GET /store/8/webspool 200 in 93ms (next.js: 3ms, application-code: 90ms)
+ GET /store/8/webspool 200 in 95ms (next.js: 4ms, application-code: 91ms)
+ GET /store/8/webspool 200 in 79ms (next.js: 2ms, application-code: 77ms)
+ GET /store/8/webspool 200 in 78ms (next.js: 2ms, application-code: 76ms)
+ GET /store/8/webspool 200 in 81ms (next.js: 2ms, application-code: 79ms)
+ GET /store/8/webspool 200 in 77ms (next.js: 2ms, application-code: 75ms)
+ GET /store/8/webspool 200 in 79ms (next.js: 2ms, application-code: 77ms)
+ GET /store/8/webspool 200 in 80ms (next.js: 3ms, application-code: 77ms)
+ GET /store/8/webspool 200 in 72ms (next.js: 2ms, application-code: 70ms)
+ GET /store/8/webspool 200 in 71ms (next.js: 3ms, application-code: 69ms)
+ GET /store/8/webspool 200 in 67ms (next.js: 4ms, application-code: 63ms)
+ GET /store/8/webspool 200 in 65ms (next.js: 1798µs, application-code: 63ms)
+ GET /store/8/webspool 200 in 65ms (next.js: 2ms, application-code: 63ms)
+ GET /store/8/webspool 200 in 83ms (next.js: 2ms, application-code: 80ms)
+ GET /store/8/webspool 200 in 88ms (next.js: 3ms, application-code: 85ms)
+ GET /store/8/webspool 200 in 76ms (next.js: 3ms, application-code: 73ms)
+ GET /store/8/webspool 200 in 76ms (next.js: 4ms, application-code: 72ms)
+ GET /store/8/webspool 200 in 80ms (next.js: 2ms, application-code: 78ms)
+ GET /store/8/webspool 200 in 91ms (next.js: 2ms, application-code: 89ms)
+ GET /store/8/webspool 200 in 90ms (next.js: 5ms, application-code: 86ms)
+ GET /store/8/webspool 200 in 79ms (next.js: 2ms, application-code: 76ms)
+ GET /store/8/webspool 200 in 39ms (next.js: 2ms, application-code: 37ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET / 200 in 81ms (next.js: 37ms, application-code: 44ms)
+ GET /user/refer 200 in 111ms (next.js: 27ms, application-code: 84ms)
+⨯ ./src/components/layout/Header.tsx:150:23
+Expression expected
+  [90m148 |[0m                   <div style={{ borderTop: [32m"1px solid var(--border-light)"[0m, padding: [32m"8px...[0m
+  [90m149 |[0m                     <button 
+[31m[1m>[0m [90m150 |[0m                       <[33mLink[0m href=[32m"/user/wishlist"[0m style={{ display: [32m"block"[0m, padding: [32m"10...[0m
+  [90m    |[0m                       [31m[1m^[0m
+  [90m151 |[0m                       <button 
+  [90m152 |[0m                         onClick={handleLogout} 
+  [90m153 |[0m                         style={{ width: [32m"100%"[0m, textAlign: [32m"left"[0m, padding: [32m"10px 16px"[0m, ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+✓ Compiled in 1335ms
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+ GET /services 500 in 1602ms (next.js: 1536ms, application-code: 66ms)
+⨯ ./src/components/layout/Header.tsx:150:23
+Expression expected
+  [90m148 |[0m                   <div style={{ borderTop: [32m"1px solid var(--border-light)"[0m, padding: [32m"8px...[0m
+  [90m149 |[0m                     <button 
+[31m[1m>[0m [90m150 |[0m                       <[33mLink[0m href=[32m"/user/wishlist"[0m style={{ display: [32m"block"[0m, padding: [32m"10...[0m
+  [90m    |[0m                       [31m[1m^[0m
+  [90m151 |[0m                       <button 
+  [90m152 |[0m                         onClick={handleLogout} 
+  [90m153 |[0m                         style={{ width: [32m"100%"[0m, textAlign: [32m"left"[0m, padding: [32m"10px 16px"[0m, ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+⨯ ./src/components/layout/Header.tsx:150:23
+Expression expected
+  [90m148 |[0m                   <div style={{ borderTop: [32m"1px solid var(--border-light)"[0m, padding: [32m"8px...[0m
+  [90m149 |[0m                     <button 
+[31m[1m>[0m [90m150 |[0m                       <[33mLink[0m href=[32m"/user/wishlist"[0m style={{ display: [32m"block"[0m, padding: [32m"10...[0m
+  [90m    |[0m                       [31m[1m^[0m
+  [90m151 |[0m                       <button 
+  [90m152 |[0m                         onClick={handleLogout} 
+  [90m153 |[0m                         style={{ width: [32m"100%"[0m, textAlign: [32m"left"[0m, padding: [32m"10px 16px"[0m, ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+ GET /services 500 in 62ms (next.js: 38ms, application-code: 24ms)
+ GET /services 500 in 59ms (next.js: 37ms, application-code: 22ms)
+⨯ ./src/components/layout/Header.tsx:150:23
+Expression expected
+  [90m148 |[0m                   <div style={{ borderTop: [32m"1px solid var(--border-light)"[0m, padding: [32m"8px...[0m
+  [90m149 |[0m                     <button 
+[31m[1m>[0m [90m150 |[0m                       <[33mLink[0m href=[32m"/user/wishlist"[0m style={{ display: [32m"block"[0m, padding: [32m"10...[0m
+  [90m    |[0m                       [31m[1m^[0m
+  [90m151 |[0m                       <button 
+  [90m152 |[0m                         onClick={handleLogout} 
+  [90m153 |[0m                         style={{ width: [32m"100%"[0m, textAlign: [32m"left"[0m, padding: [32m"10px 16px"[0m, ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+⨯ ./src/components/layout/Header.tsx:150:23
+Expression expected
+  [90m148 |[0m                   <div style={{ borderTop: [32m"1px solid var(--border-light)"[0m, padding: [32m"8px...[0m
+  [90m149 |[0m                     <button 
+[31m[1m>[0m [90m150 |[0m                       <[33mLink[0m href=[32m"/user/wishlist"[0m style={{ display: [32m"block"[0m, padding: [32m"10...[0m
+  [90m    |[0m                       [31m[1m^[0m
+  [90m151 |[0m                       <button 
+  [90m152 |[0m                         onClick={handleLogout} 
+  [90m153 |[0m                         style={{ width: [32m"100%"[0m, textAlign: [32m"left"[0m, padding: [32m"10px 16px"[0m, ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+⨯ ./src/components/layout/Header.tsx:150:23
+Expression expected
+  [90m148 |[0m                   <div style={{ borderTop: [32m"1px solid var(--border-light)"[0m, padding: [32m"8px...[0m
+  [90m149 |[0m                     <button 
+[31m[1m>[0m [90m150 |[0m                       <[33mLink[0m href=[32m"/user/wishlist"[0m style={{ display: [32m"block"[0m, padding: [32m"10...[0m
+  [90m    |[0m                       [31m[1m^[0m
+  [90m151 |[0m                       <button 
+  [90m152 |[0m                         onClick={handleLogout} 
+  [90m153 |[0m                         style={{ width: [32m"100%"[0m, textAlign: [32m"left"[0m, padding: [32m"10px 16px"[0m, ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+ GET /services 500 in 61ms (next.js: 24ms, application-code: 37ms)
+ GET /services 500 in 61ms (next.js: 40ms, application-code: 21ms)
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+ GET /services 500 in 98ms (next.js: 52ms, application-code: 45ms)
+⨯ ./src/components/layout/Header.tsx:150:23
+Expression expected
+  [90m148 |[0m                   <div style={{ borderTop: [32m"1px solid var(--border-light)"[0m, padding: [32m"8px...[0m
+  [90m149 |[0m                     <button 
+[31m[1m>[0m [90m150 |[0m                       <[33mLink[0m href=[32m"/user/wishlist"[0m style={{ display: [32m"block"[0m, padding: [32m"10...[0m
+  [90m    |[0m                       [31m[1m^[0m
+  [90m151 |[0m                       <button 
+  [90m152 |[0m                         onClick={handleLogout} 
+  [90m153 |[0m                         style={{ width: [32m"100%"[0m, textAlign: [32m"left"[0m, padding: [32m"10px 16px"[0m, ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+⨯ ./src/components/layout/Header.tsx:150:23
+Expression expected
+  [90m148 |[0m                   <div style={{ borderTop: [32m"1px solid var(--border-light)"[0m, padding: [32m"8px...[0m
+  [90m149 |[0m                     <button 
+[31m[1m>[0m [90m150 |[0m                       <[33mLink[0m href=[32m"/user/wishlist"[0m style={{ display: [32m"block"[0m, padding: [32m"10...[0m
+  [90m    |[0m                       [31m[1m^[0m
+  [90m151 |[0m                       <button 
+  [90m152 |[0m                         onClick={handleLogout} 
+  [90m153 |[0m                         style={{ width: [32m"100%"[0m, textAlign: [32m"left"[0m, padding: [32m"10px 16px"[0m, ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+ GET /services 500 in 66ms (next.js: 41ms, application-code: 25ms)
+⨯ ./src/components/layout/Header.tsx:150:23
+Expression expected
+  [90m148 |[0m                   <div style={{ borderTop: [32m"1px solid var(--border-light)"[0m, padding: [32m"8px...[0m
+  [90m149 |[0m                     <button 
+[31m[1m>[0m [90m150 |[0m                       <[33mLink[0m href=[32m"/user/wishlist"[0m style={{ display: [32m"block"[0m, padding: [32m"10...[0m
+  [90m    |[0m                       [31m[1m^[0m
+  [90m151 |[0m                       <button 
+  [90m152 |[0m                         onClick={handleLogout} 
+  [90m153 |[0m                         style={{ width: [32m"100%"[0m, textAlign: [32m"left"[0m, padding: [32m"10px 16px"[0m, ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+ GET /services 500 in 78ms (next.js: 14ms, application-code: 63ms)
+[browser] Uncaught Error: ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./src/components/layout/Header.tsx:150:23)
+    at <unknown> (Error: (./src/components/layout/Header.tsx:150:23)
+[browser] Uncaught Error: ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+
+    at <unknown> (Error: ./src/components/layout/Header.tsx:150:23)
+    at <unknown> (Error: (./src/components/layout/Header.tsx:150:23)
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/components/layout/Header.tsx:150:23
+Expression expected
+  148 |                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px...
+  149 |                     <button 
+> 150 |                       <Link href="/user/wishlist" style={{ display: "block", padding: "10...
+      |                       ^
+  151 |                       <button 
+  152 |                         onClick={handleLogout} 
+  153 |                         style={{ width: "100%", textAlign: "left", padding: "10px 16px", ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/layout/Header.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component Browser]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/layout/Header.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Client Component SSR]
+    ./src/components/layout/LayoutWrapper.tsx [Server Component]
+    ./src/app/layout.tsx [Server Component] 
+ GET /services 200 in 2.3s (next.js: 253ms, application-code: 2.0s)
+ GET /services 200 in 594ms (next.js: 159ms, application-code: 436ms)
+ GET /services/sss-6a37c0b0f0571 200 in 105ms (next.js: 69ms, application-code: 36ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /store/7/sss 200 in 58ms (next.js: 31ms, application-code: 28ms)
+ GET /services/hair-cutting-6a3cdcf495fa0 200 in 53ms (next.js: 14ms, application-code: 39ms)
+ GET /services/sss-6a37c0b0f0571 200 in 31ms (next.js: 10ms, application-code: 21ms)
+ GET /login 200 in 102ms (next.js: 72ms, application-code: 30ms)
+ GET /register 200 in 47ms (next.js: 27ms, application-code: 20ms)
+ GET /user/refer 200 in 45ms (next.js: 24ms, application-code: 21ms)
+ GET /products 200 in 43ms (next.js: 25ms, application-code: 18ms)
+✓ Compiled in 85ms
+ GET /products 200 in 82ms (next.js: 8ms, application-code: 73ms)
+○ Compiling /user/wishlist ...
+ GET /user/wishlist 200 in 3.5s (next.js: 3.3s, application-code: 165ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+✓ Compiled in 457ms
+ GET /user/wishlist 200 in 212ms (next.js: 76ms, application-code: 136ms)
+ GET /user/wishlist 200 in 132ms (next.js: 3ms, application-code: 130ms)
+ GET /user/wishlist 200 in 113ms (next.js: 15ms, application-code: 98ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/user/wish..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_5ba3...">
+                          <LayoutWrapper settings={{...}}>
+                            <body
+                              style={{display:"flex",flexDirection:"column",minHeight:"100vh"}}
+-                             cz-shortcut-listen="true"
+                            >
+                  ...
+ 
+ GET /user/wishlist 200 in 95ms (next.js: 3ms, application-code: 92ms)
+ GET /services 200 in 30ms (next.js: 10ms, application-code: 20ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /user/wishlist 200 in 50ms (next.js: 12ms, application-code: 38ms)
+ GET /products/school-erp-software-6a3cd9994d5d2 200 in 84ms (next.js: 45ms, application-code: 39ms)
+ GET /products/handmade-mug-6a339cfda2673 200 in 85ms (next.js: 14ms, application-code: 71ms)
+ GET /store/5/nitish-botique 200 in 25ms (next.js: 7ms, application-code: 18ms)
+✓ Compiled in 308ms
+✓ Compiled in 85ms
+ GET /services 200 in 80ms (next.js: 9ms, application-code: 71ms)
+ GET /products/handmade-mug-6a339cfda2673 200 in 40ms (next.js: 9ms, application-code: 31ms)
+[browser] ./src/app/(dashboard)/user/wishlist/page.tsx:175:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  173 |     </div>
+  174 |   );
+> 175 | }
+      | ^
+  176 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/user/wishlist/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/user/wishlist/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/user/wishlist/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/user/wishlist/page.tsx [Server Component] 
+ GET /user/wishlist 200 in 79ms (next.js: 24ms, application-code: 54ms)
+ GET /products/school-erp-software-6a3cd9994d5d2 200 in 123ms (next.js: 38ms, application-code: 85ms)
+ GET / 200 in 118ms (next.js: 62ms, application-code: 57ms)
+✓ Compiled in 456ms
+ GET /user/wishlist 200 in 70ms (next.js: 14ms, application-code: 56ms)
+ GET /products 200 in 36ms (next.js: 15ms, application-code: 21ms)
+ GET /services 200 in 43ms (next.js: 11ms, application-code: 31ms)
+ GET /user/orders 200 in 42ms (next.js: 23ms, application-code: 19ms)
+ GET /services 200 in 17ms (next.js: 1613µs, application-code: 16ms)
+ GET /user/orders 200 in 26ms (next.js: 3ms, application-code: 23ms)
+ GET /products 200 in 23ms (next.js: 4ms, application-code: 19ms)
+ GET /products/handmade-mug-6a339cfda2673 200 in 34ms (next.js: 13ms, application-code: 21ms)
+ GET /checkout?item_id=1&type=product 200 in 63ms (next.js: 28ms, application-code: 35ms)
+[browser] Error: Razorpay is not configured on this site.
+    at handleCheckout (src/app/checkout/page.tsx:154:17)
+    at form (<anonymous>)
+    at CheckoutForm (src/app/checkout/page.tsx:278:7)
+    at CheckoutPage (src/app/checkout/page.tsx:505:9)
+  152 |       if (paymentMethod === "razorpay") {
+  153 |         if (!settings?.razorpay_key_id) {
+> 154 |           throw new Error("Razorpay is not configured on this site.");
+      |                 ^
+  155 |         }
+  156 |
+  157 |         // 1. Create Order on Backend (src/app/checkout/page.tsx:243:15)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/services" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="inter_5ba3...">
+                          <LayoutWrapper settings={{...}}>
+                            <body
+                              style={{display:"flex",flexDirection:"column",minHeight:"100vh"}}
+-                             cz-shortcut-listen="true"
+                            >
+                  ...
+ 
+[browser] ./src/app/(dashboard)/user/wishlist/page.tsx:175:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  173 |     </div>
+  174 |   );
+> 175 | }
+      | ^
+  176 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/(dashboard)/user/wishlist/page.tsx [Client Component Browser]
+    ./src/app/(dashboard)/user/wishlist/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/(dashboard)/user/wishlist/page.tsx [Client Component SSR]
+    ./src/app/(dashboard)/user/wishlist/page.tsx [Server Component] 
