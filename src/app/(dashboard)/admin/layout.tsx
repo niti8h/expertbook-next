@@ -173,6 +173,30 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* Main Content wrapper */}
       {children}
+
+      {/* Mobile Bottom Navigation */}
+      <nav className={styles.bottomNav}>
+        <Link href="/admin/dashboard" className={`${styles.bottomNavItem} ${pathname === "/admin/dashboard" ? styles.bottomNavItemActive : ""}`}>
+          <span className={styles.bottomNavIcon}>{Icons.dashboard}</span>
+          Home
+        </Link>
+        <Link href="/admin/orders" className={`${styles.bottomNavItem} ${pathname.startsWith("/admin/orders") ? styles.bottomNavItemActive : ""}`}>
+          <span className={styles.bottomNavIcon}>{Icons.orders}</span>
+          Orders
+        </Link>
+        <Link href="/admin/users" className={`${styles.bottomNavItem} ${pathname.startsWith("/admin/users") ? styles.bottomNavItemActive : ""}`}>
+          <span className={styles.bottomNavIcon}>{Icons.users}</span>
+          Users
+        </Link>
+        <Link href="/admin/settings" className={`${styles.bottomNavItem} ${pathname.startsWith("/admin/settings") ? styles.bottomNavItemActive : ""}`}>
+          <span className={styles.bottomNavIcon}>{Icons.settings}</span>
+          Settings
+        </Link>
+        <button onClick={handleLogout} className={styles.bottomNavItem} style={{ background: "none", border: "none", cursor: "pointer" }}>
+          <span className={styles.bottomNavIcon} style={{ color: "var(--danger-600)" }}>{Icons.logout}</span>
+          Logout
+        </button>
+      </nav>
     </div>
   );
 }

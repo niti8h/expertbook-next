@@ -28,6 +28,13 @@ export async function generateMetadata(): Promise<Metadata> {
     description: settings.meta_description || "Discover trusted vendors, premium products, and skilled service providers near you. Buy, sell, and grow with MarketSphere.",
     keywords: settings.meta_keywords || "marketplace, vendors, products, services, buy, sell, local services",
     icons: settings.site_favicon ? { icon: `${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${settings.site_favicon}` } : undefined,
+    manifest: "/manifest.json",
+    appleWebApp: {
+      capable: true,
+      title: "MarketSphere",
+      statusBarStyle: "default",
+    },
+    themeColor: "#0ea5e9"
   };
 }
 

@@ -104,8 +104,8 @@ export default function LoginPage() {
 
               {error && <p className={styles.errorText}>{error}</p>}
 
-              <button type="submit" className={styles.submitBtn} disabled={loading}>
-                {loading ? "Sending OTP..." : "Continue"}
+              <button type="submit" className={styles.submitBtn} disabled={loading} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {loading ? <><span className="btn-spinner"></span>Sending OTP...</> : "Continue"}
               </button>
             </form>
           </>
@@ -140,8 +140,8 @@ export default function LoginPage() {
 
               {error && <p className={styles.errorText}>{error}</p>}
 
-              <button type="submit" className={styles.submitBtn} disabled={loading}>
-                {loading ? "Verifying..." : "Sign In"}
+              <button type="submit" className={styles.submitBtn} disabled={loading} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {loading ? <><span className="btn-spinner"></span>Verifying...</> : "Sign In"}
               </button>
             </form>
           </>

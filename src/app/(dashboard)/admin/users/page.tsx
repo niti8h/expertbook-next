@@ -58,6 +58,29 @@ export default function AdminUsersPage() {
     }
   };
 
+  const updateRole = async (id: number, role: string) => {
+    try {
+      const token = localStorage.getItem("auth-token");
+      if (!token) return;
+      
+      const res = await api(`/admin/users/${id}/role`, {
+        method: "PUT",
+        token,
+        body: { role }
+      });
+      
+      if (res.status === 200) {
+        setUsers(users.map(u => u.id === id ? { ...u, role: res.data.data.role } : u));
+        toast.success("User role updated successfully");
+      } else {
+        toast.error("Failed to update user role");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("An error occurred while updating role");
+    }
+  };
+
   return (
     <main className={styles.mainContent}>
       <div className={styles.topBar}>
@@ -122,17 +145,28 @@ export default function AdminUsersPage() {
                     </td>
                     <td style={{ color: "var(--text-secondary)" }}>{user.email}</td>
                     <td>
-                      <span style={{
-                        padding: "4px 8px",
-                        borderRadius: "100px",
-                        fontSize: "0.75rem",
-                        fontWeight: 600,
-                        backgroundColor: "var(--surface-2)",
-                        color: "var(--text-primary)",
-                        textTransform: "capitalize"
-                      }}>
-                        {user.role?.name || 'Customer'}
-                      </span>
+                      <select
+                        value={user.role?.slug || 'customer'}
+                        onChange={(e) => updateRole(user.id, e.target.value)}
+                        style={{
+                          padding: "6px 12px",
+                          borderRadius: "100px",
+                          fontSize: "0.75rem",
+                          fontWeight: 600,
+                          backgroundColor: "var(--surface-2)",
+                          color: "var(--text-primary)",
+                          textTransform: "capitalize",
+                          border: "1px solid var(--border-light)",
+                          cursor: "pointer",
+                          outline: "none"
+                        }}
+                      >
+                        <option value="customer">Customer</option>
+                        <option value="vendor">Vendor (Seller)</option>
+                        <option value="provider">Provider (Services)</option>
+                        <option value="affiliate">Affiliate</option>
+                        <option value="admin">Admin</option>
+                      </select>
                     </td>
                     <td style={{ color: "var(--text-secondary)" }}>
                       {new Date(user.created_at).toLocaleDateString()}

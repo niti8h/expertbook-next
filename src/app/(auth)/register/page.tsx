@@ -194,8 +194,8 @@ export default function RegisterPage() {
 
               {error && <p className={styles.errorText}>{error}</p>}
 
-              <button type="submit" className={styles.submitBtn} disabled={loading}>
-                {loading ? "Sending OTP..." : "Create Account"}
+              <button type="submit" className={styles.submitBtn} disabled={loading} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {loading ? <><span className="btn-spinner"></span>Sending OTP...</> : "Create Account"}
               </button>
             </form>
           </>
@@ -230,8 +230,8 @@ export default function RegisterPage() {
 
               {error && <p className={styles.errorText}>{error}</p>}
 
-              <button type="submit" className={styles.submitBtn} disabled={loading}>
-                {loading ? "Verifying..." : "Verify & Complete"}
+              <button type="submit" className={styles.submitBtn} disabled={loading} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {loading ? <><span className="btn-spinner"></span>Verifying...</> : "Verify & Complete"}
               </button>
             </form>
           </>

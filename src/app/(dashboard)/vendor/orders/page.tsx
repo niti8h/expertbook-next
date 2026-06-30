@@ -420,28 +420,33 @@ export default function VendorOrders() {
               </button>
               <button
                 onClick={updateStatus}
+                disabled={updatingId !== null}
                 style={{
                   padding: "10px 24px",
                   borderRadius: "10px",
                   border: "none",
-                  background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                  background: updatingId !== null ? "#9ca3af" : "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
                   color: "#ffffff",
                   fontWeight: 700,
                   fontSize: "0.875rem",
-                  cursor: "pointer",
-                  boxShadow: "0 4px 12px rgba(99,102,241,0.35)",
+                  cursor: updatingId !== null ? "not-allowed" : "pointer",
+                  boxShadow: updatingId !== null ? "none" : "0 4px 12px rgba(99,102,241,0.35)",
                   transition: "opacity 0.15s, transform 0.1s",
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.opacity = "0.9";
-                  e.currentTarget.style.transform = "translateY(-1px)";
+                  if (updatingId === null) {
+                    e.currentTarget.style.opacity = "0.9";
+                    e.currentTarget.style.transform = "translateY(-1px)";
+                  }
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.opacity = "1";
-                  e.currentTarget.style.transform = "translateY(0)";
+                  if (updatingId === null) {
+                    e.currentTarget.style.opacity = "1";
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }
                 }}
               >
-                Save Changes
+                {updatingId !== null ? "Saving..." : "Save Changes"}
               </button>
             </div>
           </div>

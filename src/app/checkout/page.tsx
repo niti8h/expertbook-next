@@ -489,7 +489,10 @@ function CheckoutForm() {
           style={{ padding: "16px", fontSize: "1.125rem", marginTop: "16px", display: "flex", justifyContent: "center", alignItems: "center" }}
         >
           {loading ? (
-            paymentMethod === "razorpay" ? "Processing Payment..." : "Confirming Order..."
+            <>
+              <span className="btn-spinner"></span>
+              {paymentMethod === "razorpay" ? "Processing Payment..." : "Confirming Order..."}
+            </>
           ) : (
             `Place Order`
           )}

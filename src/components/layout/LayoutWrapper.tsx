@@ -11,6 +11,8 @@ import { DialogProvider } from "../ui/DialogContext";
 import { ReactIndiaSuiteProvider } from 'react-india-suite';
 import { SettingsProvider } from '../ui/SettingsContext';
 
+import PwaInstallPrompt from "../ui/PwaInstallPrompt";
+
 export default function LayoutWrapper({ children, settings = {} }: { children: React.ReactNode, settings?: any }) {
   const pathname = usePathname();
   
@@ -31,6 +33,7 @@ export default function LayoutWrapper({ children, settings = {} }: { children: R
         <ReactIndiaSuiteProvider>
           <ToastProvider>
             <DialogProvider>
+              <PwaInstallPrompt />
               {!isDashboard && <Header />}
               <main style={{ flex: 1, display: "flex", flexDirection: "column" }}>
                 {children}
