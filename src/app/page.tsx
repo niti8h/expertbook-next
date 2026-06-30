@@ -4,7 +4,7 @@ import { fetchGlobalSettings } from "@/lib/settings";
 
 export default async function Home() {
   const settings = await fetchGlobalSettings();
-  const siteName = settings.site_name || "MarketSphere";
+  const siteName = settings.site_name || "Expert Book";
 
   return (
     <main style={{ overflow: "hidden" }}>

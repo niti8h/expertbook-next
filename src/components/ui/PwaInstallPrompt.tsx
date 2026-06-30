@@ -22,7 +22,7 @@ export default function PwaInstallPrompt() {
 
     // Detect iOS Safari
     const ua = window.navigator.userAgent;
-    const isIOSDevice = /iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream;
+    const isIOSDevice = /iPad|iPhone|iPod/.test(ua) && !(window as any).EBStream;
     setIsIOS(isIOSDevice);
     
     if (isIOSDevice) {
@@ -88,11 +88,11 @@ export default function PwaInstallPrompt() {
             display: "flex", alignItems: "center", justifyItems: "center", justifyContent: "center",
             fontSize: "1.5rem", fontWeight: 700, flexShrink: 0
           }}>
-            MS
+            EB
           </div>
           <div>
             <h3 style={{ margin: "0 0 4px 0", fontSize: "1.125rem", fontWeight: 700, color: "var(--text-primary)" }}>
-              Install MarketSphere
+              Install Expert Book
             </h3>
             <p style={{ margin: 0, fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.4 }}>
               Install our app for a faster, full-screen experience directly from your home screen.

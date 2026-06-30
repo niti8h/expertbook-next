@@ -176,7 +176,7 @@ export default function AdminSettingsPage() {
                   value={settings.site_name} 
                   onChange={handleInputChange} 
                   className={styles.input}
-                  placeholder="e.g. MarketSphere"
+                  placeholder="e.g. Expert Book"
                 />
               </div>
 

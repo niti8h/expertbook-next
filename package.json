@@ -11,6 +11,7 @@
   "dependencies": {
     "lucide-react": "^1.21.0",
     "next": "16.2.9",
+    "nextjs-toploader": "^3.9.17",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-india-suite": "^1.0.0"

@@ -19,15 +19,15 @@ export default function Footer() {
             {settings.site_logo ? (
               <img 
                 src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${settings.site_logo}`} 
-                alt={settings.site_name || "MarketSphere"} 
+                alt={settings.site_name || "Expert Book"} 
                 style={{ maxHeight: "24px", objectFit: "contain" }}
               />
             ) : (
               <div style={{ width: "24px", height: "24px", background: "var(--brand-600)", color: "white", borderRadius: "6px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem" }}>
-                {settings.site_name ? settings.site_name.substring(0, 2).toUpperCase() : "MS"}
+                {settings.site_name ? settings.site_name.substring(0, 2).toUpperCase() : "EB"}
               </div>
             )}
-            {settings.site_name || "MarketSphere"}
+            {settings.site_name || "Expert Book"}
           </Link>
           <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", lineHeight: 1.6 }}>
             The premium destination for exclusive products and professional services.
@@ -60,7 +60,7 @@ export default function Footer() {
       </div>
       <div style={{ maxWidth: "1200px", margin: "40px auto 0", paddingTop: "24px", borderTop: "1px solid var(--border-light)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
         <p style={{ color: "var(--text-muted)", fontSize: "0.813rem" }}>
-          &copy; {new Date().getFullYear()} {settings.site_name || "MarketSphere"}. All rights reserved.
+          &copy; {new Date().getFullYear()} {settings.site_name || "Expert Book"}. All rights reserved.
         </p>
       </div>
     </footer>

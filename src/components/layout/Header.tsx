@@ -63,13 +63,13 @@ export default function Header() {
           {settings.site_logo ? (
             <img 
               src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${settings.site_logo}`} 
-              alt={settings.site_name || "MarketSphere"} 
+              alt={settings.site_name || "Expert Book"} 
               style={{ maxHeight: "32px", objectFit: "contain" }}
             />
           ) : (
-            <div className={styles.logoIcon}>{settings.site_name ? settings.site_name.substring(0, 2).toUpperCase() : "MS"}</div>
+            <div className={styles.logoIcon}>{settings.site_name ? settings.site_name.substring(0, 2).toUpperCase() : "EB"}</div>
           )}
-          {settings.site_name || "MarketSphere"}
+          {settings.site_name || "Expert Book"}
         </Link>
 
         {/* Desktop Links */}
