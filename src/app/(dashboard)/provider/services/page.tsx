@@ -29,6 +29,7 @@ export default function ProviderServices() {
     lat: "",
     lng: "",
     radius_km: "10",
+    vendor_commission_rate: "",
   });
   
   const [images, setImages] = useState<File[]>([]);
@@ -151,7 +152,7 @@ export default function ProviderServices() {
     setFormData({
       title: "", description: "", price: "", price_type: "fixed", category_id: categories.length > 0 ? categories[0].id : 1, status: "active", lat: "", lng: "", radius_km: "10", vendor_commission_rate: ""
     });
-    setImages(null);
+    setImages([]);
     setExistingImages([]);
     setImagePreviews([]);
   };
@@ -388,7 +389,7 @@ export default function ProviderServices() {
                         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "10px" }}>
                           {existingImages.map((img, idx) => (
                             <div key={idx} style={{ position: "relative", width: "80px", height: "80px", borderRadius: "8px", overflow: "hidden", border: "1px solid var(--border-light)" }}>
-                              <img src={`http://localhost:8000${img}`} alt="Service" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                              <img src={`https://api.expertbook.in${img}`} alt="Service" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                               <button 
                                 type="button" 
                                 onClick={() => removeExistingImage(idx)}
@@ -509,7 +510,7 @@ export default function ProviderServices() {
                       <tr key={service.id}>
                         <td style={{ width: "60px" }}>
                           {service.images && service.images.length > 0 ? (
-                            <img src={`http://localhost:8000${service.images[0]}`} alt="img" style={{ width: "40px", height: "40px", borderRadius: "8px", objectFit: "cover" }} />
+                            <img src={`https://api.expertbook.in${service.images[0]}`} alt="img" style={{ width: "40px", height: "40px", borderRadius: "8px", objectFit: "cover" }} />
                           ) : (
                             <div style={{ width: "40px", height: "40px", borderRadius: "8px", background: "var(--surface-2)" }}></div>
                           )}

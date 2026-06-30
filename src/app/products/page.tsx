@@ -145,7 +145,7 @@ function ProductsContent() {
         }));
 
         if (silent) {
-          if (suggestions.length > 0) setResolvedCity(suggestions[0].city);
+          if (suggestions.length > 0) setResolvedCity(suggestions[0].city as string);
         } else {
           setLocationSuggestions(suggestions);
           setShowLocationDropdown(true);
@@ -491,7 +491,7 @@ function ProductsContent() {
                   <div className="product-card">
                     <div
                       className="product-image-container"
-                      style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}${product.images?.[0] || ''})`, position: "relative" }}
+                      style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${product.images?.[0] || ''})`, position: "relative" }}
                     >
                       {!product.images?.[0] && <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>No Image</div>}
                       
@@ -569,7 +569,7 @@ function ProductsContent() {
                           onMouseLeave={e => e.currentTarget.style.backgroundColor = "transparent"}
                         >
                           {product.vendor?.vendor_profile?.store_logo ? (
-                            <img src={`http://localhost:8000${product.vendor.vendor_profile.store_logo}`} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover" }} />
+                            <img src={`https://api.expertbook.in${product.vendor.vendor_profile.store_logo}`} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover" }} />
                           ) : (
                             <div style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "var(--brand-100)", color: "var(--brand-700)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 600 }}>
                               {(product.vendor?.vendor_profile?.store_name || product.vendor?.name || "V").charAt(0).toUpperCase()}

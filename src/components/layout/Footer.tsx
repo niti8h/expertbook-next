@@ -18,7 +18,7 @@ export default function Footer() {
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "1.25rem", fontWeight: 700, letterSpacing: "-0.5px", color: "var(--text-primary)", textDecoration: "none", marginBottom: "16px" }}>
             {settings.site_logo ? (
               <img 
-                src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}${settings.site_logo}`} 
+                src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${settings.site_logo}`} 
                 alt={settings.site_name || "MarketSphere"} 
                 style={{ maxHeight: "24px", objectFit: "contain" }}
               />

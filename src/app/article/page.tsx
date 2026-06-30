@@ -53,7 +53,7 @@ export default function ArticleList() {
             }}>
               {article.images && article.images.length > 0 && (
                 <div style={{ height: "200px", width: "100%", overflow: "hidden" }}>
-                  <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}${article.images[0]}`} alt={article.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${article.images[0]}`} alt={article.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </div>
               )}
               <div style={{ padding: "24px", flex: 1, display: "flex", flexDirection: "column" }}>

@@ -92,7 +92,7 @@ export default function UserAddressesPage() {
       if (res.status === 201) {
         toast.success("Address added successfully!");
         setShowForm(false);
-        setFormData({ address: "", city: "", state: "", pincode: "", is_default: false });
+        setFormData({ address: "", city: "", district: "", state: "", pincode: "", is_default: false });
         fetchAddresses();
       } else {
         toast.error("Failed to add address.");

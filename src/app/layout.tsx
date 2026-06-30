@@ -19,11 +19,15 @@ import { fetchGlobalSettings } from "@/lib/settings";
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await fetchGlobalSettings();
   
+  const defaultTitle = settings.site_name 
+    ? `${settings.site_name} — Products & Services, One Platform` 
+    : "MarketSphere — Products & Services, One Platform";
+
   return {
-    title: settings.meta_title || "MarketSphere — Products & Services, One Platform",
+    title: settings.meta_title || defaultTitle,
     description: settings.meta_description || "Discover trusted vendors, premium products, and skilled service providers near you. Buy, sell, and grow with MarketSphere.",
     keywords: settings.meta_keywords || "marketplace, vendors, products, services, buy, sell, local services",
-    icons: settings.site_favicon ? { icon: `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}${settings.site_favicon}` } : undefined,
+    icons: settings.site_favicon ? { icon: `${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${settings.site_favicon}` } : undefined,
   };
 }
 

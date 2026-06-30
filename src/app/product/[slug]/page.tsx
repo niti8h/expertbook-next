@@ -75,7 +75,7 @@ export default function ProductDetails() {
           <div>
             <div style={{ width: "100%", height: "500px", borderRadius: "var(--radius-md)", overflow: "hidden", border: "1px solid var(--border-light)", marginBottom: "16px", background: "var(--surface-1)" }}>
               {activeImage ? (
-                <img src={`http://localhost:8000${activeImage}`} alt={product.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src={`https://api.expertbook.in${activeImage}`} alt={product.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               ) : (
                 <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)" }}>No Image</div>
               )}
@@ -99,7 +99,7 @@ export default function ProductDetails() {
                       cursor: "pointer" 
                     }}
                   >
-                    <img src={`http://localhost:8000${img}`} alt="thumbnail" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <img src={`https://api.expertbook.in${img}`} alt="thumbnail" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </button>
                 ))}
               </div>

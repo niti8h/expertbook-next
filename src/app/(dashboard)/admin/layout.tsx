@@ -97,7 +97,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Link href="/" className={styles.sidebarLogo}>
             {settings.site_logo ? (
               <img 
-                src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}${settings.site_logo}`} 
+                src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${settings.site_logo}`} 
                 alt={settings.site_name || "MarketSphere"} 
                 style={{ maxHeight: "32px", objectFit: "contain" }}
               />

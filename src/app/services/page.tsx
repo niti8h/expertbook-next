@@ -302,7 +302,7 @@ function ServicesContent() {
                     <Link href={`/services/${service.slug}`} style={{ textDecoration: "none", color: "inherit", flex: 1, display: "flex", flexDirection: "column" }}>
                       
                       {/* Image Header */}
-                      <div className="product-image-container" style={{ position: "relative", backgroundImage: `url(${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}${service.images?.[0] || ''})` }}>
+                      <div className="product-image-container" style={{ position: "relative", backgroundImage: `url(${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${service.images?.[0] || ''})` }}>
                         {!service.images?.[0] && <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>No Image</div>}
                         
                         {/* Floating Category Pill */}
@@ -360,7 +360,7 @@ function ServicesContent() {
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: "8px", overflow: "hidden" }}>
                             {service.vendor?.vendor_profile?.store_logo ? (
-                              <img src={`http://localhost:8000${service.vendor.vendor_profile.store_logo}`} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover", border: "1px solid var(--border-light)", flexShrink: 0 }} />
+                              <img src={`https://api.expertbook.in${service.vendor.vendor_profile.store_logo}`} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover", border: "1px solid var(--border-light)", flexShrink: 0 }} />
                             ) : (
                               <div style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "var(--brand-100)", color: "var(--brand-700)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 700, flexShrink: 0 }}>
                                 {(service.vendor?.vendor_profile?.store_name || service.vendor?.name || "V").charAt(0).toUpperCase()}

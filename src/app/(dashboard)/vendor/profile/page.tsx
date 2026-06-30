@@ -98,8 +98,8 @@ export default function VendorProfile() {
   };
 
   // Previews
-  const bannerPreviewUrl = banner ? URL.createObjectURL(banner) : (existingBanner ? `http://localhost:8000${existingBanner}` : 'https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80&w=1200');
-  const logoPreviewUrl = logo ? URL.createObjectURL(logo) : (existingLogo ? `http://localhost:8000${existingLogo}` : 'https://ui-avatars.com/api/?name=Store&background=random');
+  const bannerPreviewUrl = banner ? URL.createObjectURL(banner) : (existingBanner ? `https://api.expertbook.in${existingBanner}` : 'https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80&w=1200');
+  const logoPreviewUrl = logo ? URL.createObjectURL(logo) : (existingLogo ? `https://api.expertbook.in${existingLogo}` : 'https://ui-avatars.com/api/?name=Store&background=random');
 
   return (
     <main className={styles.mainContent} style={{ position: "relative" }}>

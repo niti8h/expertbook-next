@@ -1,4 +1,4 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://api.expertbook.in/api";
 
 interface ApiOptions {
   method?: string;
@@ -6,7 +6,7 @@ interface ApiOptions {
   token?: string;
 }
 
-export async function api<T = unknown>(
+export async function api<T = any>(
   endpoint: string,
   options: ApiOptions = {}
 ): Promise<{ data: T; status: number }> {
@@ -31,7 +31,7 @@ export async function api<T = unknown>(
   return { data: json, status: res.status };
 }
 
-export async function multipartApi<T = unknown>(
+export async function multipartApi<T = any>(
   endpoint: string,
   options: { method?: string; body: FormData; token?: string }
 ): Promise<{ data: T; status: number }> {

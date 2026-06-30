@@ -70,6 +70,7 @@ function CheckoutForm() {
           setBillingDetails({
             address: defaultAddr.address,
             city: defaultAddr.city,
+            district: defaultAddr.district || "",
             state: defaultAddr.state,
             pincode: defaultAddr.pincode
           });
@@ -78,6 +79,7 @@ function CheckoutForm() {
           setBillingDetails({
             address: res.data.data[0].address,
             city: res.data.data[0].city,
+            district: res.data.data[0].district || "",
             state: res.data.data[0].state,
             pincode: res.data.data[0].pincode
           });

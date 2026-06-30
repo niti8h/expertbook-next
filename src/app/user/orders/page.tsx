@@ -73,8 +73,8 @@ export default function UserOrdersPage() {
       if (reviewImage) formData.append("image", reviewImage);
 
       const url = editingReviewId 
-        ? `http://localhost:8000/api/user/reviews/${editingReviewId}` 
-        : "http://localhost:8000/api/user/reviews";
+        ? `https://api.expertbook.in/api/user/reviews/${editingReviewId}` 
+        : "https://api.expertbook.in/api/user/reviews";
 
       const res = await fetch(url, {
         method: "POST",
@@ -144,7 +144,7 @@ export default function UserOrdersPage() {
                     <div key={item.id}>
                       <div style={{ display: "flex", alignItems: "center", gap: "16px", paddingBottom: "16px", borderBottom: "1px solid var(--surface-2)", marginBottom: "16px" }}>
                       <div style={{ width: "64px", height: "64px", backgroundColor: "var(--surface-1)", borderRadius: "var(--radius-sm)", border: "1px solid var(--border-light)", overflow: "hidden" }}>
-                         <img src={`http://localhost:8000${item.itemable?.images?.[0] || item.itemable?.store_banner || ''}`} alt="Item" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                         <img src={`https://api.expertbook.in${item.itemable?.images?.[0] || item.itemable?.store_banner || ''}`} alt="Item" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                       </div>
                       <div style={{ flex: 1 }}>
                         <h4 style={{ fontSize: "1rem", fontWeight: 600, margin: "0 0 4px 0" }}>{item.itemable?.title}</h4>

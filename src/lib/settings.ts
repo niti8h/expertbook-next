@@ -1,6 +1,6 @@
 export async function fetchGlobalSettings() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}/api/settings`, { 
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}/api/settings`, { 
       next: { revalidate: 60 } 
     });
     if (!res.ok) return {};

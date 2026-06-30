@@ -36,7 +36,7 @@ export default function LoginPage() {
         // If validation failed, they probably need to register
         setError("Account not found. Please create an account.");
       } else {
-        setError(res.data?.message || "Failed to send OTP.");
+        setError((res.data as any)?.message || "Failed to send OTP.");
       }
     } catch (err) {
       setError("An unexpected error occurred.");

@@ -172,9 +172,9 @@ export default function VendorPortfolio() {
                   {portfolios.map(item => (
                     <div key={item.id} style={{ border: "1px solid var(--border-light)", borderRadius: "var(--radius-sm)", overflow: "hidden", position: "relative" }}>
                       {item.media_type === "video" ? (
-                        <video src={`http://localhost:8000${item.media_path}`} controls style={{ width: "100%", height: "150px", objectFit: "cover", background: "black" }} />
+                        <video src={`https://api.expertbook.in${item.media_path}`} controls style={{ width: "100%", height: "150px", objectFit: "cover", background: "black" }} />
                       ) : (
-                        <img src={`http://localhost:8000${item.media_path}`} alt="Portfolio" style={{ width: "100%", height: "150px", objectFit: "cover" }} />
+                        <img src={`https://api.expertbook.in${item.media_path}`} alt="Portfolio" style={{ width: "100%", height: "150px", objectFit: "cover" }} />
                       )}
                       <div style={{ padding: "12px" }}>
                         <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)", marginBottom: "8px", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>

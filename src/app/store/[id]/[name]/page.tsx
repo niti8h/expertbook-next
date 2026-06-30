@@ -53,7 +53,7 @@ export default function StoreProfile() {
   const getImageUrl = (path: string | undefined | null, fallback: string) => {
     if (!path) return fallback;
     if (path.startsWith('http')) return path;
-    return `http://localhost:8000${path.startsWith('/') ? '' : '/'}${path}`;
+    return `https://api.expertbook.in${path.startsWith('/') ? '' : '/'}${path}`;
   };
 
   return (
@@ -107,7 +107,7 @@ export default function StoreProfile() {
                   <div className="product-image-container" style={{ position: "relative" }}>
                     {product.images && product.images.length > 0 ? (
                       <img 
-                        src={product.images[0].startsWith('http') ? product.images[0] : `http://localhost:8000${product.images[0]}`} 
+                        src={product.images[0].startsWith('http') ? product.images[0] : `https://api.expertbook.in${product.images[0]}`} 
                         alt={product.title} 
                         style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover" }} 
                       />

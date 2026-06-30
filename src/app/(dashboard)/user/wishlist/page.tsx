@@ -111,7 +111,7 @@ export default function WishlistPage() {
               <Link href={`/products/${product.slug}`} style={{ textDecoration: "none", color: "inherit", flex: 1, display: "flex", flexDirection: "column" }}>
                 <div
                   className="product-image-container"
-                  style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}${product.images?.[0] || ''})` }}
+                  style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${product.images?.[0] || ''})` }}
                 >
                   {!product.images?.[0] && <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>No Image</div>}
                 </div>
@@ -150,7 +150,7 @@ export default function WishlistPage() {
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: "8px", overflow: "hidden" }}>
                       {product.vendor?.vendor_profile?.store_logo ? (
-                        <img src={`http://localhost:8000${product.vendor.vendor_profile.store_logo}`} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover", border: "1px solid var(--border-light)", flexShrink: 0 }} />
+                        <img src={`https://api.expertbook.in${product.vendor.vendor_profile.store_logo}`} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover", border: "1px solid var(--border-light)", flexShrink: 0 }} />
                       ) : (
                         <div style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "var(--brand-100)", color: "var(--brand-700)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 700, flexShrink: 0 }}>
                           {(product.vendor?.vendor_profile?.store_name || product.vendor?.name || "V").charAt(0).toUpperCase()}

@@ -96,7 +96,7 @@ export default function ServiceDetailPage() {
                       transition: "all 0.2s"
                     }}
                   >
-                    <img src={`http://localhost:8000${img}`} alt={`Thumbnail ${idx}`} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <img src={`https://api.expertbook.in${img}`} alt={`Thumbnail ${idx}`} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </div>
                 ))
               ) : (
@@ -107,7 +107,7 @@ export default function ServiceDetailPage() {
             {/* Main Image */}
             <div style={{ flex: 1, height: "600px", borderRadius: "var(--radius-md)", overflow: "hidden", backgroundColor: "var(--surface-1)", border: "1px solid var(--border-light)" }}>
               {activeImage ? (
-                <img src={`http://localhost:8000${activeImage}`} alt={service.title} style={{ width: "100%", height: "100%", objectFit: "contain", backgroundColor: "white" }} />
+                <img src={`https://api.expertbook.in${activeImage}`} alt={service.title} style={{ width: "100%", height: "100%", objectFit: "contain", backgroundColor: "white" }} />
               ) : (
                 <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)" }}>No Image Available</div>
               )}
@@ -146,7 +146,7 @@ export default function ServiceDetailPage() {
               >
                 <div style={{ width: "48px", height: "48px", borderRadius: "50%", overflow: "hidden", backgroundColor: "var(--surface-2)" }}>
                   {service.vendor?.vendor_profile?.store_logo ? (
-                    <img src={`http://localhost:8000${service.vendor.vendor_profile.store_logo}`} alt="Store Logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <img src={`https://api.expertbook.in${service.vendor.vendor_profile.store_logo}`} alt="Store Logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   ) : (
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="1.5"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
                   )}
@@ -200,7 +200,7 @@ export default function ServiceDetailPage() {
                     <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                       <div style={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "var(--surface-2)", overflow: "hidden" }}>
                         {review.user?.avatar ? (
-                          <img src={`http://localhost:8000${review.user.avatar}`} alt="Avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                          <img src={`https://api.expertbook.in${review.user.avatar}`} alt="Avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                         ) : (
                           <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)", fontSize: "1.2rem", fontWeight: 600 }}>
                             {review.user?.name?.charAt(0)}
@@ -229,7 +229,7 @@ export default function ServiceDetailPage() {
 
                   {review.image && (
                     <div style={{ marginBottom: "16px" }}>
-                      <img src={`http://localhost:8000${review.image}`} alt="Review photo" style={{ borderRadius: "var(--radius-sm)", maxHeight: "150px", border: "1px solid var(--border-light)" }} />
+                      <img src={`https://api.expertbook.in${review.image}`} alt="Review photo" style={{ borderRadius: "var(--radius-sm)", maxHeight: "150px", border: "1px solid var(--border-light)" }} />
                     </div>
                   )}
 
