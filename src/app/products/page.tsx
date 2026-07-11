@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../lib/utils";
 
 import { useState, useEffect, Suspense, useRef } from "react";
 import Link from "next/link";
@@ -569,7 +570,7 @@ function ProductsContent() {
                           onMouseLeave={e => e.currentTarget.style.backgroundColor = "transparent"}
                         >
                           {product.vendor?.vendor_profile?.store_logo ? (
-                            <img src={`https://api.expertbook.in${product.vendor.vendor_profile.store_logo}`} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover" }} />
+                            <img src={getImageUrl(product.vendor.vendor_profile.store_logo)} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover" }} />
                           ) : (
                             <div style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "var(--brand-100)", color: "var(--brand-700)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 600 }}>
                               {(product.vendor?.vendor_profile?.store_name || product.vendor?.name || "V").charAt(0).toUpperCase()}

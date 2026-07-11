@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../lib/utils";
 
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
@@ -75,7 +76,7 @@ export default function ProductDetails() {
           <div>
             <div style={{ width: "100%", height: "500px", borderRadius: "var(--radius-md)", overflow: "hidden", border: "1px solid var(--border-light)", marginBottom: "16px", background: "var(--surface-1)" }}>
               {activeImage ? (
-                <img src={`https://api.expertbook.in${activeImage}`} alt={product.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src={getImageUrl(activeImage)} alt={product.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               ) : (
                 <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)" }}>No Image</div>
               )}
@@ -99,7 +100,7 @@ export default function ProductDetails() {
                       cursor: "pointer" 
                     }}
                   >
-                    <img src={`https://api.expertbook.in${img}`} alt="thumbnail" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <img src={getImageUrl(img)} alt="thumbnail" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   </button>
                 ))}
               </div>

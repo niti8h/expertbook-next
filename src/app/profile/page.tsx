@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../lib/utils";
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
@@ -118,7 +119,7 @@ export default function PublicProfilePage() {
                   backgroundColor: "white", borderRadius: "16px", border: "1px solid var(--border-light)", overflow: "hidden"
                 }}>
                   {item.media_url ? (
-                    <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${item.media_url}`} alt={item.title} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
+                    <img src={getImageUrl(item.media_url)} alt={item.title} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
                   ) : (
                     <div style={{ width: "100%", height: "200px", backgroundColor: "var(--surface-2)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)" }}>
                       No Media

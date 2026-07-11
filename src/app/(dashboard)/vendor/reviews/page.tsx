@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../../../lib/utils";
 
 import { useState, useEffect } from "react";
 import styles from "../../dashboard.module.css";
@@ -97,7 +98,7 @@ export default function VendorReviews() {
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                   <div style={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "var(--surface-2)", overflow: "hidden" }}>
                     {review.user?.avatar ? (
-                      <img src={`https://api.expertbook.in${review.user.avatar}`} alt="Avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                      <img src={getImageUrl(review.user.avatar)} alt="Avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                     ) : (
                       <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)", fontSize: "1.2rem", fontWeight: 600 }}>
                         {review.user?.name?.charAt(0)}
@@ -131,7 +132,7 @@ export default function VendorReviews() {
 
               {review.image && (
                 <div style={{ marginBottom: "16px" }}>
-                  <img src={`https://api.expertbook.in${review.image}`} alt="Review photo" style={{ borderRadius: "var(--radius-sm)", maxHeight: "150px", border: "1px solid var(--border-light)" }} />
+                  <img src={getImageUrl(review.image)} alt="Review photo" style={{ borderRadius: "var(--radius-sm)", maxHeight: "150px", border: "1px solid var(--border-light)" }} />
                 </div>
               )}
 

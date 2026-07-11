@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../lib/utils";
 
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
@@ -141,7 +142,7 @@ export default function ArticleDetail() {
         {article.images && article.images.length > 0 && (
           <div style={{ position: "relative", width: "100%", height: "400px", overflow: "hidden", backgroundColor: "#000" }}>
             <img 
-              src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${article.images[currentImageIndex]}`} 
+              src={getImageUrl(article.images[currentImageIndex])} 
               alt={article.title} 
               style={{ width: "100%", height: "100%", objectFit: "contain", transition: "opacity 0.3s ease-in-out" }} 
             />

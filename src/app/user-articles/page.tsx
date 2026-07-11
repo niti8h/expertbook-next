@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../lib/utils";
 
 import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
@@ -90,7 +91,7 @@ function UserProfileContent() {
           <div style={{ display: "flex", alignItems: "center", gap: "24px", flexWrap: "wrap" }}>
             {profile.avatar ? (
               <img 
-                src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${profile.avatar}`} 
+                src={getImageUrl(profile.avatar)} 
                 alt={profile.name} 
                 style={{ width: "96px", height: "96px", borderRadius: "50%", objectFit: "cover", border: "4px solid var(--surface-2)" }}
               />
@@ -161,7 +162,7 @@ function UserProfileContent() {
                       {article.images.map((img: string, i: number) => (
                         <img 
                           key={i} 
-                          src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${img}`} 
+                          src={getImageUrl(img)} 
                           alt="Article attachment" 
                           style={{ height: "120px", width: "160px", objectFit: "cover", borderRadius: "var(--radius-md)", border: "1px solid var(--border-light)" }}
                         />
@@ -172,7 +173,7 @@ function UserProfileContent() {
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: "16px", borderTop: "1px solid var(--border-light)" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                       {profile.avatar ? (
-                        <img src={`https://api.expertbook.in${profile.avatar}`} alt="author" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover" }} />
+                        <img src={getImageUrl(profile.avatar)} alt="author" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover" }} />
                       ) : (
                         <div style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "var(--brand-100)", color: "var(--brand-700)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 600 }}>
                           {profile.name.charAt(0).toUpperCase()}

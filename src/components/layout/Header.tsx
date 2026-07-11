@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../lib/utils";
 
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
@@ -62,7 +63,7 @@ export default function Header() {
         <Link href="/" className={styles.logo}>
           {settings.site_logo ? (
             <img 
-              src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${settings.site_logo}`} 
+              src={getImageUrl(settings.site_logo)} 
               alt={settings.site_name || "Expert Book"} 
               style={{ maxHeight: "32px", objectFit: "contain" }}
             />

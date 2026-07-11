@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../../../lib/utils";
 
 import { useState, useEffect } from "react";
 import styles from "../../dashboard.module.css";
@@ -389,7 +390,7 @@ export default function ProviderServices() {
                         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "10px" }}>
                           {existingImages.map((img, idx) => (
                             <div key={idx} style={{ position: "relative", width: "80px", height: "80px", borderRadius: "8px", overflow: "hidden", border: "1px solid var(--border-light)" }}>
-                              <img src={`https://api.expertbook.in${img}`} alt="Service" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                              <img src={getImageUrl(img)} alt="Service" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                               <button 
                                 type="button" 
                                 onClick={() => removeExistingImage(idx)}
@@ -510,7 +511,7 @@ export default function ProviderServices() {
                       <tr key={service.id}>
                         <td style={{ width: "60px" }}>
                           {service.images && service.images.length > 0 ? (
-                            <img src={`https://api.expertbook.in${service.images[0]}`} alt="img" style={{ width: "40px", height: "40px", borderRadius: "8px", objectFit: "cover" }} />
+                            <img src={getImageUrl(service.images[0])} alt="img" style={{ width: "40px", height: "40px", borderRadius: "8px", objectFit: "cover" }} />
                           ) : (
                             <div style={{ width: "40px", height: "40px", borderRadius: "8px", background: "var(--surface-2)" }}></div>
                           )}

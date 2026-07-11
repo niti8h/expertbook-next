@@ -6,6 +6,15 @@ interface ApiOptions {
   token?: string;
 }
 
+function handleUnauthorized(status: number) {
+  if (status === 401 && typeof window !== "undefined") {
+    localStorage.removeItem("auth-token");
+    if (window.location.pathname !== "/login") {
+      window.location.href = "/login";
+    }
+  }
+}
+
 export async function api<T = any>(
   endpoint: string,
   options: ApiOptions = {}
@@ -26,6 +35,8 @@ export async function api<T = any>(
     headers,
     body: body ? JSON.stringify(body) : undefined,
   });
+
+  handleUnauthorized(res.status);
 
   const json = await res.json();
   return { data: json, status: res.status };
@@ -58,6 +69,8 @@ export async function multipartApi<T = any>(
     headers,
     body,
   });
+
+  handleUnauthorized(res.status);
 
   const json = await res.json();
   return { data: json, status: res.status };

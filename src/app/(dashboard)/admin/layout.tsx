@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../../lib/utils";
 
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
@@ -97,7 +98,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Link href="/" className={styles.sidebarLogo}>
             {settings.site_logo ? (
               <img 
-                src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${settings.site_logo}`} 
+                src={getImageUrl(settings.site_logo)} 
                 alt={settings.site_name || "Expert Book"} 
                 style={{ maxHeight: "32px", objectFit: "contain" }}
               />

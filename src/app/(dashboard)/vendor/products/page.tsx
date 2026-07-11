@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../../../lib/utils";
 
 import { useState, useEffect } from "react";
 import styles from "../../dashboard.module.css";
@@ -469,7 +470,7 @@ export default function VendorProducts() {
                       <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "20px" }}>
                         {existingImages.map((img, idx) => (
                           <div key={`exist-${idx}`} style={{ position: "relative", width: "100px", height: "100px", borderRadius: "8px", overflow: "hidden", border: "1px solid var(--border-light)", boxShadow: "0 2px 4px rgba(0,0,0,0.05)" }}>
-                            <img src={`https://api.expertbook.in${img}`} alt="Product" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                            <img src={getImageUrl(img)} alt="Product" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                             <button 
                               type="button" 
                               onClick={() => removeExistingImage(idx)}
@@ -623,7 +624,7 @@ export default function VendorProducts() {
                       <tr key={product.id}>
                         <td style={{ width: "80px" }}>
                           {product.images && product.images.length > 0 ? (
-                            <img src={`https://api.expertbook.in${product.images[0]}`} alt="img" style={{ width: "48px", height: "48px", borderRadius: "8px", objectFit: "cover", border: "1px solid var(--border-light)" }} />
+                            <img src={getImageUrl(product.images[0])} alt="img" style={{ width: "48px", height: "48px", borderRadius: "8px", objectFit: "cover", border: "1px solid var(--border-light)" }} />
                           ) : (
                             <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "var(--surface-2)", border: "1px solid var(--border-light)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>

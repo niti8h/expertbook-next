@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../../lib/utils";
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -144,7 +145,7 @@ export default function UserOrdersPage() {
                     <div key={item.id}>
                       <div style={{ display: "flex", alignItems: "center", gap: "16px", paddingBottom: "16px", borderBottom: "1px solid var(--surface-2)", marginBottom: "16px" }}>
                       <div style={{ width: "64px", height: "64px", backgroundColor: "var(--surface-1)", borderRadius: "var(--radius-sm)", border: "1px solid var(--border-light)", overflow: "hidden" }}>
-                         <img src={`https://api.expertbook.in${item.itemable?.images?.[0] || item.itemable?.store_banner || ''}`} alt="Item" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                         <img src={getImageUrl(item.itemable?.images?.[0] || item.itemable?.store_banner || '')} alt="Item" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                       </div>
                       <div style={{ flex: 1 }}>
                         <h4 style={{ fontSize: "1rem", fontWeight: 600, margin: "0 0 4px 0" }}>{item.itemable?.title}</h4>

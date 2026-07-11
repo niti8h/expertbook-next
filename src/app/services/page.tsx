@@ -1,4 +1,5 @@
 "use client";
+import { getImageUrl } from "../../lib/utils";
 
 import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
@@ -360,7 +361,7 @@ function ServicesContent() {
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: "8px", overflow: "hidden" }}>
                             {service.vendor?.vendor_profile?.store_logo ? (
-                              <img src={`https://api.expertbook.in${service.vendor.vendor_profile.store_logo}`} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover", border: "1px solid var(--border-light)", flexShrink: 0 }} />
+                              <img src={getImageUrl(service.vendor.vendor_profile.store_logo)} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover", border: "1px solid var(--border-light)", flexShrink: 0 }} />
                             ) : (
                               <div style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "var(--brand-100)", color: "var(--brand-700)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 700, flexShrink: 0 }}>
                                 {(service.vendor?.vendor_profile?.store_name || service.vendor?.name || "V").charAt(0).toUpperCase()}

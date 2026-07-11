@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../auth.module.css";
@@ -61,7 +60,9 @@ export default function LoginPage() {
         localStorage.setItem("auth-token", res.data?.data?.token);
         
         // Redirect based on role
-        if (res.data?.data?.user?.role?.slug === "provider") {
+        if (res.data?.data?.user?.role?.slug === "admin") {
+          window.location.href = "/admin";
+        } else if (res.data?.data?.user?.role?.slug === "provider") {
           window.location.href = "/provider";
         } else if (res.data?.data?.user?.role?.slug === "vendor") {
           window.location.href = "/vendor"; // Use window.location to force full reload and update Header state
