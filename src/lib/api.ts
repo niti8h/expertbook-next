@@ -1,4 +1,4 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://api.expertbook.in/api";
+const API_BASE = "https://api.expertbook.in/api";
 
 interface ApiOptions {
   method?: string;
