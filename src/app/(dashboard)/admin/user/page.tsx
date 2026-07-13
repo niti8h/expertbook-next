@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import styles from "../../../dashboard.module.css";
+import styles from "../../dashboard.module.css";
 import { api } from "@/lib/api";
 import { useToast } from "@/components/ui/ToastContext";
 
