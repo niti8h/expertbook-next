@@ -1,5 +1,5 @@
 "use client";
-import { getImageUrl } from "../../lib/utils";
+import { getImageUrl } from "@/lib/utils";
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
