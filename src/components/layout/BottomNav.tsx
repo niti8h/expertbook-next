@@ -6,28 +6,41 @@ import { useEffect, useState } from "react";
 export default function BottomNav() {
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    
+    const handleScroll = () => {
+      if (window.scrollY > 20) setScrolled(true);
+      else setScrolled(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   if (!isMobile) return null;
 
   const isActive = (path: string) => {
     if (path === "/" && pathname !== "/") return false;
+    if (path === "/" && pathname === "/") return true;
     return pathname.startsWith(path);
   };
 
   const navItems = [
     {
-      name: "Wishlist",
-      path: "/user/wishlist",
+      name: "Home",
+      path: "/",
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill={isActive("/user/wishlist") ? "currentColor" : "none"} stroke="currentColor" strokeWidth={isActive("/user/wishlist") ? "0" : "1.75"} strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill={isActive("/") ? "currentColor" : "none"} stroke="currentColor" strokeWidth={isActive("/") ? "0" : "1.75"} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
         </svg>
       )
     },
@@ -63,53 +76,32 @@ export default function BottomNav() {
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
       )
-    },
-    {
-      name: "Orders",
-      path: "/user/orders",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill={isActive("/user/orders") ? "currentColor" : "none"} stroke="currentColor" strokeWidth={isActive("/user/orders") ? "0" : "1.75"} strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg>
-      )
-    },
-    {
-      name: "Earn",
-      path: "/user/refer",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill={isActive("/user/refer") ? "currentColor" : "none"} stroke="currentColor" strokeWidth={isActive("/user/refer") ? "0" : "1.75"} strokeLinecap="round" strokeLinejoin="round">
-          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-          <circle cx="8.5" cy="7" r="4"></circle>
-          <polyline points="17 11 19 13 23 9"></polyline>
-        </svg>
-      )
     }
   ];
 
   return (
     <>
-      <div style={{ height: "90px", width: "100%" }} className="hideDesktop" />
+      <div style={{ height: "120px", width: "100%" }} className="hideDesktop" />
       
       <div style={{
         position: "fixed",
-        bottom: "env(safe-area-inset-bottom, 20px)",
-        left: "16px",
-        right: "16px",
-        backgroundColor: "rgba(255, 255, 255, 0.85)",
-        backdropFilter: "blur(24px)",
-        WebkitBackdropFilter: "blur(24px)",
+        bottom: "calc(env(safe-area-inset-bottom, 20px) + 20px)", // Increased distance from bottom
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: "90%",
+        maxWidth: "400px",
+        backgroundColor: "rgba(255, 255, 255, 0.75)",
+        backdropFilter: "blur(24px) saturate(180%)",
+        WebkitBackdropFilter: "blur(24px) saturate(180%)",
         borderRadius: "100px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "10px 16px",
+        padding: "12px 20px",
         zIndex: 999,
-        boxShadow: "0 12px 36px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.05)",
-        border: "1px solid rgba(255, 255, 255, 0.6)",
-        transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+        boxShadow: "0 10px 40px rgba(0,0,0,0.1), 0 1px 3px rgba(255,255,255,0.4) inset",
+        border: "1px solid rgba(255, 255, 255, 0.5)",
+        transition: "all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)"
       }} className="hideDesktop">
         
         {navItems.map((item) => {
@@ -125,26 +117,29 @@ export default function BottomNav() {
                 gap: "4px", 
                 textDecoration: "none", 
                 color: active ? "var(--brand-600)" : "var(--text-secondary)",
-                transition: "all 0.25s ease",
-                transform: active ? "translateY(-2px)" : "translateY(0)"
+                transition: "all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+                transform: active ? "scale(1.05)" : "scale(1)"
               }}
             >
               <div style={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                width: "40px",
-                height: "32px",
-                borderRadius: "16px",
-                backgroundColor: active ? "rgba(99, 102, 241, 0.1)" : "transparent",
-                transition: "background-color 0.25s ease"
+                width: "48px",
+                height: "36px",
+                borderRadius: "18px",
+                backgroundColor: active ? "rgba(99, 102, 241, 0.15)" : "transparent",
+                transition: "all 0.3s ease",
+                transform: active ? "translateY(-4px)" : "translateY(0)"
               }}>
                 {item.icon}
               </div>
               <span style={{ 
-                fontSize: "0.6rem", 
+                fontSize: "0.65rem", 
                 fontWeight: active ? 700 : 500,
-                opacity: active ? 1 : 0.8
+                opacity: active ? 1 : 0.7,
+                transition: "all 0.3s ease",
+                transform: active ? "translateY(-2px)" : "translateY(0)"
               }}>
                 {item.name}
               </span>

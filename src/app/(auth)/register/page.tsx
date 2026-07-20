@@ -35,6 +35,10 @@ export default function RegisterPage() {
     } else if (refFromCookie) {
       setReferralCode(refFromCookie);
     }
+
+    if (localStorage.getItem("auth-token")) {
+      window.location.href = "/";
+    }
   }, []);
 
   const roles = [

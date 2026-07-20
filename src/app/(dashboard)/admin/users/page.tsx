@@ -91,7 +91,7 @@ export default function AdminUsersPage() {
 
       <div className={styles.pageContent}>
         <div style={{ display: "flex", gap: "24px", marginBottom: "24px", borderBottom: "1px solid var(--border-light)", overflowX: "auto" }}>
-          {["all", "customer", "vendor", "provider", "affiliate"].map((tab) => (
+          {["all", "customer", "vendor", "provider"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -124,7 +124,7 @@ export default function AdminUsersPage() {
               <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Email</th>
+                  <th>Mobile</th>
                   <th>Role</th>
                   <th>Joined</th>
                   <th>Status</th>
@@ -142,7 +142,7 @@ export default function AdminUsersPage() {
                         <span style={{ fontWeight: 500 }}>{user.name}</span>
                       </div>
                     </td>
-                    <td style={{ color: "var(--text-secondary)" }}>{user.email}</td>
+                    <td style={{ color: "var(--text-secondary)" }}>{user.phone || "N/A"}</td>
                     <td>
                       <select
                         value={user.role?.slug || 'customer'}
@@ -163,7 +163,6 @@ export default function AdminUsersPage() {
                         <option value="customer">Customer</option>
                         <option value="vendor">Vendor (Seller)</option>
                         <option value="provider">Provider (Services)</option>
-                        <option value="affiliate">Affiliate</option>
                         <option value="admin">Admin</option>
                       </select>
                     </td>

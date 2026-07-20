@@ -15,6 +15,9 @@ export default function LoginPage() {
   const [queryString, setQueryString] = useState("");
 
   useEffect(() => {
+    if (localStorage.getItem("auth-token")) {
+      window.location.href = "/";
+    }
     setQueryString(window.location.search);
   }, []);
 

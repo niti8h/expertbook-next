@@ -144,6 +144,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <div className={styles.navSection}>
             <p className={styles.navSectionLabel}>System</p>
+            <Link href="/" className={styles.navItem}>
+              <span className={styles.navIcon}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              Main Website
+            </Link>
             <Link href="/admin/settings" className={`${styles.navItem} ${pathname.includes("/admin/settings") ? styles.navItemActive : ""}`}>
               <span className={styles.navIcon}>{Icons.settings}</span>
               Settings
@@ -177,7 +183,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* Mobile Bottom Navigation */}
       <nav className={styles.bottomNav}>
-        <Link href="/admin/dashboard" className={`${styles.bottomNavItem} ${pathname === "/admin/dashboard" ? styles.bottomNavItemActive : ""}`}>
+        <Link href="/" className={styles.bottomNavItem}>
+          <span className={styles.bottomNavIcon}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </span>
+          Site
+        </Link>
+        <Link href="/admin" className={`${styles.bottomNavItem} ${pathname === "/admin" ? styles.bottomNavItemActive : ""}`}>
           <span className={styles.bottomNavIcon}>{Icons.dashboard}</span>
           Home
         </Link>

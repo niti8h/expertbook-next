@@ -75,7 +75,7 @@ export default function Header() {
 
         {/* Desktop Links */}
         <div className={`${styles.navLinks} ${styles.hideMobile}`}>
-          <Link href="/professionals" className={styles.navLink}>Professionals</Link>
+
           <Link href="/products" className={styles.navLink}>Products</Link>
           <Link href="/services" className={styles.navLink}>Services</Link>
           <Link href="/article" className={styles.navLink}>Articles</Link>
@@ -186,7 +186,7 @@ export default function Header() {
         <div className={styles.mobileMenu}>
           <div className={styles.mobileNavLinks}>
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-            <Link href="/professionals" onClick={() => setIsMobileMenuOpen(false)}>Professionals</Link>
+
             <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
             <Link href="/services" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
           <Link href="/article" onClick={() => setIsMobileMenuOpen(false)}>Articles</Link>

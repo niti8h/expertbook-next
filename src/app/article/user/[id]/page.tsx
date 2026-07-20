@@ -17,12 +17,40 @@ function UserProfileContent() {
   const [profile, setProfile] = useState<any>(null);
   const [articles, setArticles] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentUser, setCurrentUser] = useState<any>(null);
 
   useEffect(() => {
     if (params.id) {
       fetchUserProfile(params.id as string);
     }
+    fetchUser();
   }, [params.id]);
+
+  const fetchUser = async () => {
+    try {
+      const token = localStorage.getItem("auth-token");
+      if (!token) return;
+      const res = await api("/auth/me", { token });
+      if (res.status === 200) {
+        setCurrentUser(res.data.data);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDelete = async (id: number) => {
+    if (!confirm("Are you sure you want to delete this article?")) return;
+    try {
+      const token = localStorage.getItem("auth-token");
+      const res = await api(`/articles/${id}`, { method: "DELETE", token });
+      if (res.status === 200) {
+        setArticles(prev => prev.filter(a => a.id !== id));
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const fetchUserProfile = async (id: string) => {
     try {
@@ -145,12 +173,20 @@ function UserProfileContent() {
                   e.currentTarget.style.boxShadow = "var(--shadow-sm)";
                 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
-                    <h2 style={{ fontSize: "1.25rem", fontWeight: 700, margin: 0, color: "var(--text-primary)", flex: 1, paddingRight: "16px" }}>
-                      {article.title}
-                    </h2>
-                    <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", display: "flex", alignItems: "center", gap: "4px", whiteSpace: "nowrap" }}>
-                      <Clock size={14} /> {new Date(article.created_at).toLocaleDateString()}
-                    </span>
+                    <div style={{ flex: 1, paddingRight: "16px" }}>
+                      <h2 style={{ fontSize: "1.25rem", fontWeight: 700, margin: "0 0 8px 0", color: "var(--text-primary)" }}>
+                        {article.title}
+                      </h2>
+                      <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", display: "flex", alignItems: "center", gap: "4px", whiteSpace: "nowrap" }}>
+                        <Clock size={14} /> {new Date(article.created_at).toLocaleDateString()}
+                      </span>
+                    </div>
+                    {currentUser && (currentUser.id === article.user_id || currentUser.role?.slug === 'admin') && (
+                      <div style={{ display: "flex", gap: "8px" }} onClick={(e) => e.preventDefault()}>
+                        <Link href={`/article/edit/${article.id}`} style={{ color: "var(--brand-600)", textDecoration: "none", fontSize: "0.875rem", padding: "4px 8px", borderRadius: "4px", background: "var(--brand-50)" }}>Edit</Link>
+                        <button onClick={(e) => { e.preventDefault(); handleDelete(article.id); }} style={{ color: "var(--danger)", border: "none", background: "rgba(239, 68, 68, 0.1)", fontSize: "0.875rem", padding: "4px 8px", borderRadius: "4px", cursor: "pointer" }}>Delete</button>
+                      </div>
+                    )}
                   </div>
 
                   <p style={{ color: "var(--text-secondary)", fontSize: "0.938rem", lineHeight: 1.6, marginBottom: "24px", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>

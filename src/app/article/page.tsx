@@ -8,10 +8,38 @@ import { api } from "@/lib/api";
 export default function ArticleList() {
   const [articles, setArticles] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentUser, setCurrentUser] = useState<any>(null);
 
   useEffect(() => {
     fetchArticles();
+    fetchUser();
   }, []);
+
+  const fetchUser = async () => {
+    try {
+      const token = localStorage.getItem("auth-token");
+      if (!token) return;
+      const res = await api("/auth/me", { token });
+      if (res.status === 200) {
+        setCurrentUser(res.data.data);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDelete = async (id: number) => {
+    if (!confirm("Are you sure you want to delete this article?")) return;
+    try {
+      const token = localStorage.getItem("auth-token");
+      const res = await api(`/articles/${id}`, { method: "DELETE", token });
+      if (res.status === 200) {
+        setArticles(prev => prev.filter(a => a.id !== id));
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const fetchArticles = async () => {
     try {
@@ -68,11 +96,20 @@ export default function ArticleList() {
                   </div>
                 </Link>
                 
-                <h3 style={{ margin: "0 0 12px 0", fontSize: "1.25rem", fontWeight: 700, color: "var(--text-primary)", lineHeight: 1.4 }}>
-                  <Link href={`/article/${article.id}`} style={{ textDecoration: "none", color: "inherit" }}>
-                    {article.title}
-                  </Link>
-                </h3>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "12px" }}>
+                  <h3 style={{ margin: "0", fontSize: "1.25rem", fontWeight: 700, color: "var(--text-primary)", lineHeight: 1.4 }}>
+                    <Link href={`/article/${article.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+                      {article.title}
+                    </Link>
+                  </h3>
+                  
+                  {currentUser && (currentUser.id === article.user_id || currentUser.role?.slug === 'admin') && (
+                    <div style={{ display: "flex", gap: "8px" }}>
+                      <Link href={`/article/edit/${article.id}`} style={{ color: "var(--brand-600)", textDecoration: "none", fontSize: "0.875rem", padding: "4px 8px", borderRadius: "4px", background: "var(--brand-50)" }}>Edit</Link>
+                      <button onClick={() => handleDelete(article.id)} style={{ color: "var(--danger)", border: "none", background: "rgba(239, 68, 68, 0.1)", fontSize: "0.875rem", padding: "4px 8px", borderRadius: "4px", cursor: "pointer" }}>Delete</button>
+                    </div>
+                  )}
+                </div>
                 
                 <p style={{ margin: "0 0 20px 0", color: "var(--text-secondary)", fontSize: "0.938rem", lineHeight: 1.6, flex: 1 }}>
                   {article.content.substring(0, 120)}...

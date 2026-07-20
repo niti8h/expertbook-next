@@ -156,6 +156,12 @@ export default function ProviderLayout({ children }: { children: React.ReactNode
           
           <div className={styles.navSection}>
             <p className={styles.navSectionLabel}>System</p>
+            <Link href="/" className={styles.navItem}>
+              <span className={styles.navIcon}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              Main Website
+            </Link>
             <button 
               className={styles.navItem} 
               onClick={handleLogout}
@@ -170,6 +176,12 @@ export default function ProviderLayout({ children }: { children: React.ReactNode
 
       {/* Mobile Bottom Navigation */}
       <nav className={styles.bottomNav}>
+        <Link href="/" className={styles.bottomNavItem}>
+          <span className={styles.bottomNavIcon}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </span>
+          <span>Site</span>
+        </Link>
         <Link href="/provider" className={`${styles.bottomNavItem} ${pathname === "/provider" ? styles.bottomNavItemActive : ""}`}>
           <span className={styles.bottomNavIcon}>{Icons.dashboard}</span>
           <span>Home</span>

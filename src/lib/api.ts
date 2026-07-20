@@ -1,4 +1,4 @@
-const API_BASE = "https://api.expertbook.in/api";
+const API_BASE = "http://127.0.0.1:8000/api";
 
 interface ApiOptions {
   method?: string;
