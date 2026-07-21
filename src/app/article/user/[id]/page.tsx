@@ -42,7 +42,7 @@ function UserProfileContent() {
   const handleDelete = async (id: number) => {
     if (!confirm("Are you sure you want to delete this article?")) return;
     try {
-      const token = localStorage.getItem("auth-token");
+      const token = localStorage.getItem("auth-token") || undefined;
       const res = await api(`/articles/${id}`, { method: "DELETE", token });
       if (res.status === 200) {
         setArticles(prev => prev.filter(a => a.id !== id));

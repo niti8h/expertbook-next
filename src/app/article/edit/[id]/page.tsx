@@ -61,11 +61,11 @@ export default function EditArticle() {
       const res = await api(`/articles/${params.id}`, {
         method: "PUT",
         token,
-        body: JSON.stringify({
+        body: {
           title,
           content,
           tags,
-        }),
+        },
       });
 
       if (res.status === 200) {
