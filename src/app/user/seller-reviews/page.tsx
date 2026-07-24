@@ -1,8 +1,8 @@
 "use client";
-import { getImageUrl } from "../../../../lib/utils";
+import { getImageUrl } from "@/lib/utils";
 
 import { useState, useEffect } from "react";
-import styles from "../../dashboard.module.css";
+import styles from "../../(dashboard)/dashboard.module.css";
 import { api } from "@/lib/api";
 import { useToast } from "@/components/ui/ToastContext";
 
@@ -24,7 +24,7 @@ export default function VendorReviews() {
       const token = localStorage.getItem("auth-token");
       if (!token) return;
 
-      const res = await api("/vendor/reviews", { token });
+      const res = await api("/user/seller/reviews", { token });
       if (res.status === 200) {
         setReviews(res.data.data);
       }
@@ -48,7 +48,7 @@ export default function VendorReviews() {
       const token = localStorage.getItem("auth-token");
       if (!token) return;
 
-      const res = await api(`/vendor/reviews/${selectedReviewId}/reply`, {
+      const res = await api(`/user/seller/reviews/${selectedReviewId}/reply`, {
         method: "PUT",
         token,
         body: { vendor_reply: replyText },

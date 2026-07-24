@@ -6,29 +6,7 @@ import { api } from "@/lib/api";
 export default function LoggedInHome({ user }: { user: any }) {
   const [loadingAction, setLoadingAction] = useState("");
 
-  const handleUpgrade = async (role: string) => {
-    setLoadingAction(role);
-    try {
-      const token = localStorage.getItem("auth-token");
-      const res = await api("/auth/upgrade-role", {
-        method: "POST",
-        body: { role },
-        token: token || "",
-      });
-
-      if (res.status === 200) {
-        localStorage.setItem("auth-token", res.data?.data?.token);
-        if (role === "vendor") window.location.href = "/vendor";
-        if (role === "provider") window.location.href = "/provider";
-      } else {
-        alert(res.data?.message || "Failed to upgrade account");
-      }
-    } catch (err) {
-      alert("An unexpected error occurred");
-    } finally {
-      setLoadingAction("");
-    }
-  };
+    // No longer upgrading roles
 
   return (
     <div style={{ position: "relative", minHeight: "calc(100vh - 80px - 300px)", overflow: "hidden", background: "linear-gradient(to bottom, #f8fafc, #ffffff)" }}>
@@ -51,8 +29,8 @@ export default function LoggedInHome({ user }: { user: any }) {
           </p>
         </div>
 
-        {/* Existing Dashboards (Admin, Vendor, Provider) */}
-        {(user?.role?.slug === "admin" || user?.role?.slug === "vendor" || user?.role?.slug === "provider") && (
+        {/* Existing Dashboards (Admin) */}
+        {(user?.role?.slug === "admin") && (
           <div style={{ marginBottom: "56px" }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" }}>
               <h2 style={{ fontSize: "1.5rem", margin: 0, fontWeight: "700", display: "flex", alignItems: "center", gap: "10px" }}>
@@ -61,143 +39,26 @@ export default function LoggedInHome({ user }: { user: any }) {
               </h2>
             </div>
             
-            {user?.role?.slug === "admin" && (
-              <div style={{ 
-                padding: "32px", 
-                borderRadius: "20px", 
-                backgroundColor: "white", 
-                border: "1px solid var(--border-light)",
-                display: "flex", 
-                justifyContent: "space-between", 
-                alignItems: "center",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.03)"
-              }}>
-                <div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
-                    <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: "rgba(239, 68, 68, 0.1)", color: "rgb(239, 68, 68)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    </div>
-                    <h3 style={{ margin: 0, fontSize: "1.25rem", fontWeight: "700" }}>Admin Dashboard</h3>
+            <div style={{ 
+              padding: "32px", 
+              borderRadius: "20px", 
+              backgroundColor: "white", 
+              border: "1px solid var(--border-light)",
+              display: "flex", 
+              justifyContent: "space-between", 
+              alignItems: "center",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.03)"
+            }}>
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
+                  <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: "rgba(239, 68, 68, 0.1)", color: "rgb(239, 68, 68)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                   </div>
-                  <p style={{ margin: 0, color: "var(--text-secondary)", fontSize: "0.95rem" }}>Overview the entire marketplace and manage global settings.</p>
+                  <h3 style={{ margin: 0, fontSize: "1.25rem", fontWeight: "700" }}>Admin Dashboard</h3>
                 </div>
-                <Link href="/admin" className="btn-primary" style={{ padding: "12px 24px", borderRadius: "100px", textDecoration: "none" }}>Enter Panel</Link>
+                <p style={{ margin: 0, color: "var(--text-secondary)", fontSize: "0.95rem" }}>Overview the entire marketplace and manage global settings.</p>
               </div>
-            )}
-
-            {user?.role?.slug === "vendor" && (
-              <div style={{ 
-                padding: "32px", 
-                borderRadius: "20px", 
-                backgroundColor: "white", 
-                border: "1px solid var(--border-light)",
-                display: "flex", 
-                justifyContent: "space-between", 
-                alignItems: "center",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.03)"
-              }}>
-                <div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
-                    <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: "rgba(14, 165, 233, 0.1)", color: "var(--brand-600)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path></svg>
-                    </div>
-                    <h3 style={{ margin: 0, fontSize: "1.25rem", fontWeight: "700" }}>Vendor Dashboard</h3>
-                  </div>
-                  <p style={{ margin: 0, color: "var(--text-secondary)", fontSize: "0.95rem" }}>Manage your physical products and process incoming orders.</p>
-                </div>
-                <Link href="/vendor" className="btn-primary" style={{ padding: "12px 24px", borderRadius: "100px", textDecoration: "none" }}>Enter Panel</Link>
-              </div>
-            )}
-
-            {user?.role?.slug === "provider" && (
-              <div style={{ 
-                padding: "32px", 
-                borderRadius: "20px", 
-                backgroundColor: "white", 
-                border: "1px solid var(--border-light)",
-                display: "flex", 
-                justifyContent: "space-between", 
-                alignItems: "center",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.03)"
-              }}>
-                <div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
-                    <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: "rgba(234, 179, 8, 0.1)", color: "rgb(234, 179, 8)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    </div>
-                    <h3 style={{ margin: 0, fontSize: "1.25rem", fontWeight: "700" }}>Provider Dashboard</h3>
-                  </div>
-                  <p style={{ margin: 0, color: "var(--text-secondary)", fontSize: "0.95rem" }}>Manage your service offerings and client bookings.</p>
-                </div>
-                <Link href="/provider" style={{ padding: "12px 24px", borderRadius: "100px", textDecoration: "none", backgroundColor: "rgb(234, 179, 8)", color: "white", fontWeight: "600" }}>Enter Panel</Link>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Account Upgrade Options (Only for standard users) */}
-        {(!user?.role || user?.role?.slug === "customer") && (
-          <div style={{ marginBottom: "64px" }}>
-            <h2 style={{ fontSize: "1.25rem", marginBottom: "20px", fontWeight: "700" }}>Unlock More Features</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              
-              {/* Compact Upgrade to Vendor */}
-              <div style={{ 
-                padding: "20px 24px", 
-                borderRadius: "16px", 
-                backgroundColor: "white",
-                border: "1px solid var(--brand-100)",
-                boxShadow: "0 4px 12px rgba(14, 165, 233, 0.05)",
-                display: "flex", 
-                alignItems: "center",
-                gap: "20px",
-                flexWrap: "wrap"
-              }}>
-                <div style={{ width: "48px", height: "48px", borderRadius: "12px", backgroundColor: "var(--brand-50)", color: "var(--brand-600)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
-                </div>
-                <div style={{ flex: "1 1 min-content" }}>
-                  <h3 style={{ margin: "0 0 4px 0", fontSize: "1.125rem", fontWeight: "700" }}>Start a Store</h3>
-                  <p style={{ margin: 0, color: "var(--text-secondary)", fontSize: "0.875rem" }}>Sell products online with zero listing fees.</p>
-                </div>
-                <button 
-                  onClick={() => handleUpgrade("vendor")}
-                  disabled={loadingAction === "vendor"}
-                  className="btn-primary" 
-                  style={{ padding: "10px 20px", borderRadius: "100px", fontSize: "0.875rem", whiteSpace: "nowrap" }}
-                >
-                  {loadingAction === "vendor" ? "Processing..." : "Upgrade to Vendor"}
-                </button>
-              </div>
-
-              {/* Compact Upgrade to Provider */}
-              <div style={{ 
-                padding: "20px 24px", 
-                borderRadius: "16px", 
-                backgroundColor: "white",
-                border: "1px solid rgba(234, 179, 8, 0.2)",
-                boxShadow: "0 4px 12px rgba(234, 179, 8, 0.05)",
-                display: "flex", 
-                alignItems: "center",
-                gap: "20px",
-                flexWrap: "wrap"
-              }}>
-                <div style={{ width: "48px", height: "48px", borderRadius: "12px", backgroundColor: "rgba(234, 179, 8, 0.1)", color: "rgb(234, 179, 8)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <div style={{ flex: "1 1 min-content" }}>
-                  <h3 style={{ margin: "0 0 4px 0", fontSize: "1.125rem", fontWeight: "700" }}>Offer Services</h3>
-                  <p style={{ margin: 0, color: "var(--text-secondary)", fontSize: "0.875rem" }}>Accept client bookings and build your portfolio.</p>
-                </div>
-                <button 
-                  onClick={() => handleUpgrade("provider")}
-                  disabled={loadingAction === "provider"}
-                  style={{ padding: "10px 20px", borderRadius: "100px", fontSize: "0.875rem", whiteSpace: "nowrap", backgroundColor: "rgb(234, 179, 8)", color: "white", border: "none", fontWeight: "600", cursor: "pointer", opacity: loadingAction === "provider" ? 0.7 : 1 }}
-                >
-                  {loadingAction === "provider" ? "Processing..." : "Upgrade to Provider"}
-                </button>
-              </div>
-
+              <Link href="/admin" className="btn-primary" style={{ padding: "12px 24px", borderRadius: "100px", textDecoration: "none" }}>Enter Panel</Link>
             </div>
           </div>
         )}
@@ -256,7 +117,27 @@ export default function LoggedInHome({ user }: { user: any }) {
               </div>
             </Link>
 
-            <Link href={user?.role?.slug === 'vendor' ? "/vendor/profile" : user?.role?.slug === 'provider' ? "/provider/profile" : "/user/profile"} style={{ padding: "24px", background: "white", border: "1px solid var(--border-light)", borderRadius: "20px", textDecoration: "none", color: "var(--text-primary)", display: "flex", flexDirection: "column", gap: "12px", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.06)' }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}>
+            <Link href="/user/products" style={{ padding: "24px", background: "white", border: "1px solid var(--border-light)", borderRadius: "20px", textDecoration: "none", color: "var(--text-primary)", display: "flex", flexDirection: "column", gap: "12px", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.06)' }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}>
+              <div style={{ width: "40px", height: "40px", borderRadius: "10px", backgroundColor: "rgba(14, 165, 233, 0.1)", color: "var(--brand-600)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path></svg>
+              </div>
+              <div>
+                <h4 style={{ margin: "0 0 4px 0", fontSize: "1rem" }}>My Products</h4>
+                <p style={{ margin: 0, fontSize: "0.875rem", color: "var(--text-secondary)" }}>Manage your inventory</p>
+              </div>
+            </Link>
+
+            <Link href="/user/services" style={{ padding: "24px", background: "white", border: "1px solid var(--border-light)", borderRadius: "20px", textDecoration: "none", color: "var(--text-primary)", display: "flex", flexDirection: "column", gap: "12px", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.06)' }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}>
+              <div style={{ width: "40px", height: "40px", borderRadius: "10px", backgroundColor: "rgba(234, 179, 8, 0.1)", color: "rgb(234, 179, 8)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <div>
+                <h4 style={{ margin: "0 0 4px 0", fontSize: "1rem" }}>My Services</h4>
+                <p style={{ margin: 0, fontSize: "0.875rem", color: "var(--text-secondary)" }}>Manage your offerings</p>
+              </div>
+            </Link>
+
+            <Link href="/user/profile" style={{ padding: "24px", background: "white", border: "1px solid var(--border-light)", borderRadius: "20px", textDecoration: "none", color: "var(--text-primary)", display: "flex", flexDirection: "column", gap: "12px", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.06)' }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}>
               <div style={{ width: "40px", height: "40px", borderRadius: "10px", backgroundColor: "rgba(107, 114, 128, 0.1)", color: "rgb(107, 114, 128)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
               </div>

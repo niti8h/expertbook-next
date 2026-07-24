@@ -252,8 +252,21 @@ function ProductsContent() {
         </div>
 
         <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 21 }}>
-          <h1 style={{ fontSize: "2.5rem", fontWeight: 700, margin: "0 0 8px 0", color: "white" }}>Find what you need.</h1>
-          <p style={{ fontSize: "1.125rem", color: "rgba(255,255,255,0.8)", margin: "0 0 32px 0" }}>Search premium products available for delivery in your area.</p>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "32px", flexWrap: "wrap", gap: "16px" }}>
+            <div>
+              <h1 style={{ fontSize: "2.5rem", fontWeight: 700, margin: "0 0 8px 0", color: "white" }}>Find what you need.</h1>
+              <p style={{ fontSize: "1.125rem", color: "rgba(255,255,255,0.8)", margin: 0 }}>Search premium products available for delivery in your area.</p>
+            </div>
+            <Link href="/user/products" style={{ 
+              display: "flex", alignItems: "center", gap: "8px",
+              padding: "12px 24px", backgroundColor: "white", color: "var(--brand-600)", 
+              borderRadius: "100px", fontSize: "1rem", fontWeight: 600, 
+              textDecoration: "none", boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+              transition: "transform 0.2s"
+            }}>
+              + Add Product
+            </Link>
+          </div>
 
           <form onSubmit={handleSearchSubmit} style={{
             display: "flex",

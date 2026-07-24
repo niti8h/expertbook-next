@@ -7,8 +7,8 @@ import { api } from "@/lib/api";
 
 export default function RegisterPage() {
   const router = useRouter();
-  const [activeRole, setActiveRole] = useState<string>("customer");
   const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [phone, setPhone] = useState("");
   const [referralCode, setReferralCode] = useState("");
   const [otp, setOtp] = useState("");
@@ -41,42 +41,6 @@ export default function RegisterPage() {
     }
   }, []);
 
-  const roles = [
-    {
-      id: "customer",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="9" cy="21" r="1"/>
-          <circle cx="20" cy="21" r="1"/>
-          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
-        </svg>
-      ),
-      label: "Buyer",
-      desc: "Shop products",
-    },
-    {
-      id: "vendor",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/>
-          <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
-        </svg>
-      ),
-      label: "Seller",
-      desc: "Sell products",
-    },
-    {
-      id: "provider",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
-        </svg>
-      ),
-      label: "Provider",
-      desc: "Offer services",
-    },
-  ];
-
   const handleRequestOtp = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -85,7 +49,7 @@ export default function RegisterPage() {
     try {
       const res = await api("/auth/request-otp", {
         method: "POST",
-        body: { phone, name, role: activeRole, referral_code: referralCode },
+        body: { phone, name, username, referral_code: referralCode },
       });
 
       if (res.status === 200) {
@@ -115,13 +79,7 @@ export default function RegisterPage() {
         // Store token
         localStorage.setItem("auth-token", res.data?.data?.token);
         
-        if (activeRole === "provider") {
-          window.location.href = "/provider";
-        } else if (activeRole === "customer") {
-          window.location.href = "/";
-        } else {
-          window.location.href = "/vendor";
-        }
+        window.location.href = "/";
       } else {
         setError(res.data?.message || "Invalid OTP.");
       }
@@ -143,21 +101,7 @@ export default function RegisterPage() {
               Already have an account? <Link href="/login">Sign in</Link>
             </p>
 
-            <div className={styles.roleSelector}>
-              {roles.map((role) => (
-                <div
-                  key={role.id}
-                  className={`${styles.roleOption} ${
-                    activeRole === role.id ? styles.roleOptionActive : ""
-                  }`}
-                  onClick={() => setActiveRole(role.id)}
-                >
-                  <span className={styles.roleIcon}>{role.icon}</span>
-                  <strong>{role.label}</strong>
-                  <span>{role.desc}</span>
-                </div>
-              ))}
-            </div>
+
 
             <form onSubmit={handleRequestOtp}>
               <div className={styles.fieldGroup}>
@@ -168,6 +112,18 @@ export default function RegisterPage() {
                   placeholder="John Doe"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className={styles.fieldGroup}>
+                <label htmlFor="username">Username</label>
+                <input
+                  id="username"
+                  type="text"
+                  placeholder="johndoe123"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   required
                 />
               </div>

@@ -1,13 +1,13 @@
 "use client";
-import { getImageUrl } from "../../../../lib/utils";
+import { getImageUrl } from "@/lib/utils";
 
 import { useState, useEffect } from "react";
-import styles from "../../dashboard.module.css";
+import styles from "../../(dashboard)/dashboard.module.css";
 import { api, multipartApi } from "@/lib/api";
 import { useToast } from "@/components/ui/ToastContext";
 import { useDialog } from "@/components/ui/DialogContext";
 
-export default function ProviderPortfolio() {
+export default function VendorPortfolio() {
   const [portfolios, setPortfolios] = useState<any[]>([]);
   const [stats, setStats] = useState<any>({ average_rating: 0, total_reviews: 0 });
   const [loading, setLoading] = useState(true);
@@ -27,7 +27,7 @@ export default function ProviderPortfolio() {
       const token = localStorage.getItem("auth-token");
       if (!token) return;
 
-      const res = await api("/provider/portfolios", { token });
+      const res = await api("/user/portfolios", { token });
       if (res.status === 200) {
         setPortfolios(res.data.data.portfolios);
         setStats({
@@ -55,7 +55,7 @@ export default function ProviderPortfolio() {
       payload.append("media", file);
       if (description) payload.append("description", description);
 
-      const res = await multipartApi("/provider/portfolios", {
+      const res = await multipartApi("/user/portfolios", {
         method: "POST",
         body: payload,
         token,
@@ -83,7 +83,7 @@ export default function ProviderPortfolio() {
       const token = localStorage.getItem("auth-token");
       if (!token) return;
 
-      const res = await api(`/provider/portfolios/${id}`, {
+      const res = await api(`/user/portfolios/${id}`, {
         method: "DELETE",
         token,
       });

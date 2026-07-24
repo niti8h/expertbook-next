@@ -43,13 +43,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
-          <h4 style={{ fontWeight: 600, marginBottom: "16px", fontSize: "0.938rem" }}>Vendors</h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
-            <li><Link href="/register" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: "0.875rem" }}>Become a Seller</Link></li>
-            <li><Link href="/login" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: "0.875rem" }}>Vendor Login</Link></li>
-          </ul>
-        </div>
+
 
         <div>
           <h4 style={{ fontWeight: 600, marginBottom: "16px", fontSize: "0.938rem" }}>Legal</h4>

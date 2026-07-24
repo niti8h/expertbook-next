@@ -75,13 +75,10 @@ export default function Header() {
 
         {/* Desktop Links */}
         <div className={`${styles.navLinks} ${styles.hideMobile}`}>
-
+          <Link href="/categories" className={styles.navLink}>Categories</Link>
           <Link href="/products" className={styles.navLink}>Products</Link>
           <Link href="/services" className={styles.navLink}>Services</Link>
           <Link href="/article" className={styles.navLink}>Articles</Link>
-          {!isLoggedIn && (
-            <Link href="/register" className={styles.navLink}>Become a Vendor</Link>
-          )}
         </div>
 
         {/* Desktop Right */}
@@ -130,22 +127,30 @@ export default function Header() {
                     <Link href="/user/wallet" style={{ display: "block", padding: "10px 16px", color: "var(--text-primary)", textDecoration: "none", fontSize: "0.875rem" }} onClick={() => setIsProfileDropdownOpen(false)}>Wallet & Payouts</Link>
                   </div>
 
-                  {(user?.role?.slug === "vendor" || user?.role?.slug === "provider") && (
-                    <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px 0" }}>
-                      <p style={{ padding: "8px 16px", margin: 0, fontSize: "0.75rem", fontWeight: 600, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.5px" }}>Store Management</p>
-                      <Link
-                        href={user?.role?.slug === "vendor" ? "/vendor" : "/provider"}
-                        style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 16px", color: "var(--brand-600)", textDecoration: "none", fontSize: "0.875rem", fontWeight: 600 }}
-                        onClick={() => setIsProfileDropdownOpen(false)}
-                      >
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                        </svg>
-                        {user?.role?.slug === "vendor" ? "Vendor Dashboard" : "Provider Dashboard"}
-                      </Link>
-                    </div>
-                  )}
+                  <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px 0" }}>
+                    <p style={{ padding: "8px 16px", margin: 0, fontSize: "0.75rem", fontWeight: 600, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.5px" }}>Store Management</p>
+                    <Link
+                      href="/user/products"
+                      style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 16px", color: "var(--text-primary)", textDecoration: "none", fontSize: "0.875rem" }}
+                      onClick={() => setIsProfileDropdownOpen(false)}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                      </svg>
+                      My Products
+                    </Link>
+                    <Link
+                      href="/user/services"
+                      style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 16px", color: "var(--text-primary)", textDecoration: "none", fontSize: "0.875rem" }}
+                      onClick={() => setIsProfileDropdownOpen(false)}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                      My Services
+                    </Link>
+                  </div>
 
                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px 0" }}>
                     <Link href="/user/wishlist" style={{ display: "block", padding: "10px 16px", color: "var(--text-secondary)", textDecoration: "none", fontSize: "0.875rem", borderBottom: "1px solid var(--border-light)" }}>Wishlist</Link>
@@ -187,12 +192,10 @@ export default function Header() {
           <div className={styles.mobileNavLinks}>
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
 
+            <Link href="/categories" onClick={() => setIsMobileMenuOpen(false)}>Categories</Link>
             <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
             <Link href="/services" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
-          <Link href="/article" onClick={() => setIsMobileMenuOpen(false)}>Articles</Link>
-            {!isLoggedIn && (
-              <Link href="/register" onClick={() => setIsMobileMenuOpen(false)}>Become a Vendor</Link>
-            )}
+            <Link href="/article" onClick={() => setIsMobileMenuOpen(false)}>Articles</Link>
           </div>
           <div className={styles.mobileNavActions}>
             {isLoggedIn ? (
@@ -200,11 +203,8 @@ export default function Header() {
                 <Link href="/user/orders" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>My Orders</Link>
                 <Link href="/user/wishlist" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>Wishlist</Link>
                 <Link href="/user/wallet" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>Wallet & Payouts</Link>
-                  {(user?.role?.slug === "vendor" || user?.role?.slug === "provider") && (
-                    <Link href={user?.role?.slug === "vendor" ? "/vendor" : "/provider"} className="btn-primary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>
-                      {user?.role?.slug === "vendor" ? "Vendor Dashboard" : "Provider Dashboard"}
-                    </Link>
-                  )}
+                <Link href="/user/products" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>My Products</Link>
+                <Link href="/user/services" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>My Services</Link>
                 <button onClick={() => { handleLogout(); setIsMobileMenuOpen(false); }} className="btn-secondary" style={{ width: "100%", padding: "12px", fontSize: "1rem", color: "var(--danger)", border: "1px solid var(--danger)" }}>Logout</button>
               </>
             ) : (

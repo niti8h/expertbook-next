@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import styles from "../../dashboard.module.css";
+import styles from "../../(dashboard)/dashboard.module.css";
 import { api } from "@/lib/api";
 import { useToast } from "@/components/ui/ToastContext";
 
@@ -19,7 +19,6 @@ interface ModalState {
   currentStatus: string;
   newStatus: string;
   notes: string;
-  orderData?: Order;
 }
 
 const STATUS_OPTIONS = [
@@ -38,7 +37,7 @@ const STATUS_COLORS: Record<string, { bg: string; color: string }> = {
   cancelled:  { bg: "#fee2e2", color: "#991b1b" },
 };
 
-export default function ProviderBookings() {
+export default function VendorOrders() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [filterStatus, setFilterStatus] = useState<string>("all");
   const [loading, setLoading] = useState(true);
@@ -62,7 +61,7 @@ export default function ProviderBookings() {
       const token = localStorage.getItem("auth-token");
       if (!token) return;
 
-      const res = await api("/provider/orders", { token });
+      const res = await api("/user/seller/orders", { token });
       if (res.status === 200) {
         setOrders(res.data.data);
       }
@@ -81,7 +80,6 @@ export default function ProviderBookings() {
       currentStatus: order.status,
       newStatus: order.status,
       notes: order.tracking_notes || "",
-      orderData: order,
     });
   };
 
@@ -107,7 +105,7 @@ export default function ProviderBookings() {
       const token = localStorage.getItem("auth-token");
       if (!token) return;
 
-      const res = await api(`/provider/orders/${orderId}`, {
+      const res = await api(`/user/seller/orders/${orderId}`, {
         method: "PUT",
         token,
         body: { status: newStatus, tracking_notes: notes },
@@ -175,11 +173,11 @@ export default function ProviderBookings() {
               <thead>
                 <tr>
                   <th>Order #</th>
-                  <th>Service</th>
                   <th>Customer</th>
                   <th>Amount</th>
                   <th>Earned</th>
                   <th>Status</th>
+                  <th>Tracking Notes</th>
                   <th style={{ textAlign: "right" }}>Action</th>
                 </tr>
               </thead>
@@ -190,9 +188,6 @@ export default function ProviderBookings() {
                   <tr key={order.id}>
                     <td style={{ fontWeight: 600 }}>
                       {order.order_number}
-                    </td>
-                    <td>
-                      {order.item_title || "Unknown Service"}
                     </td>
                     <td>
                       {order.customer_name || order.user?.name || "—"}
@@ -222,6 +217,9 @@ export default function ProviderBookings() {
                       >
                         {order.status}
                       </span>
+                    </td>
+                    <td style={{ maxWidth: 200, color: "var(--text-secondary)", fontSize: "0.875rem" }}>
+                      {order.tracking_notes || <span style={{ opacity: 0.4 }}>—</span>}
                     </td>
                     <td style={{ textAlign: "right" }}>
                       <button
@@ -301,35 +299,6 @@ export default function ProviderBookings() {
                 ✕
               </button>
             </div>
-
-            {/* Booking Details Section */}
-            {modal.orderData && (
-              <div style={{ background: "#f9fafb", padding: "16px", borderRadius: "12px", border: "1px solid #e5e7eb", display: "flex", flexDirection: "column", gap: "12px", fontSize: "0.875rem" }}>
-                <div>
-                  <p style={{ color: "#6b7280", margin: "0 0 4px 0", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.05em", fontWeight: 600 }}>Service</p>
-                  <p style={{ color: "#111827", margin: 0, fontWeight: 600 }}>{modal.orderData.item_title}</p>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <div>
-                    <p style={{ color: "#6b7280", margin: "0 0 4px 0", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.05em", fontWeight: 600 }}>Customer</p>
-                    <p style={{ color: "#111827", margin: 0, fontWeight: 500 }}>{modal.orderData.customer_name}</p>
-                  </div>
-                  <div style={{ textAlign: "right" }}>
-                    <p style={{ color: "#6b7280", margin: "0 0 4px 0", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.05em", fontWeight: 600 }}>Total Earned</p>
-                    <p style={{ color: "var(--success)", margin: 0, fontWeight: 700 }}>₹{Number(modal.orderData.earned_amount).toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
-                  </div>
-                </div>
-                {modal.orderData.delivery_address && (
-                  <div>
-                    <p style={{ color: "#6b7280", margin: "0 0 4px 0", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.05em", fontWeight: 600 }}>Service Location</p>
-                    <p style={{ color: "#111827", margin: 0, lineHeight: 1.5 }}>
-                      {modal.orderData.delivery_address.address}<br />
-                      {modal.orderData.delivery_address.city}, {modal.orderData.delivery_address.state} {modal.orderData.delivery_address.pincode}
-                    </p>
-                  </div>
-                )}
-              </div>
-            )}
 
             {/* Divider */}
             <div style={{ height: 1, background: "#f0f0f0" }} />
@@ -450,28 +419,33 @@ export default function ProviderBookings() {
               </button>
               <button
                 onClick={updateStatus}
+                disabled={updatingId !== null}
                 style={{
                   padding: "10px 24px",
                   borderRadius: "10px",
                   border: "none",
-                  background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                  background: updatingId !== null ? "#9ca3af" : "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
                   color: "#ffffff",
                   fontWeight: 700,
                   fontSize: "0.875rem",
-                  cursor: "pointer",
-                  boxShadow: "0 4px 12px rgba(99,102,241,0.35)",
+                  cursor: updatingId !== null ? "not-allowed" : "pointer",
+                  boxShadow: updatingId !== null ? "none" : "0 4px 12px rgba(99,102,241,0.35)",
                   transition: "opacity 0.15s, transform 0.1s",
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.opacity = "0.9";
-                  e.currentTarget.style.transform = "translateY(-1px)";
+                  if (updatingId === null) {
+                    e.currentTarget.style.opacity = "0.9";
+                    e.currentTarget.style.transform = "translateY(-1px)";
+                  }
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.opacity = "1";
-                  e.currentTarget.style.transform = "translateY(0)";
+                  if (updatingId === null) {
+                    e.currentTarget.style.opacity = "1";
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }
                 }}
               >
-                Save Changes
+                {updatingId !== null ? "Saving..." : "Save Changes"}
               </button>
             </div>
           </div>

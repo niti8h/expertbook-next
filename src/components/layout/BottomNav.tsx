@@ -45,6 +45,18 @@ export default function BottomNav() {
       )
     },
     {
+      name: "Categories",
+      path: "/categories",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill={isActive("/categories") ? "currentColor" : "none"} stroke="currentColor" strokeWidth={isActive("/categories") ? "0" : "1.75"} strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+        </svg>
+      )
+    },
+    {
       name: "Shop",
       path: "/products",
       icon: (

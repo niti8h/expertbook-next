@@ -246,20 +246,23 @@ function ServicesContent() {
         {/* Services Grid */}
         <div style={{ width: "100%" }}>
           <div className="flex-wrap-mobile" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "24px", gap: "16px", flexWrap: "wrap" }}>
-            <h2 style={{ fontSize: "1.25rem", fontWeight: 600 }}>
+            <h2 style={{ fontSize: "1.25rem", fontWeight: 600, margin: 0 }}>
               {locationStatus === "success" ? "Services near you" : "All Services"}
             </h2>
-            
-            <form onSubmit={handleSearchSubmit} style={{ display: "flex", width: "100%", maxWidth: "400px", position: "relative", flex: 1, minWidth: "250px" }}>
-              <input 
-                type="text" 
-                placeholder="Search services..." 
-                className="input-primary"
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                style={{ width: "100%", paddingLeft: "42px", paddingRight: "16px", borderRadius: "100px", border: "1px solid var(--border-light)", backgroundColor: "white", outline: "none", boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}
-              />
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position: "absolute", left: "16px", top: "50%", transform: "translateY(-50%)" }}>
+            <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+              <Link href="/user/services" className="btn-primary" style={{ padding: "8px 20px", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", borderRadius: "100px", fontSize: "0.875rem", whiteSpace: "nowrap" }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add Service
+              </Link>
+              <form onSubmit={handleSearchSubmit} style={{ display: "flex", width: "100%", maxWidth: "400px", position: "relative", flex: 1, minWidth: "250px" }}>
+                <input 
+                  type="text" 
+                  placeholder="Search services..." 
+                  className="input-primary"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  style={{ width: "100%", paddingLeft: "42px", paddingRight: "16px", borderRadius: "100px", border: "1px solid var(--border-light)", backgroundColor: "white", outline: "none", boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}
+                />
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position: "absolute", left: "16px", top: "50%", transform: "translateY(-50%)" }}>
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
@@ -269,7 +272,7 @@ function ServicesContent() {
                 </button>
               )}
             </form>
-
+            </div>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>Sort by:</span>
               <select style={{ padding: "8px", border: "1px solid var(--border-light)", borderRadius: "var(--radius-sm)", backgroundColor: "white", fontSize: "0.875rem" }}>
