@@ -559,10 +559,8 @@ function ProductsContent() {
                         <button
                           onClick={(e) => {
                             e.preventDefault();
-                            if (product.vendor?.id) {
-                              const storeName = product.vendor?.vendor_profile?.store_name || product.vendor?.name || 'store';
-                              const slug = storeName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-                              window.location.href = `/store/${product.vendor.id}/${slug}`;
+                            if (product.vendor?.phone) {
+                              window.location.href = `/profile/${product.vendor.phone}`;
                             }
                           }}
                           style={{
@@ -582,15 +580,15 @@ function ProductsContent() {
                           onMouseEnter={e => e.currentTarget.style.backgroundColor = "var(--surface-2)"}
                           onMouseLeave={e => e.currentTarget.style.backgroundColor = "transparent"}
                         >
-                          {product.vendor?.vendor_profile?.store_logo ? (
-                            <img src={getImageUrl(product.vendor.vendor_profile.store_logo)} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover" }} />
+                          {product.vendor?.avatar ? (
+                            <img src={getImageUrl(product.vendor.avatar)} alt="avatar" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover" }} />
                           ) : (
                             <div style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "var(--brand-100)", color: "var(--brand-700)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 600 }}>
-                              {(product.vendor?.vendor_profile?.store_name || product.vendor?.name || "V").charAt(0).toUpperCase()}
+                              {(product.vendor?.name || "U").charAt(0).toUpperCase()}
                             </div>
                           )}
                           <span style={{ fontWeight: 600, color: "var(--text-primary)" }}>
-                            {product.vendor?.vendor_profile?.store_name || product.vendor?.name}
+                            {product.vendor?.name || "Unknown User"}
                           </span>
                         </button>
                       </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { fetchGlobalSettings } from "@/lib/settings";
+import CreatorSearch from "@/components/home/CreatorSearch";
 
 export default async function Home() {
   const settings = await fetchGlobalSettings();
@@ -32,6 +33,10 @@ export default async function Home() {
           <Link href="/services" className="btn-secondary" style={{ padding: "16px 36px", fontSize: "1.125rem", borderRadius: "100px", textDecoration: "none", background: "white" }}>
             Book a Service
           </Link>
+        </div>
+
+        <div style={{ marginTop: "32px", width: "100%", position: "relative", zIndex: 10 }}>
+          <CreatorSearch />
         </div>
 
         {/* Floating Glass UI Elements (No Brands) */}

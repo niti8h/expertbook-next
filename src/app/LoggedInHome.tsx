@@ -1,10 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { api } from "@/lib/api";
+import CreatorSearch from "@/components/home/CreatorSearch";
 
 export default function LoggedInHome({ user }: { user: any }) {
   const [loadingAction, setLoadingAction] = useState("");
+  const router = useRouter();
 
     // No longer upgrading roles
 
@@ -27,6 +30,11 @@ export default function LoggedInHome({ user }: { user: any }) {
           <p style={{ color: "var(--text-secondary)", fontSize: "1.125rem", maxWidth: "600px", margin: "0 auto" }}>
             Explore your personalized dashboard, manage your orders, or take your account to the next level by becoming a seller or professional.
           </p>
+        </div>
+
+        {/* Find Creator Search Bar */}
+        <div style={{ marginBottom: "48px" }}>
+          <CreatorSearch />
         </div>
 
         {/* Existing Dashboards (Admin) */}

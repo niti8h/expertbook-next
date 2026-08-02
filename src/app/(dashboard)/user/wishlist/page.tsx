@@ -143,23 +143,23 @@ export default function WishlistPage() {
               </Link>
               
               {/* Vendor Footer as separate Link */}
-              {product.vendor?.id && (
-                <Link href={`/store/${product.vendor.id}/${(product.vendor?.vendor_profile?.store_name || product.vendor?.name || 'store').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}`} style={{ textDecoration: "none", display: "block" }}>
+              {product.vendor?.phone && (
+                <Link href={`/profile/${product.vendor.phone}`} style={{ textDecoration: "none", display: "block" }}>
                   <div style={{ padding: "12px 16px", borderTop: "1px solid var(--border-light)", backgroundColor: "var(--surface-0)", transition: "background-color 0.2s" }}
                     onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--surface-1)"}
                     onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "var(--surface-0)"}
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: "8px", overflow: "hidden" }}>
-                      {product.vendor?.vendor_profile?.store_logo ? (
-                        <img src={getImageUrl(product.vendor.vendor_profile.store_logo)} alt="logo" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover", border: "1px solid var(--border-light)", flexShrink: 0 }} />
+                      {product.vendor?.avatar ? (
+                        <img src={getImageUrl(product.vendor.avatar)} alt="avatar" style={{ width: "24px", height: "24px", borderRadius: "50%", objectFit: "cover", border: "1px solid var(--border-light)", flexShrink: 0 }} />
                       ) : (
                         <div style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "var(--brand-100)", color: "var(--brand-700)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontWeight: 700, flexShrink: 0 }}>
-                          {(product.vendor?.vendor_profile?.store_name || product.vendor?.name || "V").charAt(0).toUpperCase()}
+                          {(product.vendor?.name || "U").charAt(0).toUpperCase()}
                         </div>
                       )}
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <p style={{ margin: 0, fontSize: "0.813rem", fontWeight: 600, color: "var(--text-primary)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                          {product.vendor?.vendor_profile?.store_name || product.vendor?.name}
+                          {product.vendor?.name || "Unknown User"}
                         </p>
                       </div>
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="9 18 15 12 9 6"></polyline></svg>

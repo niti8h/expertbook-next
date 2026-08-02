@@ -144,13 +144,13 @@ export default function ProductDetailPage() {
             </div>
 
             <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "40px" }}>
-              <Link href={`/store/${product.vendor?.id}/${(product.vendor?.vendor_profile?.store_name || product.vendor?.name || 'store').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}`} style={{ display: "flex", alignItems: "center", gap: "16px", padding: "16px 24px", backgroundColor: "var(--surface-1)", borderRadius: "var(--radius-md)", flex: 1, border: "1px solid var(--border-light)", textDecoration: "none", transition: "background-color 0.2s" }}
+              <Link href={`/profile/${product.vendor?.phone || '#'}`} style={{ display: "flex", alignItems: "center", gap: "16px", padding: "16px 24px", backgroundColor: "var(--surface-1)", borderRadius: "var(--radius-md)", flex: 1, border: "1px solid var(--border-light)", textDecoration: "none", transition: "background-color 0.2s" }}
                 onMouseEnter={e => e.currentTarget.style.backgroundColor = "var(--surface-2)"}
                 onMouseLeave={e => e.currentTarget.style.backgroundColor = "var(--surface-1)"}
               >
                 <div style={{ width: "48px", height: "48px", borderRadius: "50%", overflow: "hidden", backgroundColor: "var(--surface-2)" }}>
-                  {product.vendor?.vendor_profile?.store_logo ? (
-                    <img src={getImageUrl(product.vendor.vendor_profile.store_logo)} alt="Store Logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  {product.vendor?.avatar ? (
+                    <img src={getImageUrl(product.vendor.avatar)} alt="User Avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   ) : (
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="1.5"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
                   )}
@@ -158,7 +158,7 @@ export default function ProductDetailPage() {
                 <div>
                   <p style={{ fontSize: "0.813rem", color: "var(--text-secondary)", margin: 0 }}>Sold by</p>
                   <p style={{ fontSize: "1rem", fontWeight: 600, color: "var(--text-primary)", margin: 0 }}>
-                    {product.vendor?.vendor_profile?.store_name || product.vendor?.name}
+                    {product.vendor?.name || "Unknown User"}
                   </p>
                 </div>
               </Link>
