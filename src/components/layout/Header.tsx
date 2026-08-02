@@ -130,6 +130,18 @@ export default function Header() {
                   <div style={{ borderTop: "1px solid var(--border-light)", padding: "8px 0" }}>
                     <p style={{ padding: "8px 16px", margin: 0, fontSize: "0.75rem", fontWeight: 600, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.5px" }}>Store Management</p>
                     <Link
+                      href="/user/seller-orders"
+                      style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 16px", color: "var(--text-primary)", textDecoration: "none", fontSize: "0.875rem" }}
+                      onClick={() => setIsProfileDropdownOpen(false)}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                      </svg>
+                      Store Orders
+                    </Link>
+                    <Link
                       href="/user/products"
                       style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 16px", color: "var(--text-primary)", textDecoration: "none", fontSize: "0.875rem" }}
                       onClick={() => setIsProfileDropdownOpen(false)}
@@ -203,6 +215,7 @@ export default function Header() {
                 <Link href="/user/orders" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>My Orders</Link>
                 <Link href="/user/wishlist" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>Wishlist</Link>
                 <Link href="/user/wallet" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>Wallet & Payouts</Link>
+                <Link href="/user/seller-orders" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>Store Orders</Link>
                 <Link href="/user/products" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>My Products</Link>
                 <Link href="/user/services" className="btn-secondary" style={{ display: "block", textAlign: "center", padding: "12px", marginBottom: "12px", textDecoration: "none" }} onClick={() => setIsMobileMenuOpen(false)}>My Services</Link>
                 <button onClick={() => { handleLogout(); setIsMobileMenuOpen(false); }} className="btn-secondary" style={{ width: "100%", padding: "12px", fontSize: "1rem", color: "var(--danger)", border: "1px solid var(--danger)" }}>Logout</button>

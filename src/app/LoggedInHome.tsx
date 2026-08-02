@@ -117,6 +117,16 @@ export default function LoggedInHome({ user }: { user: any }) {
               </div>
             </Link>
 
+            <Link href="/user/seller-orders" style={{ padding: "24px", background: "white", border: "1px solid var(--border-light)", borderRadius: "20px", textDecoration: "none", color: "var(--text-primary)", display: "flex", flexDirection: "column", gap: "12px", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.06)' }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}>
+              <div style={{ width: "40px", height: "40px", borderRadius: "10px", backgroundColor: "rgba(16, 185, 129, 0.1)", color: "#10b981", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              </div>
+              <div>
+                <h4 style={{ margin: "0 0 4px 0", fontSize: "1rem" }}>Store Orders</h4>
+                <p style={{ margin: 0, fontSize: "0.875rem", color: "var(--text-secondary)" }}>Manage fulfillment</p>
+              </div>
+            </Link>
+
             <Link href="/user/products" style={{ padding: "24px", background: "white", border: "1px solid var(--border-light)", borderRadius: "20px", textDecoration: "none", color: "var(--text-primary)", display: "flex", flexDirection: "column", gap: "12px", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.06)' }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none' }}>
               <div style={{ width: "40px", height: "40px", borderRadius: "10px", backgroundColor: "rgba(14, 165, 233, 0.1)", color: "var(--brand-600)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path></svg>
