@@ -287,7 +287,7 @@ export default function UserProducts() {
                         <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Category</label>
                         <select value={formData.category_id} onChange={(e) => setFormData({ ...formData, category_id: parseInt(e.target.value) })}
                           style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none", backgroundColor: "white" }}>
-                          <option value="" disabled>Select a category</option>
+                          <option value="" >Select a category</option>
                           {categories.map(cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
                         </select>
                       </div>
