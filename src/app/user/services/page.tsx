@@ -22,12 +22,12 @@ export default function UserServices() {
     description: "",
     price: "",
     price_type: "fixed",
-    category_id: 0, 
+    category_id: 0,
     status: "active",
     pincode_mode: "all",
     pincodes: ""
   });
-  
+
   const [images, setImages] = useState<File[]>([]);
   const [existingImages, setExistingImages] = useState<string[]>([]);
   const [categories, setCategories] = useState<any[]>([]);
@@ -76,7 +76,7 @@ export default function UserServices() {
       const newFiles = Array.from(e.target.files);
       const allFiles = [...images, ...newFiles];
       setImages(allFiles);
-      
+
       const fileArray = allFiles.map((file) => URL.createObjectURL(file));
       setImagePreviews(fileArray);
     }
@@ -86,7 +86,7 @@ export default function UserServices() {
     const newImagesList = [...images];
     newImagesList.splice(index, 1);
     setImages(newImagesList);
-    
+
     const newPreviews = [...imagePreviews];
     newPreviews.splice(index, 1);
     setImagePreviews(newPreviews);
@@ -167,7 +167,7 @@ export default function UserServices() {
       payload.append("price_type", formData.price_type);
       payload.append("category_id", formData.category_id.toString());
       payload.append("status", formData.status);
-      
+
       if (!editingId) {
         payload.append("pincode_mode", formData.pincode_mode);
         if (formData.pincodes) payload.append("pincodes", formData.pincodes);
@@ -211,7 +211,7 @@ export default function UserServices() {
     <div style={{ minHeight: "100vh", backgroundColor: "#f8fafc", paddingBottom: "120px", position: "relative" }}>
       {/* Background Decor */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "300px", background: "linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%)", pointerEvents: "none" }} />
-      
+
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "40px 20px", position: "relative", zIndex: 10 }}>
         {/* Header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "40px" }}>
@@ -222,12 +222,12 @@ export default function UserServices() {
             <p style={{ color: "#64748b", marginTop: "8px", fontSize: "1.125rem" }}>Manage your professional services and bookings.</p>
           </div>
           {!showAddForm && (
-            <button 
+            <button
               onClick={() => setShowAddForm(true)}
-              style={{ 
+              style={{
                 display: "flex", alignItems: "center", gap: "8px",
-                padding: "12px 24px", backgroundColor: "#059669", color: "white", 
-                border: "none", borderRadius: "100px", fontSize: "1rem", fontWeight: 600, 
+                padding: "12px 24px", backgroundColor: "#059669", color: "white",
+                border: "none", borderRadius: "100px", fontSize: "1rem", fontWeight: 600,
                 cursor: "pointer", boxShadow: "0 10px 15px -3px rgba(5, 150, 105, 0.3)",
                 transition: "transform 0.2s, box-shadow 0.2s"
               }}
@@ -240,8 +240,8 @@ export default function UserServices() {
         </div>
 
         {showAddForm ? (
-          <div style={{ 
-            backgroundColor: "white", borderRadius: "24px", 
+          <div style={{
+            backgroundColor: "white", borderRadius: "24px",
             boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01)",
             overflow: "hidden"
           }}>
@@ -250,10 +250,10 @@ export default function UserServices() {
                 {editingId ? "Edit Service" : "Create New Service"}
               </h2>
             </div>
-            
+
             <form onSubmit={handleSubmit}>
               <div style={{ padding: "40px", display: "flex", flexDirection: "column", gap: "40px" }}>
-                
+
                 {/* Basic Info */}
                 <div>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 600, color: "#1e293b", marginBottom: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
@@ -261,23 +261,24 @@ export default function UserServices() {
                   </h3>
                   <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                     <div>
-                      <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Title <span style={{color:"#ef4444"}}>*</span></label>
-                      <input type="text" required value={formData.title} onChange={(e) => setFormData({...formData, title: e.target.value})} placeholder="E.g., Professional Plumbing Services"
+                      <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Title <span style={{ color: "#ef4444" }}>*</span></label>
+                      <input type="text" required value={formData.title} onChange={(e) => setFormData({ ...formData, title: e.target.value })} placeholder="E.g., Professional Plumbing Services"
                         style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none", transition: "border-color 0.2s" }}
                         onFocus={(e) => e.target.style.borderColor = "#059669"} onBlur={(e) => e.target.style.borderColor = "#cbd5e1"}
                       />
                     </div>
                     <div>
                       <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Description</label>
-                      <textarea rows={4} value={formData.description} onChange={(e) => setFormData({...formData, description: e.target.value})} placeholder="Describe your service..."
+                      <textarea rows={4} value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} placeholder="Describe your service..."
                         style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none", transition: "border-color 0.2s", fontFamily: "inherit", resize: "vertical" }}
                         onFocus={(e) => e.target.style.borderColor = "#059669"} onBlur={(e) => e.target.style.borderColor = "#cbd5e1"}
                       />
                     </div>
                     <div>
                       <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Category</label>
-                      <select value={formData.category_id} onChange={(e) => setFormData({...formData, category_id: parseInt(e.target.value)})}
+                      <select value={formData.category_id} onChange={(e) => setFormData({ ...formData, category_id: parseInt(e.target.value) })}
                         style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none", backgroundColor: "white" }}>
+                        <option value="" disabled>Select a category</option>
                         {categories.map(cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
                       </select>
                     </div>
@@ -293,13 +294,13 @@ export default function UserServices() {
                   </h3>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
                     <div>
-                      <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Price (₹) <span style={{color:"#ef4444"}}>*</span></label>
-                      <input type="number" required min="0" step="0.01" value={formData.price} onChange={(e) => setFormData({...formData, price: e.target.value})} placeholder="0.00"
+                      <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Price (₹) <span style={{ color: "#ef4444" }}>*</span></label>
+                      <input type="number" required min="0" step="0.01" value={formData.price} onChange={(e) => setFormData({ ...formData, price: e.target.value })} placeholder="0.00"
                         style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none" }} />
                     </div>
                     <div>
                       <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Price Type</label>
-                      <select value={formData.price_type} onChange={(e) => setFormData({...formData, price_type: e.target.value})}
+                      <select value={formData.price_type} onChange={(e) => setFormData({ ...formData, price_type: e.target.value })}
                         style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none", backgroundColor: "white" }}>
                         <option value="fixed">Fixed Price</option>
                         <option value="hourly">Hourly Rate</option>
@@ -309,7 +310,7 @@ export default function UserServices() {
                   </div>
                   <div style={{ marginTop: "20px" }}>
                     <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Status</label>
-                    <select value={formData.status} onChange={(e) => setFormData({...formData, status: e.target.value})}
+                    <select value={formData.status} onChange={(e) => setFormData({ ...formData, status: e.target.value })}
                       style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none", backgroundColor: "white" }}>
                       <option value="active">Active</option>
                       <option value="draft">Draft</option>
@@ -330,7 +331,7 @@ export default function UserServices() {
                       <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "20px" }}>
                         <div>
                           <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Pincode Mode</label>
-                          <select value={formData.pincode_mode} onChange={(e) => setFormData({...formData, pincode_mode: e.target.value})}
+                          <select value={formData.pincode_mode} onChange={(e) => setFormData({ ...formData, pincode_mode: e.target.value })}
                             style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none", backgroundColor: "white" }}>
                             <option value="all">Anywhere (All Pincodes)</option>
                             <option value="whitelist">Only specific pincodes</option>
@@ -340,7 +341,7 @@ export default function UserServices() {
                         {formData.pincode_mode !== "all" && (
                           <div>
                             <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Pincodes (Comma separated)</label>
-                            <input type="text" placeholder="e.g. 110001, 110002" value={formData.pincodes} onChange={(e) => setFormData({...formData, pincodes: e.target.value})}
+                            <input type="text" placeholder="e.g. 110001, 110002" value={formData.pincodes} onChange={(e) => setFormData({ ...formData, pincodes: e.target.value })}
                               style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none" }} />
                             <p style={{ margin: "8px 0 0", fontSize: "0.875rem", color: "#64748b" }}>Separate multiple pincodes with a comma.</p>
                           </div>
@@ -367,7 +368,7 @@ export default function UserServices() {
                     <span style={{ fontSize: "0.875rem", color: "#64748b", marginTop: "4px" }}>PNG, JPG, WEBP up to 2MB</span>
                     <input type="file" multiple accept="image/*" hidden onChange={handleImageChange} />
                   </label>
-                  
+
                   {(existingImages.length > 0 || imagePreviews.length > 0) && (
                     <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginTop: "24px" }}>
                       {existingImages.map((img, idx) => (
@@ -399,7 +400,7 @@ export default function UserServices() {
                 backgroundColor: "rgba(255, 255, 255, 0.8)", backdropFilter: "blur(16px)",
                 padding: "16px 32px", borderRadius: "100px",
                 boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0,0,0,0.05)",
-                display: "flex", alignItems: "center", justifyContent: "space-between", 
+                display: "flex", alignItems: "center", justifyContent: "space-between",
                 width: "90%", maxWidth: "500px", zIndex: 100
               }}>
                 <button type="button" onClick={resetForm}
@@ -407,8 +408,8 @@ export default function UserServices() {
                   Cancel
                 </button>
                 <button type="submit" disabled={saving}
-                  style={{ 
-                    padding: "12px 32px", borderRadius: "100px", fontSize: "1rem", fontWeight: 600, 
+                  style={{
+                    padding: "12px 32px", borderRadius: "100px", fontSize: "1rem", fontWeight: 600,
                     border: "none", backgroundColor: "#059669", color: "white", cursor: "pointer",
                     boxShadow: "0 4px 14px 0 rgba(5, 150, 105, 0.39)", transition: "opacity 0.2s", opacity: saving ? 0.7 : 1
                   }}>
@@ -424,8 +425,8 @@ export default function UserServices() {
                 Loading your services...
               </div>
             ) : services.length === 0 ? (
-              <div style={{ 
-                backgroundColor: "white", padding: "80px 40px", borderRadius: "24px", 
+              <div style={{
+                backgroundColor: "white", padding: "80px 40px", borderRadius: "24px",
                 textAlign: "center", boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.05)"
               }}>
                 <div style={{ display: "inline-flex", padding: "20px", backgroundColor: "#f8fafc", borderRadius: "50%", marginBottom: "24px" }}>
@@ -436,9 +437,9 @@ export default function UserServices() {
                   You haven't listed any services. Start offering your professional skills to clients!
                 </p>
                 <button onClick={() => setShowAddForm(true)}
-                  style={{ 
-                    padding: "14px 32px", backgroundColor: "#059669", color: "white", 
-                    border: "none", borderRadius: "100px", fontSize: "1.125rem", fontWeight: 600, 
+                  style={{
+                    padding: "14px 32px", backgroundColor: "#059669", color: "white",
+                    border: "none", borderRadius: "100px", fontSize: "1.125rem", fontWeight: 600,
                     cursor: "pointer", boxShadow: "0 10px 15px -3px rgba(5, 150, 105, 0.3)"
                   }}>
                   + Add Service
@@ -447,12 +448,12 @@ export default function UserServices() {
             ) : (
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "24px" }}>
                 {services.map((service) => (
-                  <div key={service.id} style={{ 
-                    backgroundColor: "white", borderRadius: "20px", overflow: "hidden", 
+                  <div key={service.id} style={{
+                    backgroundColor: "white", borderRadius: "20px", overflow: "hidden",
                     boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)",
                     transition: "transform 0.2s, box-shadow 0.2s", display: "flex", flexDirection: "column"
                   }} onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.1)"; }} onMouseOut={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 10px 15px -3px rgba(0, 0, 0, 0.05)"; }}>
-                    
+
                     <div style={{ height: "200px", position: "relative", backgroundColor: "#f1f5f9" }}>
                       {service.images && service.images.length > 0 ? (
                         <img src={getImageUrl(service.images[0])} alt={service.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -462,13 +463,13 @@ export default function UserServices() {
                         </div>
                       )}
                       <div style={{ position: "absolute", top: "12px", right: "12px", display: "flex", gap: "8px" }}>
-                        <span style={{ 
+                        <span style={{
                           padding: "4px 12px", borderRadius: "100px", fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase",
                           backgroundColor: service.status === "active" ? "#dcfce7" : "#f1f5f9", color: service.status === "active" ? "#16a34a" : "#64748b"
                         }}>
                           {service.status}
                         </span>
-                        <span style={{ 
+                        <span style={{
                           padding: "4px 12px", borderRadius: "100px", fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase",
                           backgroundColor: "white", color: "#0f172a", boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
                         }}>
@@ -476,7 +477,7 @@ export default function UserServices() {
                         </span>
                       </div>
                     </div>
-                    
+
                     <div style={{ padding: "24px", flex: 1, display: "flex", flexDirection: "column" }}>
                       <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#1e293b", margin: "0 0 8px 0" }}>{service.title}</h3>
                       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto", paddingTop: "16px" }}>
@@ -488,13 +489,13 @@ export default function UserServices() {
                     </div>
 
                     <div style={{ padding: "16px 24px", borderTop: "1px solid #f1f5f9", display: "flex", gap: "12px" }}>
-                      <button onClick={() => handleEdit(service)} style={{ 
+                      <button onClick={() => handleEdit(service)} style={{
                         flex: 1, padding: "10px", borderRadius: "8px", border: "1px solid #e2e8f0", backgroundColor: "white",
                         color: "#334155", fontSize: "0.938rem", fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", cursor: "pointer", transition: "background-color 0.2s"
                       }} onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f8fafc"} onMouseOut={(e) => e.currentTarget.style.backgroundColor = "white"}>
                         <Edit size={16} /> Edit
                       </button>
-                      <button onClick={() => handleDelete(service.id)} style={{ 
+                      <button onClick={() => handleDelete(service.id)} style={{
                         flex: 1, padding: "10px", borderRadius: "8px", border: "1px solid #fee2e2", backgroundColor: "#fef2f2",
                         color: "#ef4444", fontSize: "0.938rem", fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", cursor: "pointer", transition: "background-color 0.2s"
                       }} onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#fee2e2"} onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#fef2f2"}>
