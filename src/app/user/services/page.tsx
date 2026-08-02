@@ -24,9 +24,8 @@ export default function UserServices() {
     price_type: "fixed",
     category_id: 0, 
     status: "active",
-    lat: "",
-    lng: "",
-    radius_km: "10"
+    pincode_mode: "all",
+    pincodes: ""
   });
   
   const [images, setImages] = useState<File[]>([]);
@@ -93,56 +92,12 @@ export default function UserServices() {
     setImagePreviews(newPreviews);
   };
 
-  const fetchLocation = async () => {
-    toast.success("Fetching location...");
-
-    const fallbackToIP = async () => {
-      try {
-        const res = await fetch("https://ipapi.co/json/");
-        const data = await res.json();
-        if (data.latitude && data.longitude) {
-          setFormData((prev) => ({
-            ...prev,
-            lat: data.latitude.toString(),
-            lng: data.longitude.toString(),
-          }));
-          toast.success("Approximate location fetched via IP!");
-        } else {
-          toast.error("Failed to fetch location automatically. Please enter manually.");
-        }
-      } catch (err) {
-        toast.error("Failed to fetch location automatically. Please enter manually.");
-      }
-    };
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setFormData((prev) => ({
-            ...prev,
-            lat: position.coords.latitude.toString(),
-            lng: position.coords.longitude.toString(),
-          }));
-          toast.success("Location fetched successfully!");
-        },
-        (error) => {
-          console.error("Browser geolocation failed:", error);
-          toast.info("Browser location denied. Trying approximate IP location...");
-          fallbackToIP();
-        },
-        { timeout: 10000 }
-      );
-    } else {
-      toast.info("Geolocation not supported. Trying approximate IP location...");
-      fallbackToIP();
-    }
-  };
 
   const resetForm = () => {
     setShowAddForm(false);
     setEditingId(null);
     setFormData({
-      title: "", description: "", price: "", price_type: "fixed", category_id: categories.length > 0 ? categories[0].id : 1, status: "active", lat: "", lng: "", radius_km: "10"
+      title: "", description: "", price: "", price_type: "fixed", category_id: categories.length > 0 ? categories[0].id : 1, status: "active", pincode_mode: "all", pincodes: ""
     });
     setImages([]);
     setExistingImages([]);
@@ -158,9 +113,8 @@ export default function UserServices() {
       price_type: service.price_type,
       category_id: service.category_id || (categories.length > 0 ? categories[0].id : 1),
       status: service.status,
-      lat: "", 
-      lng: "",
-      radius_km: "10",
+      pincode_mode: "all",
+      pincodes: "",
     });
     setExistingImages(service.images || []);
     setEditingId(service.id);
@@ -215,9 +169,8 @@ export default function UserServices() {
       payload.append("status", formData.status);
       
       if (!editingId) {
-        if (formData.lat) payload.append("lat", formData.lat);
-        if (formData.lng) payload.append("lng", formData.lng);
-        if (formData.radius_km) payload.append("radius_km", formData.radius_km);
+        payload.append("pincode_mode", formData.pincode_mode);
+        if (formData.pincodes) payload.append("pincodes", formData.pincodes);
       } else {
         existingImages.forEach((img, idx) => {
           payload.append(`existing_images[${idx}]`, img);
@@ -371,32 +324,29 @@ export default function UserServices() {
                 {!editingId && (
                   <div>
                     <h3 style={{ fontSize: "1.25rem", fontWeight: 600, color: "#1e293b", marginBottom: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
-                      <MapPin size={20} color="#64748b" /> Service Area
+                      <MapPin size={20} color="#64748b" /> Service Area (Pincodes)
                     </h3>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "20px" }}>
-                      <div>
-                        <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Latitude</label>
-                        <input type="text" value={formData.lat} onChange={(e) => setFormData({...formData, lat: e.target.value})} placeholder="e.g. 28.7041"
-                          style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none" }} />
-                      </div>
-                      <div>
-                        <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Longitude</label>
-                        <input type="text" value={formData.lng} onChange={(e) => setFormData({...formData, lng: e.target.value})} placeholder="e.g. 77.1025"
-                          style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none" }} />
-                      </div>
-                      <div>
-                        <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Service Radius (km)</label>
-                        <input type="number" value={formData.radius_km} onChange={(e) => setFormData({...formData, radius_km: e.target.value})} placeholder="10"
-                          style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none" }} />
+                    <div style={{ backgroundColor: "#f8fafc", padding: "24px", borderRadius: "16px", border: "1px solid #e2e8f0" }}>
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "20px" }}>
+                        <div>
+                          <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Pincode Mode</label>
+                          <select value={formData.pincode_mode} onChange={(e) => setFormData({...formData, pincode_mode: e.target.value})}
+                            style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none", backgroundColor: "white" }}>
+                            <option value="all">Anywhere (All Pincodes)</option>
+                            <option value="whitelist">Only specific pincodes</option>
+                            <option value="blacklist">Anywhere EXCEPT specific pincodes</option>
+                          </select>
+                        </div>
+                        {formData.pincode_mode !== "all" && (
+                          <div>
+                            <label style={{ display: "block", marginBottom: "8px", fontWeight: 500, color: "#334155" }}>Pincodes (Comma separated)</label>
+                            <input type="text" placeholder="e.g. 110001, 110002" value={formData.pincodes} onChange={(e) => setFormData({...formData, pincodes: e.target.value})}
+                              style={{ width: "100%", padding: "14px 16px", borderRadius: "12px", border: "1px solid #cbd5e1", fontSize: "1rem", outline: "none" }} />
+                            <p style={{ margin: "8px 0 0", fontSize: "0.875rem", color: "#64748b" }}>Separate multiple pincodes with a comma.</p>
+                          </div>
+                        )}
                       </div>
                     </div>
-                    <button type="button" onClick={fetchLocation} style={{ 
-                      marginTop: "16px", padding: "10px 20px", backgroundColor: "white", color: "#0f172a", 
-                      border: "1px solid #cbd5e1", borderRadius: "100px", fontSize: "0.875rem", fontWeight: 600, 
-                      cursor: "pointer", display: "flex", alignItems: "center", gap: "8px", transition: "background-color 0.2s"
-                    }} onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#f8fafc"} onMouseOut={(e) => e.currentTarget.style.backgroundColor = "white"}>
-                      <MapPin size={16} /> Fetch Current Location
-                    </button>
                   </div>
                 )}
 

@@ -112,7 +112,7 @@ export default function WishlistPage() {
               <Link href={`/products/${product.slug}`} style={{ textDecoration: "none", color: "inherit", flex: 1, display: "flex", flexDirection: "column" }}>
                 <div
                   className="product-image-container"
-                  style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_BACKEND_URL || "https://api.expertbook.in"}${product.images?.[0] || ''})` }}
+                  style={{ backgroundImage: `url(${getImageUrl(product.images?.[0])})` }}
                 >
                   {!product.images?.[0] && <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>No Image</div>}
                 </div>
