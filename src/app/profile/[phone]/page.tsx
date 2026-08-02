@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { api } from "@/lib/api";
 import Link from "next/link";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 
 export default function UserProfile() {
   const { phone } = useParams();
@@ -15,7 +13,7 @@ export default function UserProfile() {
 
   useEffect(() => {
     if (phone) {
-      api(`/profile/${phone}`).then(res => {
+      api(`/marketplace/profile/${phone}`).then(res => {
         if (res.status === 200) {
           setProfileData(res.data.data);
         }
@@ -29,37 +27,27 @@ export default function UserProfile() {
 
   if (loading) {
     return (
-      <>
-        <Header />
-        <div style={{ minHeight: "60vh", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#f8fafc" }}>
-          <div style={{ color: "#64748b", fontSize: "1.125rem" }}>Loading profile...</div>
-        </div>
-        <Footer />
-      </>
+      <div style={{ minHeight: "60vh", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#f8fafc" }}>
+        <div style={{ color: "#64748b", fontSize: "1.125rem" }}>Loading profile...</div>
+      </div>
     );
   }
 
   if (!profileData || !profileData.user) {
     return (
-      <>
-        <Header />
-        <div style={{ minHeight: "60vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", backgroundColor: "#f8fafc" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>Profile Not Found</h2>
-          <p style={{ color: "#64748b", marginBottom: "24px" }}>We couldn't find a user with this mobile number.</p>
-          <Link href="/" style={{ padding: "12px 24px", backgroundColor: "var(--brand-600)", color: "white", borderRadius: "100px", textDecoration: "none", fontWeight: 600 }}>Back Home</Link>
-        </div>
-        <Footer />
-      </>
+      <div style={{ minHeight: "60vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", backgroundColor: "#f8fafc" }}>
+        <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>Profile Not Found</h2>
+        <p style={{ color: "#64748b", marginBottom: "24px" }}>We couldn't find a user with this mobile number.</p>
+        <Link href="/" style={{ padding: "12px 24px", backgroundColor: "var(--brand-600)", color: "white", borderRadius: "100px", textDecoration: "none", fontWeight: 600 }}>Back Home</Link>
+      </div>
     );
   }
 
   const { user, products, services, blogs } = profileData;
 
   return (
-    <>
-      <Header />
-      <div style={{ backgroundColor: "#f8fafc", minHeight: "100vh", paddingBottom: "80px" }}>
-        {/* Banner */}
+    <div style={{ backgroundColor: "#f8fafc", minHeight: "100vh", paddingBottom: "80px" }}>
+      {/* Banner */}
         <div style={{ 
           height: "250px", 
           backgroundColor: "#e2e8f0", 
@@ -199,8 +187,7 @@ export default function UserProfile() {
             )
           )}
 
-        </div>
       </div>
-    </>
+    </div>
   );
 }
