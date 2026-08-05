@@ -101,7 +101,13 @@ export default function LoginPage() {
                   type="tel"
                   placeholder="+91 98765 43210"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => {
+                    let val = e.target.value.replace(/\D/g, "");
+                    if (val.startsWith("91") && val.length > 10) {
+                      val = val.substring(2);
+                    }
+                    setPhone(val);
+                  }}
                   required
                 />
               </div>
