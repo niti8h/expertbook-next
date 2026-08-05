@@ -8,7 +8,6 @@ import { api } from "@/lib/api";
 export default function RegisterPage() {
   const router = useRouter();
   const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
   const [phone, setPhone] = useState("");
   const [referralCode, setReferralCode] = useState("");
   const [otp, setOtp] = useState("");
@@ -49,7 +48,7 @@ export default function RegisterPage() {
     try {
       const res = await api("/auth/request-otp", {
         method: "POST",
-        body: { phone, name, username, referral_code: referralCode },
+        body: { phone, name, referral_code: referralCode },
       });
 
       if (res.status === 200) {
@@ -112,18 +111,6 @@ export default function RegisterPage() {
                   placeholder="John Doe"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className={styles.fieldGroup}>
-                <label htmlFor="username">Username</label>
-                <input
-                  id="username"
-                  type="text"
-                  placeholder="johndoe123"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
                   required
                 />
               </div>
